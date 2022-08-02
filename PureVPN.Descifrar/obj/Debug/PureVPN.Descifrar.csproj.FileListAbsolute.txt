@@ -1,0 +1,11 @@
+C:\Users\m.wasim\Desktop\src\PureVPN.Descifrar\bin\Debug\PureVPN.Descifrar.dll
+C:\Users\m.wasim\Desktop\src\PureVPN.Descifrar\bin\Debug\PureVPN.Descifrar.pdb
+C:\Users\m.wasim\Desktop\src\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.csproj.AssemblyReference.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.csproj.CoreCompileInputs.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.dll
+C:\Users\m.wasim\Desktop\src\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.pdb
+D:\WindowsApplicationProject\PureVPN.Descifrar\bin\Debug\PureVPN.Descifrar.dll
+D:\WindowsApplicationProject\PureVPN.Descifrar\bin\Debug\PureVPN.Descifrar.pdb
+D:\WindowsApplicationProject\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.csproj.CoreCompileInputs.cache
+D:\WindowsApplicationProject\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.dll
+D:\WindowsApplicationProject\PureVPN.Descifrar\obj\Debug\PureVPN.Descifrar.pdb

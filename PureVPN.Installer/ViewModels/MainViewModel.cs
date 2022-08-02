@@ -1,0 +1,119 @@
+﻿using MvvmCore;
+using PureVPN.Installer.Helpers;
+using System;
+using System.Windows.Input;
+using System.Windows.Threading;
+
+namespace PureVPN.Installer.ViewModels
+{
+    public class MainViewModel : BaseViewModel
+    {
+        private bool isShowingSplash = true;
+
+        public bool IsShowingSplash
+        {
+            get { return isShowingSplash; }
+            set
+            {
+                isShowingSplash = value;
+                NotifyOfPropertyChange(() => IsShowingSplash);
+            }
+        }
+
+        private bool showOverlay;
+
+        public bool ShowOverlay
+        {
+            get { return showOverlay; }
+            set
+            {
+                showOverlay = value;
+                NotifyOfPropertyChange(() => ShowOverlay);
+            }
+        }
+
+        private bool isWindowClosable = true;
+
+        public bool IsWindowClosable
+        {
+            get { return isWindowClosable; }
+            set
+            {
+                isWindowClosable = value;
+                NotifyOfPropertyChange(() => IsWindowClosable);
+            }
+        }
+
+        private BaseViewModel activeViewModel;
+
+        public BaseViewModel ActiveViewModel
+        {
+            get { return activeViewModel; }
+            set
+            {
+                activeViewModel = value;
+                IsWindowClosable = value != IoC.Get<InstallerViewModel>();
+                NotifyOfPropertyChange(() => ActiveViewModel);
+            }
+        }
+
+        protected override void OnViewLoaded(object view)
+        {
+            ActiveViewModel = IoC.Get<AgreementViewModel>();
+            var dispatcher = new DispatcherTimer();
+            dispatcher.Interval = TimeSpan.FromSeconds(3);
+            dispatcher.Tick += (sender, e) =>
+            {
+                dispatcher.Stop();
+                IsShowingSplash = false;
+            };
+            dispatcher.Start();
+
+            App.MainWindow.Closing += ClosingApp;
+        }
+
+        private void ClosingApp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        #region Actions
+        private ICommand closeAction;
+
+        public ICommand CloseAction
+        {
+            get
+            {
+                if (closeAction == null)
+                    closeAction = new ActionHelper<object>(CloseApp);
+                return closeAction;
+            }
+        }
+
+        private ICommand minimizeAction;
+
+        public ICommand MinimizeAction
+        {
+            get
+            {
+                if (minimizeAction == null)
+                    minimizeAction = new ActionHelper<object>(MinimizeApp);
+                return minimizeAction;
+            }
+        }
+
+        private ICommand dragWindowAction;
+
+        public ICommand DragWindowAction
+        {
+            get
+            {
+                if (dragWindowAction == null)
+                    dragWindowAction = new ActionHelper<object>(DragApp);
+                return dragWindowAction;
+            }
+        }
+        #endregion
+
+    }
+}

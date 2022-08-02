@@ -1,0 +1,10 @@
+C:\Users\m.wasim\Desktop\src\PureVPN.ThirdPartyInstallerLauncher\bin\Debug\PureVPN.ThirdPartyInstallerLauncher.dll
+C:\Users\m.wasim\Desktop\src\PureVPN.ThirdPartyInstallerLauncher\bin\Debug\PureVPN.ThirdPartyInstallerLauncher.pdb
+C:\Users\m.wasim\Desktop\src\PureVPN.ThirdPartyInstallerLauncher\obj\Debug\PureVPN.ThirdPartyInstallerLauncher.csproj.CoreCompileInputs.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.ThirdPartyInstallerLauncher\obj\Debug\PureVPN.ThirdPartyInstallerLauncher.dll
+C:\Users\m.wasim\Desktop\src\PureVPN.ThirdPartyInstallerLauncher\obj\Debug\PureVPN.ThirdPartyInstallerLauncher.pdb
+D:\WindowsApplicationProject\PureVPN.ThirdPartyInstallerLauncher\bin\Debug\PureVPN.ThirdPartyInstallerLauncher.dll
+D:\WindowsApplicationProject\PureVPN.ThirdPartyInstallerLauncher\bin\Debug\PureVPN.ThirdPartyInstallerLauncher.pdb
+D:\WindowsApplicationProject\PureVPN.ThirdPartyInstallerLauncher\obj\Debug\PureVPN.ThirdPartyInstallerLauncher.csproj.CoreCompileInputs.cache
+D:\WindowsApplicationProject\PureVPN.ThirdPartyInstallerLauncher\obj\Debug\PureVPN.ThirdPartyInstallerLauncher.dll
+D:\WindowsApplicationProject\PureVPN.ThirdPartyInstallerLauncher\obj\Debug\PureVPN.ThirdPartyInstallerLauncher.pdb

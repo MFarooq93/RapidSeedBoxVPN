@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="PureVPN.Uninstaller.Views.MessageBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             MinHeight="300" Background="Transparent"
+             mc:Ignorable="d" MinWidth="480" MaxHeight="350" MaxWidth="500" x:Name="message">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Uninstaller;component/Resources/Styles/Styles.xaml" />
+    </UserControl.Resources>
+
+    <Border Background="#070713" CornerRadius="20" BorderBrush="White" BorderThickness="1">
+        <Grid Background="Transparent" VerticalAlignment="Stretch" MinHeight="120" HorizontalAlignment="Stretch" Margin="10">
+
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,28,5,5">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,10,10">
+                    <TextBlock Foreground="White" Text="{Binding Caption}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" />
+                    <TextBlock Foreground="White" Text="{Binding Message}" TextWrapping="Wrap" Opacity="0.8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,5,0" FontSize="16" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,10,20,20" Visibility="{Binding ShowButtons, Converter={StaticResource BoolToVis}}">
+                    <Button Content="{Binding NegativeButtonContent}" Style="{StaticResource CurvedButton}" HorizontalAlignment="Right" Margin="0,0,0,0" Visibility="{Binding NegativeButtonContent, Converter={StaticResource StringToVis}}" Command="{Binding ButtonClickAction}" CommandParameter="false" AutomationProperties.AutomationId="btnPopupNegative" />
+                    <Button Content="{Binding PositiveButtonContent}" Style="{StaticResource CurvedButton2}" HorizontalAlignment="Right" Margin="20,0,0,0" Command="{Binding ButtonClickAction}" CommandParameter="true" AutomationProperties.AutomationId="btnPopupPositive"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+    
+</UserControl>

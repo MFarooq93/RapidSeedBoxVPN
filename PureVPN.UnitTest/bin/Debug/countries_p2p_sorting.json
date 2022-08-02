@@ -1,0 +1,850 @@
+{
+  "p2pCountryRanking": [
+    {
+      "code": "AF",
+      "is_p2p": true,
+      "name": "Afghanistan",
+      "priority": 0
+    },
+    {
+      "code": "AL",
+      "is_p2p": false,
+      "name": "Albania",
+      "priority": 0
+    },
+    {
+      "code": "DZ",
+      "is_p2p": false,
+      "name": "Algeria",
+      "priority": 0
+    },
+    {
+      "code": "AO",
+      "is_p2p": true,
+      "name": "Angola",
+      "priority": 0
+    },
+    {
+      "code": "AR",
+      "is_p2p": false,
+      "name": "Argentina",
+      "priority": 0
+    },
+    {
+      "code": "AM",
+      "is_p2p": true,
+      "name": "Armenia",
+      "priority": 0
+    },
+    {
+      "code": "AW",
+      "is_p2p": false,
+      "name": "Aruba",
+      "priority": 0
+    },
+    {
+      "code": "AU",
+      "is_p2p": false,
+      "name": "Australia",
+      "priority": 2
+    },
+    {
+      "code": "AT",
+      "is_p2p": false,
+      "name": "Austria",
+      "priority": 0
+    },
+    {
+      "code": "AZ",
+      "is_p2p": false,
+      "name": "Azerbaijan",
+      "priority": 0
+    },
+    {
+      "code": "BS",
+      "is_p2p": true,
+      "name": "The Bahamas",
+      "priority": 0
+    },
+    {
+      "code": "BH",
+      "is_p2p": true,
+      "name": "Bahrain",
+      "priority": 0
+    },
+    {
+      "code": "BD",
+      "is_p2p": true,
+      "name": "Bangladesh",
+      "priority": 0
+    },
+    {
+      "code": "BB",
+      "is_p2p": true,
+      "name": "Barbados",
+      "priority": 0
+    },
+    {
+      "code": "BE",
+      "is_p2p": true,
+      "name": "Belgium",
+      "priority": 0
+    },
+    {
+      "code": "BZ",
+      "is_p2p": false,
+      "name": "Belize",
+      "priority": 0
+    },
+    {
+      "code": "BM",
+      "is_p2p": true,
+      "name": "Bermuda",
+      "priority": 0
+    },
+    {
+      "code": "BO",
+      "is_p2p": true,
+      "name": "Bolivia",
+      "priority": 0
+    },
+    {
+      "code": "BA",
+      "is_p2p": false,
+      "name": "Bosnia and Herzegovina",
+      "priority": 0
+    },
+    {
+      "code": "BR",
+      "is_p2p": false,
+      "name": "Brazil",
+      "priority": 0
+    },
+    {
+      "code": "VG",
+      "is_p2p": true,
+      "name": "British Virgin Islands",
+      "priority": 0
+    },
+    {
+      "code": "BN",
+      "is_p2p": true,
+      "name": "Brunei Darussalam",
+      "priority": 0
+    },
+    {
+      "code": "BG",
+      "is_p2p": true,
+      "name": "Bulgaria",
+      "priority": 0
+    },
+    {
+      "code": "KH",
+      "is_p2p": true,
+      "name": "Cambodia",
+      "priority": 0
+    },
+    {
+      "code": "CA",
+      "is_p2p": false,
+      "name": "Canada",
+      "priority": 3
+    },
+    {
+      "code": "CV",
+      "is_p2p": true,
+      "name": "Cape Verde",
+      "priority": 0
+    },
+    {
+      "code": "KY",
+      "is_p2p": true,
+      "name": "Cayman Islands",
+      "priority": 0
+    },
+    {
+      "code": "CL",
+      "is_p2p": true,
+      "name": "Chile",
+      "priority": 0
+    },
+    {
+      "code": "CN",
+      "is_p2p": false,
+      "name": "China",
+      "priority": 0
+    },
+    {
+      "code": "CO",
+      "is_p2p": true,
+      "name": "Colombia",
+      "priority": 0
+    },
+    {
+      "code": "CR",
+      "is_p2p": false,
+      "name": "Costa Rica",
+      "priority": 0
+    },
+    {
+      "code": "HR",
+      "is_p2p": false,
+      "name": "Croatia",
+      "priority": 0
+    },
+    {
+      "code": "CY",
+      "is_p2p": false,
+      "name": "Cyprus",
+      "priority": 0
+    },
+    {
+      "code": "CZ",
+      "is_p2p": false,
+      "name": "Czech Republic",
+      "priority": 0
+    },
+    {
+      "code": "DK",
+      "is_p2p": true,
+      "name": "Denmark",
+      "priority": 0
+    },
+    {
+      "code": "DM",
+      "is_p2p": true,
+      "name": "Dominica",
+      "priority": 0
+    },
+    {
+      "code": "DO",
+      "is_p2p": true,
+      "name": "Dominican Republic",
+      "priority": 0
+    },
+    {
+      "code": "EC",
+      "is_p2p": false,
+      "name": "Ecuador",
+      "priority": 0
+    },
+    {
+      "code": "EG",
+      "is_p2p": false,
+      "name": "Egypt",
+      "priority": 0
+    },
+    {
+      "code": "SV",
+      "is_p2p": true,
+      "name": "El Salvador",
+      "priority": 0
+    },
+    {
+      "code": "EE",
+      "is_p2p": true,
+      "name": "Estonia",
+      "priority": 0
+    },
+    {
+      "code": "ET",
+      "is_p2p": true,
+      "name": "Ethiopia",
+      "priority": 0
+    },
+    {
+      "code": "FI",
+      "is_p2p": false,
+      "name": "Finland",
+      "priority": 0
+    },
+    {
+      "code": "FR",
+      "is_p2p": false,
+      "name": "France",
+      "priority": 1
+    },
+    {
+      "code": "GE",
+      "is_p2p": false,
+      "name": "Georgia",
+      "priority": 0
+    },
+    {
+      "code": "DE",
+      "is_p2p": true,
+      "name": "Germany",
+      "priority": 4
+    },
+    {
+      "code": "GR",
+      "is_p2p": false,
+      "name": "Greece",
+      "priority": 0
+    },
+    {
+      "code": "GD",
+      "is_p2p": false,
+      "name": "Grenada",
+      "priority": 0
+    },
+    {
+      "code": "GT",
+      "is_p2p": true,
+      "name": "Guatemala",
+      "priority": 0
+    },
+    {
+      "code": "GY",
+      "is_p2p": true,
+      "name": "Guyana",
+      "priority": 0
+    },
+    {
+      "code": "HT",
+      "is_p2p": true,
+      "name": "Haiti",
+      "priority": 0
+    },
+    {
+      "code": "HN",
+      "is_p2p": true,
+      "name": "Honduras",
+      "priority": 0
+    },
+    {
+      "code": "HK",
+      "is_p2p": false,
+      "name": "Hong Kong (SAR)",
+      "priority": 0
+    },
+    {
+      "code": "HU",
+      "is_p2p": false,
+      "name": "Hungary",
+      "priority": 0
+    },
+    {
+      "code": "IS",
+      "is_p2p": false,
+      "name": "Iceland",
+      "priority": 0
+    },
+    {
+      "code": "IN",
+      "is_p2p": false,
+      "name": "India",
+      "priority": 0
+    },
+    {
+      "code": "ID",
+      "is_p2p": false,
+      "name": "Indonesia",
+      "priority": 0
+    },
+    {
+      "code": "IE",
+      "is_p2p": false,
+      "name": "Ireland",
+      "priority": 0
+    },
+    {
+      "code": "IT",
+      "is_p2p": false,
+      "name": "Italy",
+      "priority": 0
+    },
+    {
+      "code": "JM",
+      "is_p2p": false,
+      "name": "Jamaica",
+      "priority": 0
+    },
+    {
+      "code": "JP",
+      "is_p2p": false,
+      "name": "Japan",
+      "priority": 0
+    },
+    {
+      "code": "JO",
+      "is_p2p": false,
+      "name": "Jordan",
+      "priority": 0
+    },
+    {
+      "code": "KZ",
+      "is_p2p": true,
+      "name": "Kazakhstan",
+      "priority": 0
+    },
+    {
+      "code": "KE",
+      "is_p2p": true,
+      "name": "Kenya",
+      "priority": 0
+    },
+    {
+      "code": "KR",
+      "is_p2p": false,
+      "name": "Korea, South",
+      "priority": 0
+    },
+    {
+      "code": "KW",
+      "is_p2p": false,
+      "name": "Kuwait",
+      "priority": 0
+    },
+    {
+      "code": "KG",
+      "is_p2p": true,
+      "name": "Kyrgyzstan",
+      "priority": 0
+    },
+    {
+      "code": "LA",
+      "is_p2p": true,
+      "name": "Laos",
+      "priority": 0
+    },
+    {
+      "code": "LV",
+      "is_p2p": true,
+      "name": "Latvia",
+      "priority": 0
+    },
+    {
+      "code": "LB",
+      "is_p2p": true,
+      "name": "Lebanon",
+      "priority": 0
+    },
+    {
+      "code": "LI",
+      "is_p2p": false,
+      "name": "Liechtenstein",
+      "priority": 0
+    },
+    {
+      "code": "LT",
+      "is_p2p": true,
+      "name": "Lithuania",
+      "priority": 0
+    },
+    {
+      "code": "LU",
+      "is_p2p": true,
+      "name": "Luxembourg",
+      "priority": 0
+    },
+    {
+      "code": "MO",
+      "is_p2p": true,
+      "name": "Macao",
+      "priority": 0
+    },
+    {
+      "code": "MG",
+      "is_p2p": true,
+      "name": "Madagascar",
+      "priority": 0
+    },
+    {
+      "code": "MY",
+      "is_p2p": false,
+      "name": "Malaysia",
+      "priority": 0
+    },
+    {
+      "code": "MT",
+      "is_p2p": false,
+      "name": "Malta",
+      "priority": 0
+    },
+    {
+      "code": "MR",
+      "is_p2p": true,
+      "name": "Mauritania",
+      "priority": 0
+    },
+    {
+      "code": "MU",
+      "is_p2p": true,
+      "name": "Mauritius",
+      "priority": 0
+    },
+    {
+      "code": "MX",
+      "is_p2p": false,
+      "name": "Mexico",
+      "priority": 0
+    },
+    {
+      "code": "MD",
+      "is_p2p": true,
+      "name": "Moldova",
+      "priority": 0
+    },
+    {
+      "code": "MC",
+      "is_p2p": true,
+      "name": "Monaco",
+      "priority": 0
+    },
+    {
+      "code": "MN",
+      "is_p2p": true,
+      "name": "Mongolia",
+      "priority": 0
+    },
+    {
+      "code": "MS",
+      "is_p2p": true,
+      "name": "Montserrat",
+      "priority": 0
+    },
+    {
+      "code": "MA",
+      "is_p2p": false,
+      "name": "Morocco",
+      "priority": 0
+    },
+    {
+      "code": "NL",
+      "is_p2p": true,
+      "name": "Netherlands",
+      "priority": 5
+    },
+    {
+      "code": "NZ",
+      "is_p2p": false,
+      "name": "New Zealand",
+      "priority": 0
+    },
+    {
+      "code": "NI",
+      "is_p2p": true,
+      "name": "Nicaragua",
+      "priority": 0
+    },
+    {
+      "code": "NE",
+      "is_p2p": false,
+      "name": "Niger",
+      "priority": 0
+    },
+    {
+      "code": "NG",
+      "is_p2p": true,
+      "name": "Nigeria",
+      "priority": 0
+    },
+    {
+      "code": "NO",
+      "is_p2p": true,
+      "name": "Norway",
+      "priority": 0
+    },
+    {
+      "code": "OM",
+      "is_p2p": true,
+      "name": "Oman",
+      "priority": 0
+    },
+    {
+      "code": "PK",
+      "is_p2p": true,
+      "name": "Pakistan",
+      "priority": 0
+    },
+    {
+      "code": "PA",
+      "is_p2p": true,
+      "name": "Panama",
+      "priority": 0
+    },
+    {
+      "code": "PG",
+      "is_p2p": true,
+      "name": "Papua New Guinea",
+      "priority": 0
+    },
+    {
+      "code": "PY",
+      "is_p2p": true,
+      "name": "Paraguay",
+      "priority": 0
+    },
+    {
+      "code": "PE",
+      "is_p2p": true,
+      "name": "Peru",
+      "priority": 0
+    },
+    {
+      "code": "PH",
+      "is_p2p": false,
+      "name": "Philippines",
+      "priority": 0
+    },
+    {
+      "code": "PL",
+      "is_p2p": false,
+      "name": "Poland",
+      "priority": 0
+    },
+    {
+      "code": "PT",
+      "is_p2p": true,
+      "name": "Portugal",
+      "priority": 0
+    },
+    {
+      "code": "PR",
+      "is_p2p": true,
+      "name": "Puerto Rico",
+      "priority": 0
+    },
+    {
+      "code": "QA",
+      "is_p2p": false,
+      "name": "Qatar",
+      "priority": 0
+    },
+    {
+      "code": "RO",
+      "is_p2p": true,
+      "name": "Romania",
+      "priority": 0
+    },
+    {
+      "code": "RU",
+      "is_p2p": true,
+      "name": "Russia",
+      "priority": 0
+    },
+    {
+      "code": "LC",
+      "is_p2p": true,
+      "name": "Saint Lucia",
+      "priority": 0
+    },
+    {
+      "code": "SA",
+      "is_p2p": false,
+      "name": "Saudi Arabia",
+      "priority": 0
+    },
+    {
+      "code": "SN",
+      "is_p2p": false,
+      "name": "Senegal",
+      "priority": 0
+    },
+    {
+      "code": "SC",
+      "is_p2p": false,
+      "name": "Seychelles",
+      "priority": 0
+    },
+    {
+      "code": "SG",
+      "is_p2p": false,
+      "name": "Singapore",
+      "priority": 0
+    },
+    {
+      "code": "SK",
+      "is_p2p": false,
+      "name": "Slovakia",
+      "priority": 0
+    },
+    {
+      "code": "SI",
+      "is_p2p": false,
+      "name": "Slovenia",
+      "priority": 0
+    },
+    {
+      "code": "ZA",
+      "is_p2p": false,
+      "name": "South Africa",
+      "priority": 0
+    },
+    {
+      "code": "ES",
+      "is_p2p": false,
+      "name": "Spain",
+      "priority": 0
+    },
+    {
+      "code": "LK",
+      "is_p2p": true,
+      "name": "Sri Lanka",
+      "priority": 0
+    },
+    {
+      "code": "SR",
+      "is_p2p": true,
+      "name": "Suriname",
+      "priority": 0
+    },
+    {
+      "code": "SE",
+      "is_p2p": true,
+      "name": "Sweden",
+      "priority": 0
+    },
+    {
+      "code": "CH",
+      "is_p2p": false,
+      "name": "Switzerland",
+      "priority": 0
+    },
+    {
+      "code": "SY",
+      "is_p2p": false,
+      "name": "Syria",
+      "priority": 0
+    },
+    {
+      "code": "TW",
+      "is_p2p": false,
+      "name": "Taiwan",
+      "priority": 0
+    },
+    {
+      "code": "TJ",
+      "is_p2p": true,
+      "name": "Tajikistan",
+      "priority": 0
+    },
+    {
+      "code": "TZ",
+      "is_p2p": true,
+      "name": "Tanzania",
+      "priority": 0
+    },
+    {
+      "code": "TH",
+      "is_p2p": false,
+      "name": "Thailand",
+      "priority": 0
+    },
+    {
+      "code": "TT",
+      "is_p2p": true,
+      "name": "Trinidad and Tobago",
+      "priority": 0
+    },
+    {
+      "code": "TN",
+      "is_p2p": true,
+      "name": "Tunisia",
+      "priority": 0
+    },
+    {
+      "code": "TR",
+      "is_p2p": true,
+      "name": "Turkey",
+      "priority": 0
+    },
+    {
+      "code": "TM",
+      "is_p2p": true,
+      "name": "Turkmenistan",
+      "priority": 0
+    },
+    {
+      "code": "TC",
+      "is_p2p": true,
+      "name": "Turks and Caicos Islands",
+      "priority": 0
+    },
+    {
+      "code": "UA",
+      "is_p2p": false,
+      "name": "Ukraine",
+      "priority": 0
+    },
+    {
+      "code": "AE",
+      "is_p2p": true,
+      "name": "United Arab Emirates",
+      "priority": 0
+    },
+    {
+      "code": "GB",
+      "is_p2p": false,
+      "name": "United Kingdom",
+      "priority": 6
+    },
+    {
+      "code": "US",
+      "is_p2p": false,
+      "name": "United States",
+      "priority": 7
+    },
+    {
+      "code": "UY",
+      "is_p2p": false,
+      "name": "Uruguay",
+      "priority": 0
+    },
+    {
+      "code": "UZ",
+      "is_p2p": true,
+      "name": "Uzbekistan",
+      "priority": 0
+    },
+    {
+      "code": "VE",
+      "is_p2p": true,
+      "name": "Venezuela",
+      "priority": 0
+    },
+    {
+      "code": "VN",
+      "is_p2p": false,
+      "name": "Vietnam",
+      "priority": 0
+    },
+    {
+      "code": "YE",
+      "is_p2p": false,
+      "name": "Yemen",
+      "priority": 0
+    },
+    {
+      "code": "RS",
+      "is_p2p": false,
+      "name": "Serbia",
+      "priority": 0
+    },
+    {
+      "code": "ME",
+      "is_p2p": false,
+      "name": "Montenegro",
+      "priority": 0
+    },
+    {
+      "code": "IM",
+      "is_p2p": false,
+      "name": "Isle of Man",
+      "priority": 0
+    },
+    {
+      "code": "mm",
+      "is_p2p": true,
+      "name": "Myanmar",
+      "priority": 0
+    },
+    {
+      "code": "GH",
+      "is_p2p": true,
+      "name": "Ghana",
+      "priority": 0
+    }
+  ]
+}

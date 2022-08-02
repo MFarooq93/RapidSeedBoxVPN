@@ -1,0 +1,11 @@
+C:\Users\m.wasim\Desktop\src\PureVPN.Repository\bin\Debug\PureVPN.Repository.dll
+C:\Users\m.wasim\Desktop\src\PureVPN.Repository\bin\Debug\PureVPN.Repository.pdb
+C:\Users\m.wasim\Desktop\src\PureVPN.Repository\obj\Debug\PureVPN.Repository.csproj.AssemblyReference.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.Repository\obj\Debug\PureVPN.Repository.csproj.CoreCompileInputs.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.Repository\obj\Debug\PureVPN.Repository.dll
+C:\Users\m.wasim\Desktop\src\PureVPN.Repository\obj\Debug\PureVPN.Repository.pdb
+D:\WindowsApplicationProject\PureVPN.Repository\bin\Debug\PureVPN.Repository.dll
+D:\WindowsApplicationProject\PureVPN.Repository\bin\Debug\PureVPN.Repository.pdb
+D:\WindowsApplicationProject\PureVPN.Repository\obj\Debug\PureVPN.Repository.csproj.CoreCompileInputs.cache
+D:\WindowsApplicationProject\PureVPN.Repository\obj\Debug\PureVPN.Repository.dll
+D:\WindowsApplicationProject\PureVPN.Repository\obj\Debug\PureVPN.Repository.pdb

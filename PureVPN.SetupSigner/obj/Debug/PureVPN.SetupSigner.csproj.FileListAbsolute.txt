@@ -1,0 +1,16 @@
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\bin\Debug\DigiCertCA.crt
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\bin\Debug\Gz-System-Ltd-2020.pfx
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\bin\Debug\SetupSigner.exe
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\bin\Debug\SetupSigner.pdb
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\obj\Debug\PureVPN.SetupSigner.csproj.AssemblyReference.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\obj\Debug\PureVPN.SetupSigner.csproj.CoreCompileInputs.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\obj\Debug\SetupSigner.exe
+C:\Users\m.wasim\Desktop\src\PureVPN.SetupSigner\obj\Debug\SetupSigner.pdb
+D:\WindowsApplicationProject\PureVPN.SetupSigner\bin\Debug\DigiCertCA.crt
+D:\WindowsApplicationProject\PureVPN.SetupSigner\bin\Debug\Gz-System-Ltd-2020.pfx
+D:\WindowsApplicationProject\PureVPN.SetupSigner\bin\Debug\SetupSigner.exe
+D:\WindowsApplicationProject\PureVPN.SetupSigner\bin\Debug\SetupSigner.pdb
+D:\WindowsApplicationProject\PureVPN.SetupSigner\obj\Debug\PureVPN.SetupSigner.csproj.AssemblyReference.cache
+D:\WindowsApplicationProject\PureVPN.SetupSigner\obj\Debug\PureVPN.SetupSigner.csproj.CoreCompileInputs.cache
+D:\WindowsApplicationProject\PureVPN.SetupSigner\obj\Debug\SetupSigner.exe
+D:\WindowsApplicationProject\PureVPN.SetupSigner\obj\Debug\SetupSigner.pdb

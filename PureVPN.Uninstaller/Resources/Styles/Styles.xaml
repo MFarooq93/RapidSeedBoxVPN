@@ -1,0 +1,487 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:PureVPN.Converters"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:CustomControls="clr-namespace:PureVPN.CustomControls">
+
+    <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    <Converters:StringToImageSourceConverter x:Key="StrToImg" />
+    <Converters:InvertBooleanConverter x:Key="InvertBoolConverter" />
+    <Converters:InvertBoolToVisibilityConverter x:Key="InvertBoolToVis" />
+    <Converters:StringToVisibilityConverter x:Key="StringToVis" />
+    <Converters:StringToBoolConverter x:Key="StringToBool" />
+    <Converters:BoolToStringConverter x:Key="BoolToStr" />
+    <Converters:IconConverter x:Key="IcoToImg" />
+    <Converters:NullImageConverter x:Key="NullImgConverter" />
+    <Converters:MultiBindingConverter x:Key="MultiBindConverter" />
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 55 Roman" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.2" />
+            </Trigger>
+            <Trigger Property="FontWeight" Value="Bold">
+                <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 65 Medium" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 55 Roman" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.75" />
+            </Trigger>
+            <Trigger Property="FontWeight" Value="Bold">
+                <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 65 Medium" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 55 Roman" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.75" />
+            </Trigger>
+            <Trigger Property="FontWeight" Value="Bold">
+                <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 65 Medium" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="Margin" Value="10,0,10,0"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="MaxWidth" Value="300" />
+        <Setter Property="Cursor" Value="Hand" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="imageCheckBox" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" FlowDirection="LeftToRight"
+                          Height="14" Width="14"  Source="pack://application:,,,/Uninstaller;component/Resources/Images/ic-unchecked.png"/>
+
+                        <TextBlock Grid.Column="1" Text="{TemplateBinding Content}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{TemplateBinding Foreground}"
+                                   Margin="0,0,0,0" FontSize="13" Opacity="1" FontWeight="Normal" TextWrapping="Wrap" MaxWidth="{TemplateBinding MaxWidth}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="imageCheckBox" Property="Source" Value="pack://application:,,,/Uninstaller;component/Resources/Images/ic-checked.png"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}" >
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Padding" Value="10,0,0,0" />
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                <TextBox x:Name="RevealedText"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Padding="{TemplateBinding Padding}" FontSize="{TemplateBinding FontSize}"
+                                              Margin="0" Text="{TemplateBinding Text}"
+                                              Background="{TemplateBinding Background}"
+                                              Visibility="Hidden" BorderThickness="0" />
+                                <TextBlock Name="txtPrompt" HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" FontSize="{TemplateBinding FontSize}" Padding="{TemplateBinding Padding}" Text="{TemplateBinding Tag}" Margin="2,0,0,0" Cursor="IBeam" Foreground="Black" Opacity="0.5" Visibility="Collapsed"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            <Setter Property="Background" TargetName="border" Value="#f7f7f7" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#808080"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#A0A0A0"/>
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=RevealedText, Path=Text.Length}" Value="0">
+                            <Setter TargetName="txtPrompt" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SmallText" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="9" />
+        <Setter Property="Margin" Value="0,0,2,0" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="SimpleButton">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Padding" Value="5,0,5,0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 55 Roman" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" Width="{TemplateBinding Width}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="7"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.9"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.8"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="CurvedButton">
+        <Setter Property="Background" Value="#ff8100"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Padding" Value="5,0,5,0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 55 Roman" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="7"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.9"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.8"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="CurvedButton2">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Padding" Value="5,0,5,0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="FontFamily" Value="/Uninstaller;component/Resources/Fonts/Avenir/#Avenir LT Std 55 Roman" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="Transparent" Width="{TemplateBinding Width}" CornerRadius="20">
+                        <Grid>
+                            <Border CornerRadius="20" Background="{TemplateBinding Background}" Opacity="0.1" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="7"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.9"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.8"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="WithText" TargetType="{x:Type CustomControls:ImageTextControl}">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageTextControl}">
+                    <StackPanel Orientation="Horizontal" Height="{TemplateBinding Height}" Margin="{TemplateBinding Margin}" Cursor="{TemplateBinding Cursor}">
+
+                        <Image x:Name="image" Source="{TemplateBinding ImageSource}" UseLayoutRounding="True"
+                                StretchDirection="DownOnly" VerticalAlignment="Stretch"  HorizontalAlignment="Center" />
+
+                        <TextBlock Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding TextToShow}" Margin="5,0,0,0" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="WithoutTooltip" TargetType="{x:Type CustomControls:ImageTextControl}">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageTextControl}">
+                    <Grid Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Margin="{TemplateBinding Margin}" Cursor="{TemplateBinding Cursor}">
+
+                        <Image x:Name="image" Source="{TemplateBinding ImageSource}" UseLayoutRounding="True"
+                                StretchDirection="DownOnly" VerticalAlignment="Stretch"  HorizontalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="WithBorder" TargetType="{x:Type CustomControls:ImageTextControl}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageTextControl}">
+                    <Grid>
+                        <Border x:Name="back" Background="{TemplateBinding Background}" Visibility="Collapsed"/>
+                        <Grid Background="Transparent" Height="{TemplateBinding Height}" Margin="15,10,15,10" Cursor="{TemplateBinding Cursor}">
+                            <Image x:Name="image" Source="{TemplateBinding ImageSource}" UseLayoutRounding="True"
+                                StretchDirection="DownOnly" VerticalAlignment="Stretch"  HorizontalAlignment="Center" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="back" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style TargetType="{x:Type CustomControls:ImageTextControl}">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageTextControl}">
+                    <Grid Height="{TemplateBinding Height}" Margin="{TemplateBinding Margin}" Cursor="{TemplateBinding Cursor}">
+
+                        <Popup x:Name="popup" Grid.Column="0" 
+                                Placement="Top" 
+                                PopupAnimation="Fade" AllowsTransparency="False" HorizontalOffset="-25" VerticalOffset="50">
+
+                            <StackPanel Orientation="Vertical"  Background="Transparent" CanVerticallyScroll="False" CanHorizontallyScroll="False">
+                                <TextBox x:Name="tooltip" Text="{TemplateBinding TooltipText}" Background="#282d33" Foreground="White" Padding="2,0,2,0"
+                                     VerticalAlignment="Top" HorizontalAlignment="Right" BorderBrush="#1b2224"
+                                     TextAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                                     TextWrapping="WrapWithOverflow" />
+
+                            </StackPanel>
+                        </Popup>
+
+                        <Image x:Name="image" Source="{TemplateBinding ImageSource}" UseLayoutRounding="True"
+                                StretchDirection="DownOnly" VerticalAlignment="Stretch"  HorizontalAlignment="Center" />
+
+                    </Grid>
+
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+
+                        <EventTrigger SourceName="image" RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames
+                                                BeginTime="0:0:0.2"
+                                                Storyboard.TargetName="popup"
+                                                Storyboard.TargetProperty="IsOpen"
+                                                Duration="0:0:0" FillBehavior="HoldEnd">
+                                        <DiscreteBooleanKeyFrame Value="True" KeyTime="0:0:0" />
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger SourceName="image" RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames
+                                                    BeginTime="0:0:0:0.0"
+                                                    Storyboard.TargetName="popup"
+                                                    Storyboard.TargetProperty="IsOpen"
+                                                    Duration="0:0:0" FillBehavior="HoldEnd">
+                                        <DiscreteBooleanKeyFrame Value="False" KeyTime="0:0:0" />
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="StatusBarClose" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Image x:Name="img" Margin="{TemplateBinding Margin}"
+                        Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
+                        Source="/Uninstaller;component/Resources/Images/ic_close.png" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="img" Property="Source" Value="/Uninstaller;component/Resources/Images/ic_close_hover.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StatusBarMinimize" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Image x:Name="img" Margin="{TemplateBinding Margin}"
+                        Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
+                        Source="/Uninstaller;component/Resources/Images/ic_minimize.png" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="img" Property="Source" Value="/Uninstaller;component/Resources/Images/ic_minimize_hover.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonWithBorder" TargetType="{x:Type CustomControls:ImageButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageButton}">
+                    <CustomControls:ImageTextControl Style="{StaticResource WithBorder}" Margin="{TemplateBinding Margin}"
+                        Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}" Background="{TemplateBinding Background}"
+                        ImageSource="{TemplateBinding ImageSource}" TextToShow="{TemplateBinding TextToShow}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ButtonWithText" TargetType="{x:Type CustomControls:ImageButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageButton}">
+                    <CustomControls:ImageTextControl Style="{StaticResource WithText}" Margin="{TemplateBinding Margin}"
+                        Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
+                        ImageSource="{TemplateBinding ImageSource}" TextToShow="{TemplateBinding TextToShow}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonWithoutTooltip" TargetType="{x:Type CustomControls:ImageButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageButton}">
+                    <CustomControls:ImageTextControl Style="{StaticResource WithoutTooltip}" Margin="{TemplateBinding Margin}"
+                        Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
+                        ImageSource="{TemplateBinding ImageSource}" TextToShow="{TemplateBinding TextToShow}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type CustomControls:ImageButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomControls:ImageButton}">
+                    <CustomControls:ImageTextControl Margin="{TemplateBinding Margin}"
+                        Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
+                        ImageSource="{TemplateBinding ImageSource}" TextToShow="{TemplateBinding TextToShow}"
+                        TooltipText="{TemplateBinding TooltipText}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

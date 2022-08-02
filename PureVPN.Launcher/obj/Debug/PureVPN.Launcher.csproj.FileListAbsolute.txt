@@ -1,0 +1,13 @@
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\bin\Debug\PureVPN.Launcher.exe.config
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\bin\Debug\PureVPN.Launcher.exe
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\bin\Debug\PureVPN.Launcher.pdb
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.csproj.AssemblyReference.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.csproj.CoreCompileInputs.cache
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.exe
+C:\Users\m.wasim\Desktop\src\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.pdb
+D:\WindowsApplicationProject\PureVPN.Launcher\bin\Debug\PureVPN.Launcher.exe.config
+D:\WindowsApplicationProject\PureVPN.Launcher\bin\Debug\PureVPN.Launcher.exe
+D:\WindowsApplicationProject\PureVPN.Launcher\bin\Debug\PureVPN.Launcher.pdb
+D:\WindowsApplicationProject\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.csproj.CoreCompileInputs.cache
+D:\WindowsApplicationProject\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.exe
+D:\WindowsApplicationProject\PureVPN.Launcher\obj\Debug\PureVPN.Launcher.pdb

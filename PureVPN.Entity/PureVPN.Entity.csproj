@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E8D7050-34AD-4FA4-AC2C-652BFDF20858}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PureVPN.Entity</RootNamespace>
+    <AssemblyName>PureVPN.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Delegates\SpeedMeasurementEventHandler.cs" />
+    <Compile Include="Enums\ConnectedTo.cs" />
+    <Compile Include="Enums\LocationFeatures.cs" />
+    <Compile Include="Enums\SettingsTab.cs" />
+    <Compile Include="Enums\PortForwardingDetailsStatus.cs" />
+    <Compile Include="Enums\PureLinksActions.cs" />
+    <Compile Include="Enums\UserStatusCode.cs" />
+    <Compile Include="Enums\LocationFilter.cs" />
+    <Compile Include="Enums\UtcActions.cs" />
+    <Compile Include="Enums\ConnectionInitiatedBy.cs" />
+    <Compile Include="Enums\SelectedInterfaceScreen.cs" />
+    <Compile Include="Enums\ConnectingFrom.cs" />
+    <Compile Include="Enums\CurrentStatus.cs" />
+    <Compile Include="Enums\LoginMethod.cs" />
+    <Compile Include="Enums\MessageBoxFor.cs" />
+    <Compile Include="Enums\SessionRating.cs" />
+    <Compile Include="Enums\ConnectionInterface.cs" />
+    <Compile Include="Enums\UpdateType.cs" />
+    <Compile Include="Enums\TabScreen.cs" />
+    <Compile Include="Enums\AutoConnectOptions.cs" />
+    <Compile Include="Enums\WebBrowserMessageType.cs" />
+    <Compile Include="Exceptions\ForceLogoutException.cs" />
+    <Compile Include="Models\COCMixpanelModel.cs" />
+    <Compile Include="Models\AuthToken.cs" />
+    <Compile Include="Models\DashboardNotificationModel.cs" />
+    <Compile Include="Models\DTO\DislikeReasonModel.cs" />
+    <Compile Include="Models\DTO\ApiResponseMetrics.cs" />
+    <Compile Include="Models\DTO\CachingRuleModel.cs" />
+    <Compile Include="Models\DTO\FirestoreTokenReply.cs" />
+    <Compile Include="Models\DTO\MigrateTokenReply.cs" />
+    <Compile Include="Models\DTO\MigrateUserToEmail.cs" />
+    <Compile Include="Models\DTO\DevicesReply.cs" />
+    <Compile Include="Models\DTO\PureAction.cs" />
+    <Compile Include="Models\Extensions.cs" />
+    <Compile Include="Models\FirebaseConfiguration.cs" />
+    <Compile Include="Models\DTO\PortForwardingReply.cs" />
+    <Compile Include="Models\DTO\SpeedtestExperiment.cs" />
+    <Compile Include="Models\InitializingStatusModel.cs" />
+    <Compile Include="Models\CityModel.cs" />
+    <Compile Include="Models\DTO\DedicatedIP.cs" />
+    <Compile Include="Models\DTO\BaseNetwork.cs" />
+    <Compile Include="Models\DTO\ForceUpdateReply.cs" />
+    <Compile Include="Models\DTO\AppSurvey.cs" />
+    <Compile Include="Models\DTO\AccessTokenReply.cs" />
+    <Compile Include="Models\DTO\TicketReply.cs" />
+    <Compile Include="Models\DTO\LoginReply.cs" />
+    <Compile Include="Models\AtomModel.cs" />
+    <Compile Include="Models\CountryModel.cs" />
+    <Compile Include="Models\DedicatedIPModel.cs" />
+    <Compile Include="Models\DTO\ProfileReply.cs" />
+    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Models\ApplicationListModel.cs" />
+    <Compile Include="Models\LocationFilters.cs" />
+    <Compile Include="Models\LocationModel.cs" />
+    <Compile Include="Models\AutoConnectOptionModel.cs" />
+    <Compile Include="Models\LocationsBaseModel.cs" />
+    <Compile Include="Models\NetworkSpeed.cs" />
+    <Compile Include="Models\PortForwardingDetail.cs" />
+    <Compile Include="Models\ProtocolModel.cs" />
+    <Compile Include="Models\BackgroundVpnModel.cs" />
+    <Compile Include="Models\RemoteConfigModel.cs" />
+    <Compile Include="Models\ServerPreference.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Models\DTO\ErrorModel.cs" />
+    <Compile Include="Models\AfterConnectionModel.cs" />
+    <Compile Include="Models\SpeedMeasurementModel.cs" />
+    <Compile Include="Models\StatusModel.cs" />
+    <Compile Include="Models\URLModel.cs" />
+    <Compile Include="Models\WebBrowserMessageModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\DTO\ReferAFriend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NotificationCenter\NotificationCenter\NotificationCenter.Infrastructure\NotificationCenter.Infrastructure.csproj">
+      <Project>{82fa4f28-133e-45e2-b118-4e4804c5d7b9}</Project>
+      <Name>NotificationCenter.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureVPN.Realtime.Repository\PureVPN.Realtime.Repository.csproj">
+      <Project>{51FFB60F-19BD-41A8-9903-FCF5F8FB15AC}</Project>
+      <Name>PureVPN.Realtime.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureVPN.SpeedTest\PureVPN.SpeedTest.csproj">
+      <Project>{B509B659-F44E-44AD-8731-9A1125E8A2E7}</Project>
+      <Name>PureVPN.SpeedTest</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

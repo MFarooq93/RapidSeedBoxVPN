@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Bundle Name="PureVPN" Compressed="yes" DisableRemove="yes" DisableModify="yes" IconSourceFile="Payloads\installern.ico" UpgradeCode="6f330b47-2577-43ad-9095-1861bb25844b" Version="8.0.0.9">
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+      <Payload SourceFile="Payloads\WixSharp.UI.dll" />
+      <Payload SourceFile="Payloads\BootstrapperCore.config" />
+      <Payload SourceFile="Payloads\Microsoft.Deployment.WindowsInstaller.dll" />
+    </BootstrapperApplicationRef>
+
+    <Variable Name="_WixSharp.Bootstrapper.SilentManagedBA.PrimaryPackageId" Value="PureVPNInstaller.exe" Persisted="yes" />
+
+    <Chain DisableRollback="yes" DisableSystemRestore="yes">
+      <PackageGroupRef Id="NetFx48Redist" />
+      <ExePackage Name="PureVPNInstaller.exe" Id="PureVPNInstaller.exe" SourceFile="..\PureVPN.Installer\bin\Release\PureVPNInstaller.exe" Compressed="yes" />
+    </Chain>
+  </Bundle>
+</Wix>

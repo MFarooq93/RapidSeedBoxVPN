@@ -1,0 +1,14 @@
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\PureVPN.Installer.csproj.AssemblyReference.cache
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Resources\Styles\ProgressBarStyles.baml
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\AdditionalTasksView.baml
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\InstallerView.baml
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\MessageBoxView.baml
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\AdditionalTasksView.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\AgreementView.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\InstallerView.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\MainView.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\Views\MessageBoxView.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\PureVPNInstaller_Content.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\PureVPNInstaller_MarkupCompile.cache
+D:\WindowsApplicationProject\PureVPN.Installer\obj\Debug\PureVPNInstaller_MarkupCompile.lref

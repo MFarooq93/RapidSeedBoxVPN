@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Core.FilterBuilder`1">
+            <summary>
+            Provides methods to build <see cref="T:Atom.Core.IModels.IFilter"/>
+            </summary>
+            <typeparam name="T"><see cref="T:Atom.Core.IModels.IFilter"/> to built</typeparam>
+        </member>
+        <member name="M:Atom.Core.FilterBuilder`1.WithProtocol(Atom.Core.Models.Protocol)">
+            <summary>
+            Apply <see cref="T:Atom.Core.Models.Protocol"/> to filter
+            </summary>
+            <param name="protocol"><see cref="T:Atom.Core.Models.Protocol"/> to filter</param>
+            <returns><see cref="T:Atom.Core.IFilterBuilder`1"/></returns>
+        </member>
+        <member name="M:Atom.Core.FilterBuilder`1.Build">
+            <summary>
+            Builds <see cref="T:Atom.Core.IModels.IFilter"/> T
+            </summary>
+            <returns><see cref="T:Atom.Core.IModels.IFilter"/> of type T</returns>
+        </member>
+        <member name="M:Atom.Core.DI.DependencyGraph.SetScopeLifeStyle">
+            <summary>
+            Configures defatult Lifestyle for Scoped resilutions
+            </summary>
+        </member>
+        <member name="M:Atom.Core.DI.DependencyGraph.RegisterScoped``2">
+            <summary>
+            Registers <typeparamref name="TImplementation"/> for <typeparamref name="TService"/> for Scoped Lifestyle
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+        </member>
+        <member name="M:Atom.Core.DI.DependencyGraph.BeginScope">
+            <summary>
+            Creates and returns an explicitly created <see cref="T:SimpleInjector.Scope"/>
+            </summary>
+            <returns>Explicitly craeted <see cref="T:SimpleInjector.Scope"/></returns>
+        </member>
+        <member name="M:Atom.Core.DI.DependencyGraph.DisposeScope(System.IDisposable)">
+            <summary>
+            Disposes an <see cref="T:SimpleInjector.Scope"/>, should only be used to dispose explicitly craeted scopes
+            </summary>
+            <param name="scope">Explicitly created scope</param>
+        </member>
+        <member name="T:Atom.Core.Enums.SmartConnectTag">
+            <summary>
+            SmartConnectTag Contains all the enum tags required by the ATOM SDK to establish SmartConnect VPN
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.AUTOMATIC">
+            <summary>
+            Automatic tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.AUTOMATIC_FILE_SHARING">
+            <summary>
+            Automatic file sharing tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.AVF_FILE_SHARING">
+            <summary>
+            Avf file sharing tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.AVF_SECURITY">
+            <summary>
+            Avf sharing tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.FILE_SHARING">
+            <summary>
+            File sharing tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.FREE_FILE_SHARING">
+            <summary>
+            Free file sharing tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.FREE_USERS">
+            <summary>
+            Free users tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.NATTED">
+            <summary>
+            Natted tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.NATTED_FILE_SHARING">
+            <summary>
+            Natted file sharing tag
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Enums.SmartConnectTag.PAID">
+            <summary>
+            Paid tag
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Exceptions.AtomAPIException">
+            <summary>
+            Represents an exception that is thrown when web api has failed
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Exceptions.AtomException">
+            <summary>
+            Represents <see cref="N:Atom"/> exception
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Exceptions.AtomException.ErrorCode">
+            <summary>
+            Gets the error code of the error that caused the exception.
+            </summary>        
+            <returns>
+            A int error code.
+            </returns>
+        </member>
+        <member name="P:Atom.Core.Exceptions.AtomException.ErrorMessage">
+            <summary>
+            Gets the error message of the error that caused the exception.
+            </summary>  
+        </member>
+        <member name="F:Atom.Core.Exceptions.ErrorCodes.AuthenticationErrors.RequestFailed">
+            <summary>
+            RequestFailed / Unsuccessful communication
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Exceptions.ErrorCodes.AuthenticationErrors.GeneralError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Exceptions.ErrorCodes.AuthenticationErrors.ParsingFailed">
+            <summary>
+            Json parsing failed
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Exceptions.ValidationException">
+            <summary>
+            Represents an exception that is thrown when an invalid parameter or an invalid combination of parameters is supplied
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Extensions.PingExtensions">
+            <summary>
+            Provides extension methods related to Ping
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Extensions.PingExtensions.PingAsync(System.Collections.Generic.List{Atom.Core.Models.Country})">
+            <summary>
+            Populates <see cref="P:Atom.Core.Models.Country.Latency"/> and returns <see cref="T:System.Collections.Generic.List`1"/> sorted by <see cref="P:Atom.Core.Models.Country.Latency"/>
+            </summary>
+            <param name="countries"><see cref="T:System.Collections.Generic.List`1"/> to ping and sort</param>
+            <returns><see cref="T:System.Collections.Generic.List`1"/> sorted by <see cref="P:Atom.Core.Models.Country.Latency"/></returns>
+        </member>
+        <member name="M:Atom.Core.Extensions.PingExtensions.PingAsync(System.Collections.Generic.List{Atom.Core.Models.City})">
+            <summary>
+            Populates <see cref="P:Atom.Core.Models.City.Latency"/> and returns <see cref="T:System.Collections.Generic.List`1"/> sorted by <see cref="P:Atom.Core.Models.City.Latency"/>
+            </summary>
+            <param name="cities"><see cref="T:System.Collections.Generic.List`1"/> to ping and sort</param>
+            <returns><see cref="T:System.Collections.Generic.List`1"/> sorted by <see cref="P:Atom.Core.Models.City.Latency"/></returns>
+        </member>
+        <member name="M:Atom.Core.Helpers.DnsResolver.#ctor(System.Int32)">
+            <summary>
+            Initialized an instance of <see cref="T:Atom.Core.Helpers.DnsResolver"/>
+            </summary>
+            <param name="dnsPerThread">Number of DNS to resolve in a single logical thread when performing lookup in bulk</param>
+        </member>
+        <member name="P:Atom.Core.Helpers.DnsResolver.DnsPerThread">
+            <summary>
+            Number of DNS to resolve in a single logical thread when performing lookup in bulk
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Helpers.DnsResolver.LookupBulk(System.Collections.Generic.IEnumerable{Atom.Core.IModels.Pingable})">
+            <summary>
+            Resolves <see cref="T:System.Net.IPAddress"/> for <see cref="P:Atom.Core.IModels.Pingable.Hostname"/> in <paramref name="entities"/>
+            </summary>
+            <param name="entities"><see cref="T:System.Collections.Generic.IEnumerable`1"/> to resolve</param>
+        </member>
+        <member name="M:Atom.Core.Helpers.DnsResolver.Lookup(System.String)">
+            <summary>
+            Resolves <see cref="T:System.Net.IPAddress"/> for <paramref name="hostname"/>
+            </summary>
+            <param name="hostname">DNS to resolve</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Atom.Core.Helpers.DnsResolver.BulkLookup(System.Object)" -->
+        <member name="M:Atom.Core.Helpers.HelperMethods.SetLatency``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Pings <see cref="P:Atom.Core.Models.DataCenter.IPAddress"/> and sets <see cref="P:Atom.Core.IModels.IDataCenter.Latency"/>. Returns <see cref="T:System.Collections.Generic.IEnumerable`1"/> sorted by <see cref="P:Atom.Core.IModels.IDataCenter.Latency"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entites"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Helpers.HelperMethods.SetLatency(System.Collections.Generic.List{Atom.Core.Models.DataCenter},System.Boolean)">
+            <summary>
+            Pings <see cref="P:Atom.Core.Models.DataCenter.Hostname"/> and sets <see cref="P:Atom.Core.Models.DataCenter.Latency"/> for <paramref name="dataCenters"/>
+            </summary>
+            <param name="dataCenters"><see cref="T:System.Collections.Generic.List`1"/> to ping</param>
+            <param name="shouldUpdateIPAddress">Determines whether to Resolve IP Address from DNS before measuring latency</param>
+        </member>
+        <member name="M:Atom.Core.Helpers.HelperMethods.SortByLatency``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Sorts <paramref name="latencies"/> and returns collection sorted by <see cref="P:Atom.Core.IModels.IDataCenter.Latency"/>, <see cref="T:Atom.Core.IModels.IDataCenter"/>s with zero latency are moved to bottom
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="latencies"></param>
+            <returns>Sorted <see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+        </member>
+        <member name="T:Atom.Core.Helpers.PingUtility">
+            <summary>
+            Provides ping functions using ICMP.DLL Win32 API 
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Helpers.PingUtility._Data">
+            <summary>
+            Data sent to ping
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Helpers.PingUtility.replySize">
+            <summary>
+            Unmanaged size of reponse buffer in bytes
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Helpers.PingUtility.length">
+            <summary>
+            Data size for ping request
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Helpers.PingUtility.Timeout">
+            <summary>
+            Timeout in milliseconds to Ping
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Helpers.PingUtility.PingsPerThread">
+            <summary>
+            Number of IPs to ping per thread, when performed in bulk
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Helpers.PingUtility.ShouldUpdateIPAddress">
+            <summary>
+            Determines whether to Resolve IP Address from DNS before measuring latency
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Helpers.PingUtility.ICMP_OPTIONS">
+            <summary>
+            Describes request options for <see cref="M:Atom.Core.Helpers.PingUtility.IcmpSendEcho(System.IntPtr,System.Int32,System.String,System.Int16,Atom.Core.Helpers.PingUtility.ICMP_OPTIONS@,Atom.Core.Helpers.PingUtility.ICMP_ECHO_REPLY@,System.Int32,System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Helpers.PingUtility.ICMP_ECHO_REPLY">
+            <summary>
+            Describes the data returned in response to an IPv4 echo request
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Helpers.PingUtility.IcmpSendEcho(System.IntPtr,System.Int32,System.String,System.Int16,Atom.Core.Helpers.PingUtility.ICMP_OPTIONS@,Atom.Core.Helpers.PingUtility.ICMP_ECHO_REPLY@,System.Int32,System.Int32)">
+            <summary>
+            Sends an IPv4 ICMP echo request and returns any echo response replies. The call returns when the time-out has expired or the reply buffer is filled
+            </summary>
+            <returns>Echo response reply <see cref="T:Atom.Core.Helpers.PingUtility.ICMP_ECHO_REPLY"/></returns>
+        </member>
+        <member name="M:Atom.Core.Helpers.PingUtility.#ctor(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Initializes new instance of <see cref="T:Atom.Core.Helpers.PingUtility"/>
+            </summary>
+            <param name="timeout">Timeout in milliseconds to Ping</param>
+            <param name="pingsPerThread">Number of IPs to ping per thread, when performed in bulk</param>
+            <param name="shouldUpdateIPAddress">Determines whether to Resolve IP Address from DNS before measuring latency</param>
+        </member>
+        <member name="M:Atom.Core.Helpers.PingUtility.Ping(System.Net.IPAddress)">
+            <summary>
+            Gets ping round trip time in milliseconds for <paramref name="ipAddresss"/>. Set <see cref="P:Atom.Core.IModels.Pingable.Latency"/>
+            </summary>
+            <param name="ipAddress"><see cref="T:System.Net.IPAddress"/> to ping</param>
+            <returns>Round trip time in milliseconds</returns>
+        </member>
+        <member name="M:Atom.Core.Helpers.PingUtility.BulkPing(System.Collections.Generic.IEnumerable{Atom.Core.IModels.Pingable})">
+            <summary>
+            Performs <see cref="M:Atom.Core.Helpers.PingUtility.Ping(System.Net.IPAddress)"/> on <paramref name="ipAddresses"/> in multiple <see cref="T:System.Threading.Thread"/>s. Sets <see cref="P:Atom.Core.IModels.Pingable.Latency"/>
+            </summary>
+            <param name="ipAddresses"></param>
+        </member>
+        <member name="M:Atom.Core.Helpers.PingUtility.BulkPing(System.Object)">
+            <summary>
+            Performs <see cref="M:Atom.Core.Helpers.PingUtility.Ping(System.Net.IPAddress)"/> on <see cref="!:IEnumerable&lt;"/><see cref="!:Pingable&gt;"/> <paramref name="ipAddresses"/>
+            </summary>
+            <param name="ipAddresses"><see cref="!:IEnumerable&lt;"/><see cref="!:Pingable&gt;"/> to ping</param>
+        </member>
+        <member name="T:Atom.Core.IFilterBuilder`1">
+            <summary>
+            Provides methods to build <see cref="T:Atom.Core.IModels.IFilter"/>
+            </summary>
+            <typeparam name="T"><see cref="T:Atom.Core.IModels.IFilter"/> to built</typeparam>
+        </member>
+        <member name="M:Atom.Core.IFilterBuilder`1.WithProtocol(Atom.Core.Models.Protocol)">
+            <summary>
+            Apply <see cref="T:Atom.Core.Models.Protocol"/> to filter
+            </summary>
+            <param name="protocol"><see cref="T:Atom.Core.Models.Protocol"/> to filter</param>
+            <returns><see cref="T:Atom.Core.IFilterBuilder`1"/></returns>
+        </member>
+        <member name="M:Atom.Core.IFilterBuilder`1.Build">
+            <summary>
+            Builds <see cref="T:Atom.Core.IModels.IFilter"/> T
+            </summary>
+            <returns><see cref="T:Atom.Core.IModels.IFilter"/> of type T</returns>
+        </member>
+        <member name="T:Atom.Core.IModels.IFilter">
+            <summary>
+            Represents a filter
+            </summary>
+        </member>
+        <member name="P:Atom.Core.IModels.Pingable.Latency">
+            <summary>
+            Latency in milliseconds
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.ApiModels.ConnectedLocationApiModel">
+            <summary>
+            Represents Connected Location Model from API
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.ConnectedLocationApiModel.Ip">
+            <summary>
+            IP Address for connected location
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.ConnectedLocationApiModel.Country">
+            <summary>
+            Connected <see cref="P:Atom.Core.Models.ApiModels.ConnectedLocationApiModel.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.ConnectedLocationApiModel.City">
+            <summary>
+            Connected <see cref="P:Atom.Core.Models.ApiModels.ConnectedLocationApiModel.City"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.ApiModels.IPAddress">
+            <summary>
+            Represents IP Address
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.IPAddress.client_ip">
+            <summary>
+            IP Address for connected location
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.ApiModels.IpToLocationApiModel">
+            <summary>
+            Represents IP to Location response model from API
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.Inventory.Body.IsForcedOverwrite">
+            <summary>
+            This property is not expected in inventory response, it is for internal use only
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.Inventory.Extras.IsOverride">
+            <summary>
+            Describes whether to delete local data and dump as complete data
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.Inventory.Country.IsVirtual">
+            <summary>
+            Describes whether <see cref="T:Atom.Core.Models.ApiModels.Inventory.Country"/> has Virtual data centers
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.ApiModels.Inventory.Country.Rank">
+            <summary>
+            Describes Rank for the <see cref="T:Atom.Core.Models.ApiModels.Inventory.Country"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.AtomConfiguration">
+            <summary>
+            Represents a set of properties which contains the configuration settings to initialize the Atom SDK.
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Models.AtomConfiguration.#ctor(System.String)">
+            <summary>
+            Initializes a new object of AtomConfiguration.
+            </summary>
+            <param name="secretKey">The Secret Key provided by ATOM at the time of subscription.</param>
+        </member>
+        <member name="P:Atom.Core.Models.AtomConfiguration.SecretKey">
+            <summary>
+            The Secret Key provided by ATOM at the time of subscription.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.AtomConfiguration.BaseUrl">
+            <summary>
+            The base Url of all the requests to be made by the ATOM SDK. It is optional.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.AtomConfiguration.EnableWhitelisting">
+            <summary>
+            Specifies whether the provided name of the VPN adapter in <see cref="P:Atom.Core.Models.AtomConfiguration.VpnInterfaceName"/> is whitelabeled.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.AtomConfiguration.VpnInterfaceName">
+            <summary>
+            Name of the VPN adapter to be displayed. 
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.AtomConfiguration.PersistVPNDetails">
+            <summary>
+            Used to store last VPNProperties and ConnectionDetails.
+            </summary>  
+        </member>
+        <member name="P:Atom.Core.Models.Configuration.Key">
+            <summary>
+            Key to identify
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Configuration.Value">
+            <summary>
+            Configuration value
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.Feature">
+            <summary>
+            Represents a Feature
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Feature.Id">
+            <summary>
+            Gets or sets the integer id of this Feature.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Feature.Name">
+            <summary>
+            Gets or sets the name of the Feature.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Feature.Type">
+            <summary>
+            Gets or sets the type of the Feature.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Feature.IsActive">
+            <summary>
+            Describes whehter Feature is Deleted
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Feature.Countries">
+            <summary>
+            Countries with this <see cref="T:Atom.Core.Models.Feature"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Feature.Cities">
+            <summary>
+            Cities with this <see cref="T:Atom.Core.Models.Feature"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.Location">
+            <summary>
+            Represents Connected Location
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Location.Ip">
+            <summary>
+            IP Address for connected location
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Location.Country">
+            <summary>
+            Connected <see cref="P:Atom.Core.Models.Location.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Location.City">
+            <summary>
+            Connected <see cref="P:Atom.Core.Models.Location.City"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.CountryProtocolDns">
+            <summary>
+            DNS Configurations mapping for <see cref="P:Atom.Core.Models.CountryProtocolDns.Country"/> and <see cref="P:Atom.Core.Models.CountryProtocolDns.Protocol"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.LocationFilter">
+            <summary>
+            Represents Filter for Location
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.LocationFilter.Protocol">
+            <summary>
+            <see cref="P:Atom.Core.Models.LocationFilter.Protocol"/> to filter <see cref="T:Atom.Core.Models.Location"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.Credentials">
+            <summary>
+            Represents the network credentials used to authenticate to the VPN server.
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Models.Credentials.#ctor(System.String,System.String)">
+            <summary>
+            Creates a <see cref="T:Atom.Core.Models.Credentials"/> object with a username and a password.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Credentials.Username">
+            <summary>
+            Gets or sets the username used to authenticate to the VPN server.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Credentials.Password">
+            <summary>
+            Gets or sets the password used to authenticate to the VPN server.
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.Channel">
+            <summary>
+            Represents a Channel.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.Id">
+            <summary>
+            Gets or sets the integer id of this channel. The valid channel id is required for VPN Dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.Name">
+            <summary>
+            Gets or sets the name of the channel.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.Protocols">
+            <summary>
+            Get the protocols supported by the channel
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.RecommendedProtocolSlug">
+            <summary>
+            Slug for RecommendedProtocol
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.RecommendedProtocol">
+            <summary>
+            Recommended Protocol for <see cref="T:Atom.Core.Models.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.ChannelUrl">
+            <summary>
+            Gets or sets the web url of the channel.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.Order">
+            <summary>
+            Gets or sets the sort order of the channel.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Channel.IconUrl">
+            <summary>
+            Gets or sets the Icon Url of the channel.
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.City">
+            <summary>
+            Represents a city.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Id">
+            <summary>
+            Gets or sets the integer id of this city. The valid city id is required for VPN Dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Name">
+            <summary>
+            Gets or sets the name of the city.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.CountryId">
+            <summary>
+            Gets or sets the id of the city.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.CountrySlug">
+            <summary>
+            the CountrySlug of Country with which city belongs. The valid CountrySlug is required for VPN Dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Protocols">
+            <summary>
+            Get the Protocols supported by the City.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.SupportedFeatures">
+            <summary>
+            List of Feature names supported by this <see cref="T:Atom.Core.Models.City"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Features">
+            <summary>
+            List of <see cref="T:Atom.Core.Models.Feature"/>s
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.RecommendedProtocolSlug">
+            <summary>
+            Slug for RecommendedProtocol
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.RecommendedProtocol">
+            <summary>
+            Recommended Protocol for <see cref="P:Atom.Core.Models.City.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Country">
+            <summary>
+            Get or set country object
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.DataCenters">
+            <summary>
+            Get <see cref="T:Atom.Core.Models.DataCenter"/> of the <see cref="T:Atom.Core.Models.City"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Models.City.Atom#Core#IModels#IDataCenter#GetDataCenters">
+            <summary>
+            Gets <see cref="P:Atom.Core.Models.City.DataCenters"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Models.City.Latency">
+            <summary>
+            Latency for <see cref="T:Atom.Core.Models.City"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Latitude">
+            <summary>
+            Gets or sets the latitude of the city.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.City.Longitude">
+            <summary>
+            Gets or sets the longitude of the city.
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.Country">
+            <summary>
+            Represents a Country.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.IsActive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Id">
+            <summary>
+            Gets or sets the integer id of this country. The valid Country id is required for VPN Dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.CountrySlug">
+            <summary>
+            Gets or sets the CountrySlug of the protocol. The valid CountrySlug is required for VPN Dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.ISOCode">
+            <summary>
+            Gets or sets the ISO Alpha-2 Country code of the current country.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Latency">
+            <summary>
+            Gets or sets the least time a packet takes to be sent to the server of this country plus the length of time it takes for an
+            acknowledgment of that packet to be received at the client depending on user's network conditions. 
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Name">
+            <summary>
+            Gets or sets the name of the country.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Latitude">
+            <summary>
+            Gets or sets the latitude of the country.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Longitude">
+            <summary>
+            Gets or sets the logitude of the country.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Rank">
+            <summary>
+            Describes Rank for the <see cref="T:Atom.Core.Models.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.IsVirtual">
+            <summary>
+            Describes whether <see cref="T:Atom.Core.Models.Country"/> has Virtual data centers
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Protocols">
+            <summary>
+            Gets the protocols supported by this country.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.RecommendedProtocolSlug">
+            <summary>
+            Slug for RecommendedProtocol
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.RecommendedProtocol">
+            <summary>
+            Recommended Protocol for <see cref="T:Atom.Core.Models.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.DataCenters">
+            <summary>
+            Gets <see cref="T:Atom.Core.Models.DataCenter"/>s of the <see cref="T:Atom.Core.Models.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.SupportedFeatures">
+            <summary>
+            List of Feature names supported by this <see cref="T:Atom.Core.Models.Country"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.Features">
+            <summary>
+            List of <see cref="T:Atom.Core.Models.Feature"/>s
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.CustomAttributes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Country.IsSmartDialingSupported">
+            <summary>
+            Gets or sets the smart dialing.
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Models.Country.Atom#Core#IModels#IDataCenter#GetDataCenters">
+            <summary>
+            Gets <see cref="P:Atom.Core.Models.Country.DataCenters"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Models.DataCenter.Latency">
+            <summary>
+            Latency in milliseconds
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.DataCenter.IsReferenceDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.DataCenter.IPAddress">
+            <summary>
+            <see cref="P:Atom.Core.Models.DataCenter.IPAddress"/> representation for <see cref="P:Atom.Core.Models.DataCenter.Ip"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.Protocol">
+            <summary>
+            Represents a Network protocol used to create a VPN tunnel.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.ProtocolSlug">
+            <summary>
+            Gets or sets the ProtocolSlug of the protocol. The valid ProtocolSlug is required for VPN Dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.Name">
+            <summary>
+            Gets or sets the name of the protocol.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.Description">
+            <summary>
+            The brief description of the protocol.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.MultiportRange">
+            <summary>
+            Port ranges get from the get protocol API. For Muliport purpose
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.Speed">
+            <summary>
+            The rating representing the speed of the protocol. The maximum value is 5.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.Security">
+            <summary>
+            The rating representing the security of the protocol provides. The maximum value is 5.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.DefaultPortNumber">
+            <summary>
+            Returns the default port of a Protocol on our network.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.Protocol.IsMultiport">
+            <summary>
+            Sets and gets the Protocol supports multi port
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Models.SmartConnect">
+            <summary>
+            Represents a SmartConnect
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.SmartConnect.Host">
+            <summary>
+            Dialing host of the SmartConnect.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.SmartConnect.Protocol">
+            <summary>
+            Get the protocol supported by the SmartConnect
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.SmartConnect.ConfigurationVersion">
+            <summary>
+            Gets and Sets the VPN configuration version of the SmartConnect.
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.SmartConnect.Tags">
+            <summary>
+            Sets and gets the tags of features supported on this Smart Connect
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Models.SmartConnect.IsMultiPort">
+            <summary>
+            Gets and Sets the SmartConnect supports multi port
+            </summary>
+        </member>
+    </members>
+</doc>

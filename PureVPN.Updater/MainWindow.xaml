@@ -1,0 +1,47 @@
+﻿<Window x:Class="PureVPN.Updater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PureVPN.Updater"
+        Title="PureVPN Updater" 
+        WindowStartupLocation="CenterScreen" 
+        Icon="PureVPN.ico"
+        ResizeMode="CanMinimize"
+		Closing="Window_Closing"
+        WindowStyle="None" 
+        Background="Transparent"
+        AllowsTransparency="False" 
+        SnapsToDevicePixels="True"  
+        Width="470" Height="568">
+
+    <Border BorderThickness="1">
+        <Canvas Background="White" >
+            <StackPanel Background="White" Width="468" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                <Button x:Name="btnMinimize" HorizontalAlignment="Right" Style="{DynamicResource StatusBarMinimize}"  Width="40" Height="40" Margin="0,0,0,0" Click="BtnMinimize_Click"/>
+            </StackPanel>
+            <Image Source="pack://application:,,,/Updater;component/Resources/Images/ic_downloading_update.png" Width="72" Height="72" Margin="30,24,0,0" />
+            <Label Padding="0" Name="ProgressLabel" FontWeight="SemiBold" FontSize="20" Foreground="#000000" Content="{DynamicResource Downloading update}" Margin="132,24,0,0" />
+            <TextBlock FontSize="13" Margin="132,61,0,0" Foreground="Gray" MaxWidth="308" TextWrapping="Wrap" Text="{DynamicResource Downloading update description}"></TextBlock>
+
+            <local:ReleaseNotesControl x:Name="ReleaseNotesCtrl" Width="416px" Height="262px" Margin="30,126,0,0"/>
+
+            <TextBlock  Name="StatusText" Text="0 %" FontSize="12" Foreground="Gray" Padding="0" Margin="30,418,0,0"/>
+            <ProgressBar Name="Progress" Height="10" Width="410" Margin="30,441,0,0" />
+
+            <Grid Margin="30,466,0,0" Width="410">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" HorizontalAlignment="Right">
+                    <Image Source="pack://application:,,,/Updater;component/Resources/Images/arrow.png" Width="11" Height="11" Margin="0,3,0,0" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label x:Name="downloadedKb" Padding="0" FontSize="12" Foreground="Gray" Content="0 KB" Margin="16,0,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <Button Name="btnCancel" Click="BtnCancel_Click" Content="{DynamicResource Cancel}"  Style="{StaticResource popUpCancelButton}" Width="188" Height="32" Margin="252,514,0,0" />
+
+        </Canvas>
+    </Border>
+</Window>

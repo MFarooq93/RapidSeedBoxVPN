@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="app_api_response_time" xml:space="preserve">
+    <value>app_api_response_time</value>
+  </data>
+  <data name="app_cancelled" xml:space="preserve">
+    <value>app_cancelled</value>
+  </data>
+  <data name="app_cities_viewed" xml:space="preserve">
+    <value>app_cities_viewed</value>
+  </data>
+  <data name="app_connect" xml:space="preserve">
+    <value>app_connect</value>
+  </data>
+  <data name="app_connected" xml:space="preserve">
+    <value>app_connected</value>
+  </data>
+  <data name="app_disconnected" xml:space="preserve">
+    <value>app_disconnected</value>
+  </data>
+  <data name="app_expiry_renew_clicked" xml:space="preserve">
+    <value>app_expiry_renew_clicked</value>
+  </data>
+  <data name="app_expiry_popup_shown" xml:space="preserve">
+    <value>app_expiry_popup_shown</value>
+  </data>
+  <data name="app_launched" xml:space="preserve">
+    <value>app_launched</value>
+  </data>
+  <data name="app_location_load_time" xml:space="preserve">
+    <value>app_location_load_time</value>
+  </data>
+  <data name="app_logged_in" xml:space="preserve">
+    <value>app_logged_in</value>
+  </data>
+  <data name="app_login_failed" xml:space="preserve">
+    <value>app_login_failed</value>
+  </data>
+  <data name="app_mark_favorite" xml:space="preserve">
+    <value>app_mark_favorite</value>
+  </data>
+  <data name="app_ping_time" xml:space="preserve">
+    <value>app_ping_time</value>
+  </data>
+  <data name="app_session_popup_rated" xml:space="preserve">
+    <value>app_session_popup_rated</value>
+  </data>
+  <data name="app_session_popup_shown" xml:space="preserve">
+    <value>app_session_popup_shown</value>
+  </data>
+  <data name="app_submit_feedback" xml:space="preserve">
+    <value>app_submit_feedback</value>
+  </data>
+  <data name="app_ttc" xml:space="preserve">
+    <value>app_ttc</value>
+  </data>
+  <data name="app_updated" xml:space="preserve">
+    <value>app_updated</value>
+  </data>
+  <data name="app_utb" xml:space="preserve">
+    <value>app_utb</value>
+  </data>
+  <data name="app_utc" xml:space="preserve">
+    <value>app_utc</value>
+  </data>
+  <data name="app_migration_popup_shown" xml:space="preserve">
+    <value>app_migration_popup_shown</value>
+  </data>
+  <data name="app_migration_popup_clicked" xml:space="preserve">
+    <value>app_migration_popup_clicked</value>
+  </data>
+  <data name="app_credentials_not_found" xml:space="preserve">
+    <value>app_credentials_not_found</value>
+  </data>
+  <data name="app_fetch_account_info_failed" xml:space="preserve">
+    <value>app_fetch_account_info_failed</value>
+  </data>
+  <data name="app_multiple_credentials_found" xml:space="preserve">
+    <value>app_multiple_credentials_found</value>
+  </data>
+  <data name="app_update_available" xml:space="preserve">
+    <value>app_update_available</value>
+  </data>
+  <data name="app_update_ignored" xml:space="preserve">
+    <value>app_update_ignored</value>
+  </data>
+  <data name="app_view_migration_popup" xml:space="preserve">
+    <value>app_view_migration_popup</value>
+  </data>
+  <data name="app_proceed_migration" xml:space="preserve">
+    <value>app_proceed_migration</value>
+  </data>
+  <data name="app_fail_fetch_account_info" xml:space="preserve">
+    <value>app_fail_fetch_account_info</value>
+  </data>
+  <data name="app_view_session_prompt" xml:space="preserve">
+    <value>app_view_session_prompt</value>
+  </data>
+  <data name="app_feedback_session" xml:space="preserve">
+    <value>app_feedback_session</value>
+  </data>
+  <data name="app_rate_session" xml:space="preserve">
+    <value>app_rate_session</value>
+  </data>
+  <data name="app_view_kill_dedicatedip_session_popup" xml:space="preserve">
+    <value>app_view_kill_dedicatedip_session_popup</value>
+  </data>
+  <data name="app_proceed_kill_dedicatedip_session" xml:space="preserve">
+    <value>app_proceed_kill_dedicatedip_session</value>
+  </data>
+  <data name="app_done_kill_dedicatedip_session" xml:space="preserve">
+    <value>app_done_kill_dedicatedip_session</value>
+  </data>
+  <data name="app_fail_kill_dedicatedip_session" xml:space="preserve">
+    <value>app_fail_kill_dedicatedip_session</value>
+  </data>
+  <data name="app_toggle_iks" xml:space="preserve">
+    <value>app_toggle_iks</value>
+  </data>
+  <data name="app_resume_internet_iks" xml:space="preserve">
+    <value>app_resume_internet_iks</value>
+  </data>
+  <data name="app_block_internet_iks" xml:space="preserve">
+    <value>app_block_internet_iks</value>
+  </data>
+  <data name="app_click_cta_troubleshoot" xml:space="preserve">
+    <value>app_click_cta_troubleshoot</value>
+  </data>
+  <data name="app_complete_troubleshoot" xml:space="preserve">
+    <value>app_complete_troubleshoot</value>
+  </data>
+  <data name="app_view_troubleshoot" xml:space="preserve">
+    <value>app_view_troubleshoot</value>
+  </data>
+  <data name="app_start_troubleshoot" xml:space="preserve">
+    <value>app_start_troubleshoot</value>
+  </data>
+  <data name="app_cancel_troubleshoot" xml:space="preserve">
+    <value>app_cancel_troubleshoot</value>
+  </data>
+  <data name="app_fail_get_connected_location" xml:space="preserve">
+    <value>app_fail_get_connected_location</value>
+  </data>
+  <data name="app_accept_connection_over_connection_popup" xml:space="preserve">
+    <value>app_accept_connection_over_connection_popup</value>
+  </data>
+  <data name="app_view_already_connected_popup" xml:space="preserve">
+    <value>app_view_already_connected_popup</value>
+  </data>
+  <data name="app_view_connection_over_connection_popup" xml:space="preserve">
+    <value>app_view_connection_over_connection_popup</value>
+  </data>
+  <data name="app_fail_refer_a_friend_invite" xml:space="preserve">
+    <value>app_fail_refer_a_friend_invite</value>
+  </data>
+  <data name="app_click_refer_a_friend" xml:space="preserve">
+    <value>app_click_refer_a_friend</value>
+  </data>
+  <data name="app_sort_list" xml:space="preserve">
+    <value>app_sort_list</value>
+  </data>
+  <data name="app_view_refer_a_friend" xml:space="preserve">
+    <value>app_view_refer_a_friend</value>
+  </data>
+  <data name="app_toggle_split" xml:space="preserve">
+    <value>app_toggle_split</value>
+  </data>
+  <data name="app_add_application_for_split" xml:space="preserve">
+    <value>app_add_application_for_split</value>
+  </data>
+  <data name="app_click_addon" xml:space="preserve">
+    <value>app_click_addon</value>
+    <comment>When the user taps on addon and routed to MA</comment>
+  </data>
+  <data name="app_click_addon_details" xml:space="preserve">
+    <value>app_click_addon_details</value>
+    <comment>When the user taps on addon and is shown addon details</comment>
+  </data>
+  <data name="app_click_grace_period_popup" xml:space="preserve">
+    <value>app_click_grace_period_popup</value>
+  </data>
+  <data name="app_view_grace_period_popup" xml:space="preserve">
+    <value>app_view_grace_period_popup</value>
+  </data>
+  <data name="app_change_language" xml:space="preserve">
+    <value>app_change_language</value>
+    <comment>When user accepts to change language</comment>
+  </data>
+  <data name="app_request_store_rating" xml:space="preserve">
+    <value>app_request_store_rating</value>
+  </data>
+  <data name="app_store_rating" xml:space="preserve">
+    <value>app_store_rating</value>
+  </data>
+  <data name="app_click_notification" xml:space="preserve">
+    <value>app_click_notification</value>
+  </data>
+  <data name="app_view_notification" xml:space="preserve">
+    <value>app_view_notification</value>
+  </data>
+  <data name="app_view_notification_center" xml:space="preserve">
+    <value>app_view_notification_center</value>
+    <comment>When a user views notification center</comment>
+  </data>
+  <data name="app_clear_notification" xml:space="preserve">
+    <value>app_clear_notification</value>
+    <comment>When a user clears a notification</comment>
+  </data>
+  <data name="app_click_switch_server" xml:space="preserve">
+    <value>app_click_switch_server</value>
+  </data>
+  <data name="app_accept_switch_server" xml:space="preserve">
+    <value>app_accept_switch_server</value>
+  </data>
+  <data name="app_cancel_switch_server_popup" xml:space="preserve">
+    <value>app_cancel_switch_server_popup</value>
+  </data>
+  <data name="app_view_switch_server_popup" xml:space="preserve">
+    <value>app_view_switch_server_popup</value>
+  </data>
+  <data name="app_receive_notification" xml:space="preserve">
+    <value>app_receive_notification</value>
+    <comment>When a user receives notification</comment>
+  </data>
+  <data name="app_route_live_chat" xml:space="preserve">
+    <value>app_route_live_chat</value>
+  </data>
+  <data name="app_view_live_chat_popup" xml:space="preserve">
+    <value>app_view_live_chat_popup</value>
+  </data>
+  <data name="app_click_login" xml:space="preserve">
+    <value>app_click_login</value>
+    <comment>When a user clicks login button</comment>
+  </data>
+  <data name="app_click_purchase" xml:space="preserve">
+    <value>app_click_purchase</value>
+    <comment>When the user clicks on purchase account button</comment>
+  </data>
+  <data name="app_click_retry_fetch_user_details" xml:space="preserve">
+    <value>app_click_retry_fetch_user_details</value>
+    <comment>When the user clicks on fetching user details again</comment>
+  </data>
+  <data name="app_fail_fetch_user_details" xml:space="preserve">
+    <value>app_fail_fetch_user_details</value>
+    <comment>When the application fails to fetch user details after login</comment>
+  </data>
+  <data name="app_logout" xml:space="preserve">
+    <value>app_logout</value>
+    <comment>When the user clicks logout button</comment>
+  </data>
+  <data name="app_return_web_login" xml:space="preserve">
+    <value>app_return_web_login</value>
+    <comment>When the browser opens the app again after login</comment>
+  </data>
+  <data name="app_route_web_login" xml:space="preserve">
+    <value>app_route_web_login</value>
+    <comment>When a user is redirected to browser for login</comment>
+  </data>
+  <data name="app_view_purchase_popup" xml:space="preserve">
+    <value>app_view_purchase_popup</value>
+    <comment>When the application shows the user message to purchase an account</comment>
+  </data>
+  <data name="app_api_failure" xml:space="preserve">
+    <value>app_api_failure</value>
+    <comment>When api responded with any failure</comment>
+  </data>
+  <data name="app_request_swap_token" xml:space="preserve">
+    <value>app_request_swap_token</value>
+    <comment>When a request is made to swap legacy access token with FA access toek</comment>
+  </data>
+  <data name="app_view_deeplink_popup" xml:space="preserve">
+    <value>app_view_deeplink_popup</value>
+    <comment>When the user sees popup before taking action on deeplink</comment>
+  </data>
+  <data name="app_view_invalid_deeplink_popup" xml:space="preserve">
+    <value>app_view_invalid_deeplink_popup</value>
+    <comment>When the user sees invalid deeplink popup</comment>
+  </data>
+  <data name="app_click_setupdevice" xml:space="preserve">
+    <value>app_click_setupdevice</value>
+  </data>
+  <data name="app_view_setupdevice" xml:space="preserve">
+    <value>app_view_setupdevice</value>
+  </data>
+  <data name="app_filter_list" xml:space="preserve">
+    <value>app_filter_list</value>
+    <comment>When the user applies filters on a list</comment>
+  </data>
+  <data name="app_view_switch_to_p2p_enabled_location_popup" xml:space="preserve">
+    <value>app_view_switch_to_p2p_enabled_location_popup</value>
+    <comment>When user is shown a pop up to switch to p2p enabled location</comment>
+  </data>
+  <data name="app_accept_switch_to_p2p_enabled_location_popup" xml:space="preserve">
+    <value>app_accept_switch_to_p2p_enabled_location_popup</value>
+    <comment>When user clicks Proceed on switch to p2p enabled location pop up</comment>
+  </data>
+  <data name="app_cancel_switch_to_p2p_enabled_location_popup" xml:space="preserve">
+    <value>app_cancel_switch_to_p2p_enabled_location_popup</value>
+    <comment>When user clicks OK on switch to p2p enabled location pop up</comment>
+  </data>
+  <data name="app_user_speed" xml:space="preserve">
+    <value>app_user_speed</value>
+  </data>
+  <data name="app_user_speed_failed" xml:space="preserve">
+    <value>app_user_speed_failed</value>
+  </data>
+</root>

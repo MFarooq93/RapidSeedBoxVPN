@@ -1,0 +1,2582 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.SDK.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.SDK.Core.CustomEventArgs.AtomDependenciesMissingEventArgs">
+            <summary>
+            <see cref="T:System.EventArgs"/> for <see cref="!:AtomManager.AtomDependenciesMissing"/> event.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.AtomDependenciesMissingEventArgs.Exception">
+            <summary>
+            Contains the exception for missing Atom Dependencies.
+            </summary>        
+            <returns>
+            The exception to describe missing dependencies.
+            </returns>
+        </member>
+        <member name="T:Atom.SDK.Core.CustomEventArgs.AtomInitializedEventArgs">
+            <summary>
+            <see cref="T:System.EventArgs"/> for <see cref="!:AtomManager.AtomInitialized"/> event.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.AtomInitializedEventArgs.Exception">
+            <summary>
+            Contains the exception occured during the initialization process.
+            </summary>        
+            <returns>
+            The exception that caused the error, or null if no exception available.
+            </returns>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.AtomInitializedEventArgs.IsInitializedSuccessfully">
+            <summary>
+            Describes whether <see cref="!:AtomManager"/> instance initialized successfully
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.ConnectingEventArgs.ConnectionDetails">
+            <summary>
+            Provides the details of the connection. 
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.ConnectingEventArgs.State">
+            <summary>
+            Provides the <see cref="T:Atom.SDK.Core.Enumerations.VPNState"/> of the current dialing process.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.CustomEventArgs.PacketsTransmittedEventArgs">
+            <summary>
+            Event arguments for packetTransmitted
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.PacketsTransmittedEventArgs.BytesReceived">
+            <summary>
+            Amount of received data in bytes
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.PacketsTransmittedEventArgs.BytesSent">
+            <summary>
+            Amount of sent data in bytes
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.CustomEventArgs.UnableToAccessInternetEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.CustomEventArgs.UnableToAccessInternetEventArgs.UTBEventSource">
+            <summary>
+            Describes source of UTB
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.ConnectedEventArgs.ConnectionDetails">
+            <summary>
+            Provides the details of the connection attempt. 
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.ConnectedLocationEventArgs">
+            <summary>
+            <see cref="T:System.EventArgs"/> for ConnectedLocation event
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.ConnectedLocationEventArgs.ConnectedLocation">
+            <summary>
+            Provides <see cref="T:Atom.Core.Models.Location"/> after VPN Connection
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.ConnectedLocationEventArgs.Error">
+            <summary>
+            Provides <see cref="T:Atom.Core.Exceptions.AtomException"/>, of any
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.DialErrorEventArgs">
+            <summary>
+            Provides data for the <see cref="!:AtomManager.DialError"/> event.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.DialErrorEventArgs.Type">
+            <summary>
+            Gets the <see cref="T:Atom.SDK.Core.Enumerations.DialErrorType"/> for this error.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.DisconnectedEventArgs">
+            <summary>
+            Provides data for the <see cref="!:AtomManager.Disconnected"/> event.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.DisconnectedEventArgs.Cancelled">
+            <summary>
+            Gets a value identifying if the connection was cancelled manually. The return value will be true when using <see cref="!:AtomManager.Cancel"/> otherwise the default value will be false.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.ErrorEventArgs">
+            <summary>
+            This is a base class used to provide error information in an Event argument.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.ErrorEventArgs.Exception">
+            <summary>
+            Contains the exception occured during the dialing process.
+            </summary>        
+            <returns>
+            The exception that caused the error, or null if no exception available.
+            </returns>
+        </member>
+        <member name="P:Atom.SDK.Core.ErrorEventArgs.Message">
+            <summary>
+            Gets a message that describes the error.
+            </summary>        
+            <returns>
+            The error message that explains the reason for the exception, or an empty string("").
+            </returns>
+        </member>
+        <member name="P:Atom.SDK.Core.ErrorEventArgs.ConnectionDetails">
+            <summary>
+            Provides the details of the connection attempt. 
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.StateChangedEventArgs">
+            <summary>
+            Provides data for the <see cref="!:AtomManager.StateChanged"/> event.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.StateChangedEventArgs.State">
+            <summary>
+            Provides the <see cref="T:Atom.SDK.Core.Enumerations.VPNState"/> of the current dialing process.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.BaseSpeedSourceType.Reseller">
+            <summary>
+            Provided in VPNProperties
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.BaseSpeedSourceType.PolicyJSON">
+            <summary>
+            Get from Policy JSON
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.CustomServiceCommands">
+            <summary>
+            Cuustom Commands for Atom Service
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.CustomServiceCommands.RasExceptionInCaseOf13801">
+            <summary>
+            Custom Command for Ras exception when error code is 13801
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.CustomServiceCommands.TapInstall">
+            <summary>
+            Custom command for Tap installation
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.CustomServiceCommands.RegistryValueForTapAdapter">
+            <summary>
+            Check for Tap Adapter values in registry
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.CustomServiceCommands.StopDNSLeakProtection">
+            <summary>
+            Custom Command for Atom Service to Stop DNS Leak Protection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.CustomServiceCommands.StopOVPNProcess">
+            <summary>
+            Custom Command for Atom Service to stop OVPN process after system is restarted
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.DisconnectionMethodType">
+            <summary>
+            Shows the reason for disconnect
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DisconnectionMethodType.AutoDisconnected">
+            <summary>
+            Connection disconnect automatically
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DisconnectionMethodType.ManualDisconnected">
+            <summary>
+            User diconnect the connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DisconnectionMethodType.COCDisconnected">
+            <summary>
+            Previous connection is disconnected and new connection is going to start becasuse user ask for conenction over connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DisconnectionMethodType.Cancelled">
+            <summary>
+            Connection cancelled
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.MultipleDedicatedDNSDialingType">
+            <summary>
+            Defines the connection type of multiple dedicated DNSs
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MultipleDedicatedDNSDialingType.Automatic">
+            <summary>
+            When protocol is not provided
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MultipleDedicatedDNSDialingType.WithProtocolSwitch">
+            <summary>
+            When protocol switch is enabled
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MultipleDedicatedDNSDialingType.WithoutProtocolSwitch">
+            <summary>
+            When protocol switch is not enabled
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.PolicyTagType.TAG_OVPN_OBF">
+            <summary>
+            Obfuscated server tag
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ReconnectType.Null">
+            <summary>
+            Default value is null
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ReconnectType.ReconnectAndUTB">
+            <summary>
+            When reconnect is called after UTB
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ReconnectType.ReconnectWithNewServers">
+            <summary>
+            When reconnect is called after application relaunch or reconnect after creating new server queue
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ReconnectType.Reconnect">
+            <summary>
+            When reconnect is called with in one app life cycle
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ReconnectType.ReconnectWhenAutoDC">
+            <summary>
+            Reconnect on auto disconnect
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.ServerFilterType">
+            <summary>
+            Represents type of filter to apply on <see cref="T:Atom.SDK.Core.Enumerations.ServerType"/>
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServerFilterType.Include">
+            <summary>
+            To include provided Server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServerFilterType.Exclude">
+            <summary>
+            To exclude provided Server
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.ConnectionType">
+            <summary>
+            Describes Connection Type provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.PSK">
+            <summary>
+            Describes that PSK was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.Country">
+            <summary>
+            Describes that country was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.City">
+            <summary>
+            Describes that city was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.Channel">
+            <summary>
+            Describes that channel was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.SmartConnect">
+            <summary>
+            Describes that smart connect DNS was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.Manual">
+            <summary>
+            Describes that Manual DNS was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.ManualWithConfig">
+            <summary>
+            Describes that Manual DNS with custom configuration was provided to make Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ConnectionType.ManualWithDedicatedDNS">
+            <summary>
+            Describes that Multiple Manual DNS were provided to make Connection
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.ServiceStartupState">
+            <summary>
+            Describes Windows Service Startup State
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServiceStartupState.Unknown">
+            <summary>
+            Windows service is not installed or start up mode is unknown
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServiceStartupState.Enabled">
+            <summary>
+            Windows service is enabled
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServiceStartupState.Disabled">
+            <summary>
+            Windows service is disabled
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServiceStartupState.Refused">
+            <summary>
+            Insufficient permissions to read <see cref="T:Atom.SDK.Core.Enumerations.ServiceStartupState"/>
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServiceStartupState.Error">
+            <summary>
+            Error occured on reading <see cref="T:Atom.SDK.Core.Enumerations.ServiceStartupState"/>
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.UTBEventSource">
+            <summary>
+            Describes source of UTB event
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.UTBEventSource.SessionStart">
+            <summary>
+            UTB Detected at start of the VPN Session
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.UTBEventSource.InSession">
+            <summary>
+            UTB Detected during the VPN Session
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.DialErrorType">
+            <summary>
+            Represents the type of error occured.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.Exception">
+            <summary>
+            The error type is not defined, see the Exception associated with the event for more info.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.ServerEmpty">
+            <summary>
+            The SDK could not obtain a server to connect to.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.ConnectionTimedOut">
+            <summary>
+            The connection timed out.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.CannotResolveHost">
+            <summary>
+            The SDK could not resolve host.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.TLSHandshakeFailed">
+            <summary>
+            A common error which occurs with OpenVPN protocols..
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.InactivityTimeout">
+            <summary>
+            The connection was terminated by the server due to inactivity.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.AuthFailed">
+            <summary>
+            The client could not be authenticated.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.TelnetClientFailed">
+            <summary>
+            There was a error opening a port to listen to OpenVPN connection state.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.ConnectionReset">
+            <summary>
+            The connection was reset.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.Stealth_Services_not_ready">
+            <summary>
+            There was a problem starting or finding the Stealth service.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.DialErrorType.AdapterDisabled">
+            <summary>
+            The virtual network adapter used for the provided protocol was either disabled or not installed.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNConnect">
+            <summary>
+            When SDK try to connect
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNConnected">
+            <summary>
+            When SDK is connected
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNDisconnected">
+            <summary>
+            When SDK is diconnected
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNConnectionCancelled">
+            <summary>
+            When user cancel the connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNUnableToConnect">
+            <summary>
+            When SDK is unable to create the connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNAttemptFailed">
+            <summary>
+            when connection is not establish but SDK still trying to connect         
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.APIError">
+            <summary>
+            When API is unable to reach
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.APISuccess">
+            <summary>
+            When API is working fine
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.IP2LocationAPIFailure">
+            <summary>
+            When user location call is failed
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.APIFailure">
+            <summary>
+            When API is failed
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNUnableToBrowse">
+            <summary>
+            When internet is not available after connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNConnectedSpeed">
+            <summary>
+            User speed after connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.RecommendedLocation">
+            <summary>
+            When user call recommended location
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelEvent.VPNConnectedSpeedFailed">
+            <summary>
+            When unable to get connection speed after connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ServiceInstallationStatus">
+            <summary>
+            Atom service installation status
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TimeTakenToEnableService">
+            <summary>
+            Duration in milliseconds taken to enable Atom service
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ServiceEnableFailed">
+            <summary>
+            Describes that attempt to enable Atom service failed
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.DoCheckInternetConnectivity">
+            <summary>
+            Describes whether consumer has enabled checking internet availability
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsInternetAvailable">
+            <summary>
+            Describes whether internet is connected
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ErrorMessageInSignalRConnectivity">
+            <summary>
+            Show error message in signalR connectivity
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsSignalRConnectedSuccessfully">
+            <summary>
+            Show SignalR is connected successfully or not
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.Windows10ReleaseVersion">
+            <summary>
+            Show Windows 10 release version 
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsFilterEnabled">
+            <summary>
+            Decribes whether any filter was provided for Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.NASIdentifier">
+            <summary>
+            Decribes NAS Identifier provided as filter provided, if any, for Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ProvidedFilters">
+            <summary>
+            Decribes list of requested Server Filters, if any, for Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDialedWithFilter">
+            <summary>
+            Describes whether provided filter for Connection was applied or ignored,
+            It is determined from SpeedTest API response
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ConnectionType">
+            <summary>
+            Describes which connection type is used for connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TimeTakenToGetAdapterStatus">
+            <summary>
+            Total time taken by Win32_NetworkAdapter to get adapter status
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsTapInstalledDuringConnection">
+            <summary>
+            True, if Tap Adapter is installed during connection sequence
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsTapAdapterAlreadyConnected">
+            <summary>
+            True, if Tap Adapter is already connected
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TimeoutForOpenVPN">
+            <summary>
+            Timeout for openVPN
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsRecommendedProtocolEnabled">
+            <summary>
+            Describes whether develop provided the Recommended Protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDialedWithRecommendedProtocol">
+            <summary>
+            Describes whether Connection is made with recommended protocol (regardless of the value for IsRecommendedProtocolEnabled)
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.RecommendedProtocol">
+            <summary>
+            Describes Slug for the Recommended Protocol for provided parameters
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsProtocolSwitchEnabled">
+            <summary>
+            Describes wheather protocol switch is enable or not
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TelnetPort">
+            <summary>
+            Show scanned port
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TimeTakenToScanTelnetPort">
+            <summary>
+            Descirbe time taken to scan telnet port
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ReconnectType">
+            <summary>
+            Describes the reconnect type
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsUseFailoverEnabled">
+            <summary>
+            If this property is set to true then server can be a failover
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDialedWithLastDialedProtocol">
+            <summary>
+            Describes if connection with last dialed successfull protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.LastDialedProtocol">
+            <summary>
+            Describes Slug of last dialed successfull protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDialWithLastDialedProtocolEnabled">
+            <summary>
+            Describes use last successfull protocol instead of recommended protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.SensitiveApplications">
+            <summary>
+            List of sensitive application which should be close when connection drops automatically
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ConnectionSpeedIperf">
+            <summary>
+            Connection speed in bits per second
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ConnectionSpeedIperfUnit">
+            <summary>
+            Unit of connection speed 
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ConnectionSpeedIperfServer">
+            <summary>
+            server address on which connection speed is recieved
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ConnectionSpeedIperfPort">
+            <summary>
+            Available port on which connection speed return from Iperf
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TotalTimeTakenToGetConnectionSpeedResponse">
+            <summary>
+            Total time taken to get connection speed response
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsIperfClientEnabledOnDialedServer">
+            <summary>
+            Show availability of iperf on dialed server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.UserCity">
+            <summary>
+            User city from where ip2location ip call
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.UserCountry">
+            <summary>
+            User country from where ip2location ip call
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.UserIsp">
+            <summary>
+            User ISP from ip2location api
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.RecommendedCity">
+            <summary>
+            Recommended city from Atom
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.RecommendedCountry">
+            <summary>
+            Recommended country from Atom
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsRecommendedLocationFiltersEnabled">
+            <summary>
+            Desribes whether filter was provided for Recommended Location
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.RecommendedLocationFilterProtocol">
+            <summary>
+            Describes protocol slug for filter (if any) Recommended Location
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsLocationAPISuccess">
+            <summary>
+            Shows if ip2location api call is successfull or not
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.RecommendedLocationErrorMessage">
+            <summary>
+            Error in recommended location
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.DialWithOVPNObfuscatedServer">
+            <summary>
+            Shows if user want to dialed with obfuscated server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.DialWithQuantumResistantServer">
+            <summary>
+            Shows if user want to dialed with quantum resistant server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDialedWithOVPNObfuscatedServer">
+            <summary>
+            Connection is dialing with obfuscated server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDialedWithQuantumResistantServer">
+            <summary>
+            Connection is dialing with quantum resistant server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TimeTakenToInitiateCOC">
+            <summary>
+            Time taken from disconnection of previous connection to validation of new connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.PreviousSessionID">
+            <summary>
+            Previous connection session ID on which connection over connection was invoked
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.DisconnectionType">
+            <summary>
+            Showes reason for disconnect
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsConnectionOverConnection">
+            <summary>
+            Set to true if the connection is connection over connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.WireGuardClientPublicKey">
+            <summary>
+            Public key for WireGuard client
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.WireGuardServerConfiguration">
+            <summary>
+            Server configuration returned from WireGuard API
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.TimeoutForWireGuard">
+            <summary>
+            Timeout for WireGuard
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.EventUniqueID">
+            <summary>
+            Unique ID in each mixpanel events
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsEventSentOnRetry">
+            <summary>
+            Describes if mixpanel event is sent on retry
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.BaseSpeed">
+            <summary>
+            Network speed of the user before VPN connection  
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsExperimentedUser">
+            <summary>
+            If the value is true, it will allow SDK to mark user as experimented user and respectively
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsExperimentedServer">
+            <summary>
+            True if connected server is experimented server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsExperimentedPropertiesProvided">
+            <summary>
+            True if user prvoides Experiment properties in VPN properties class
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.UserProvidedDedicatedDNS">
+            <summary>
+            List of deidcated DNS provided by the user
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ProcessedDedicatedDNS">
+            <summary>
+            List of deidcated DNS after SDK apply filteration process
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsSelectedProtocolAutomatic">
+            <summary>
+            User didn't provide primary protocol during multiple dedicated DNS dialing
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IperfResponseErrorMessage">
+            <summary>
+            error message in Iperf response
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IperfResponse">
+            <summary>
+            Iperf response
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsPolicyDataDownloaded">
+            <summary>
+            shows if policay data download successfully or not
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsDefaultRecommendedProtocolUsed">
+            <summary>
+            Shows if recommended protocol set from default policy or not
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.RecommendedProtocolSource">
+            <summary>
+            Shows on which basis recommended protocol is seleted like city wise, country wise or ISP wise
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsIKSToggleOn">
+            <summary>
+            Describes if user requested to enable IKS
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.Source">
+            <summary>
+            Describes the source of the event
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.IsOVPNObfuscatedSupported">
+            <summary>
+            Describes user's source location is supported obfuscated dialing or not
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.ServerGroup">
+            <summary>
+            Describes the server group of the returned server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.MixPanelProperty.BaseSpeedSource">
+            <summary>
+            Describes the soruce of base speed
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.Protocols">
+            <summary>
+            Represents network protocols used to create a VPN tunnel.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.RASProtocols">
+            <summary>
+            Represents network protocols for a remote access service (RAS) entry.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.RASProtocols.AUTOMATIC">
+            <summary>
+            Point to point tunneling protocol.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.RASProtocols.PPTP">
+            <summary>
+            Point to point tunneling protocol.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.RASProtocols.L2TP">
+            <summary>
+            Layer 2 tunneling protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.RASProtocols.SSTP">
+            <summary>
+            Secure socket tunneling protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.RASProtocols.IKEv2">
+            <summary>
+            Internet key exchange version 2 protocol
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.ServerType">
+            <summary>
+            Specifies whether the web server platform is windows or linux.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServerType.Windows">
+            <summary>
+            Windows
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.ServerType.Linux">
+            <summary>
+            Linux
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.VPNState">
+            <summary>
+            Represents Vpn Connection state.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.DISCONNECTED">
+            <summary>
+            The client has disconnected or failed a connection attempt.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.AUTHENTICATING">
+            <summary>
+            The authentication process is starting.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.AUTHENTICATED">
+            <summary>
+            The client has successfully completed authentication.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.ASSIGNING_IP">
+            <summary>
+            The SDK is assigning IP to the client.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.CONNECTED">
+            <summary>
+            The client has connected successfully.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.OPTIMIZING_CONNECTION">
+            <summary>
+            The SDK is pinging the available datacenters for an optimized connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.VALIDATING">
+            <summary>
+            The SDK is validating the connection parameters.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.GETTING_FASTEST_SERVER">
+            <summary>
+            The SDK is trying to recieve server addresses to connect to.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.SETTING_VPN_ENTRY">
+            <summary>
+            A RAS VPN entry is being set up.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.BUILDING_CONFIGURATION">
+            <summary>
+            A configuration is being built up as per the parameters.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.GENERATING_VPN_CREDENTIALS">
+            <summary>
+            VPN credentials are being generated on behalf of the provided UUID.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.STARTING_OVPN_CONTROLLER">
+            <summary>
+            Starting OpenVPN controller.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.STARTING_STEALTH_CONTROLLER">
+            <summary>
+            Starting the stealth controller.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.OPENING_PORT">
+            <summary>
+            Opening port to establish the connection.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.SETTING_VPN_CREDENTIALS">
+            <summary>
+            The SDK is setting up the VPN credentials in the RAS entry.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.VERIFYING_USER">
+            <summary>
+            The SDK is verifying if the user is permitted to connect to the VPN server.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.DISCONNECTING_PREVIOUS_CONNECTION">
+            <summary>
+            The SDK is disconnecting an already established VPN connection.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.RECONNECTING">
+            <summary>
+            The SDK is trying to reconnect when connection drops
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.WAITING_FOR_USABLE_NETWORK">
+            <summary>
+            The SDK is checking for the usable network before starting the connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.SCANNING_PORT">
+            <summary>
+            Scaning telnet available port to establish the connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNState.CONNECTING">
+            <summary>
+            SDK is creating new connection
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Enumerations.VPNStatus">
+            <summary>
+            Represents the current status of the VPN SDK
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNStatus.CONNECTED">
+            <summary>
+            VPN is connected.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNStatus.CONNECTING">
+            <summary>
+            VPN is being connected.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Enumerations.VPNStatus.DISCONNECTED">
+            <summary>
+            VPN is disconnected.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.SDKAlreadyInitilized">
+            <summary>
+            When atom sdk is already initialized from another process with same credentials
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.ServiceNotInstalled">
+            <summary>
+            When atom service is not installed
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.ServiceDisabled">
+            <summary>
+            When atom service is disabled
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.VirtualCountriesNotFound">
+            <summary>
+            Unable to get Virtual Countries
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.PhysicalCountriesNotFound">
+            <summary>
+            Unable to get Physical Countries
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.RecommendedCountryOnlyAvailableInDisconnectedState">
+            <summary>
+            When VPN is not DISCONNECTED and GetRecommendedCountry is called
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.GetRecommendedCountryFailed">
+            <summary>
+            Unable to get Recommended Country
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.InvalidNASIdentifier">
+            <summary>
+            When ServerFilter is provided in VPN Properties but NAS Identifier is null or empty
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.RecommendedProtocolNotFound">
+            <summary>
+            Recommended Protocol is not found
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.InitializationFailed">
+            <summary>
+            When Atom SKD Initialization failes
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.SDKNotInitialized">
+            <summary>
+            When Connection is requested and SDK is not initialized
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.SplitApplicationRemoveError">
+            <summary>
+            When try to remove split appplication in disconnected state
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.KeypairGenerationFailed">
+            <summary>
+            When Atom SDK fails to generate Keypair for WireGuard
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.WireGuardStartFailed">
+            <summary>
+            When fails to start WireGuard service
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.UnableToGetConnectedLocation">
+            <summary>
+            When getting Connected Location fails
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.NewconnectionIsAlreadyInProcess">
+            <summary>
+            When try dialing from Connection over connection and COC is already in process
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.GeneralSpeedTestError">
+            <summary>
+            General speedtest error (other than network and serialization error)
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.UnableToParseSpeedTestResponse">
+            <summary>
+            Unable to parse speedtest response (JsonSerialization error)
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.NetworkExceptionError">
+            <summary>
+            Request to server failed (Network exception error)
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.DedicatedIPServerIsNullOrEmpty">
+            <summary>
+            When user provide empty or null dedicated IP address to ping.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.ErrorOccuredDuringLatencyMeasurment">
+            <summary>
+            when error occured during ping Dedicated IP Server
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.ProtocolNotSupported">
+            <summary>
+            Protocol Not Supported
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.WireGuardConfigurationNotFound">
+            <summary>
+            Unable to establish connection. WireGuard Configuration not found.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.WireGuardConnectionTimedout">
+            <summary>
+            Unable to establish connection. Connection timed out.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.DedicatedDNSInvalidProtocol">
+            <summary>
+            When reseller provide invalid protocol for dedicated host dialing
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.DedicatedDnsCollectionShouldNotBeEmpty">
+            <summary>
+            When dedicated dns collection is empty
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.DedicatedDnsShouldNotBeEmpty">
+            <summary>
+            When dedicated dns is invalid or empty
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.InSessionUTB">
+            <summary>
+            When user is unable to browse during a VPN Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Exceptions.AtomErrorCodes.WireGuardShouldBePrimaryProtocol">
+            <summary>
+            When Primary protocol is not WireGuard and Secondary/Tertiary protocol is WireGuard
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Helpers.APIParams.PARAM_sPassword_key">
+            <summary>
+            Parameter key for encrypted User Pasword
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Helpers.APIParams.PARAM_aServerFilter_key">
+            <summary>
+            Parameter key for server filter in Speed Test API
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Helpers.APIParams.PARAM_sClientPublicKey_key">
+            <summary>
+            Parameter key for WireGuard client public key
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Helpers.APIParams.PARAM_sSdkVersion_key">
+            <summary>
+            Parameter key for SDK Version
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Helpers.APIParams.PARAM_aTagsFilter">
+            <summary>
+            Parameter key for aTagsFilter for Speed Test Parameter
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.CryptoHelper.Hash(System.String)">
+            <summary>
+            Compute Hash for <paramref name="plainText"/>
+            </summary>
+            <param name="plainText">Plain text to hash</param>
+            <returns>Hashed string</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.TryGetValuesForAbsoulteRegistryPath(System.String,System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object}@)">
+            <summary>
+            Try Get all values from absoulte registry <paramref name="path"/>
+            </summary>
+            <param name="path">Absoulte Registry Path</param>
+            <param name="isLocalMachinePath">Describes whether <paramref name="path"/> is for LocalMachine registry</param>
+            <param name="response">Key value pair for keys at <paramref name="path"/></param>
+            <returns>Boolean which describes whether key was found</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.AddUrlInRegistry(System.String)">
+            <summary>
+            This method is specific to add url in registry in case of successfull web request
+            </summary>
+            <param name="url">Url that you want to save</param>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.AddValueInCurrentUserRegistry(System.String,System.String)">
+            <summary>
+            This method is specific to add key values in Current User registry
+            </summary>
+            <param name="key">Key against the value in current user registry</param>
+            <param name="value">value that you want to save</param>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.AddValueInLocalMachineRegistry(System.String,System.String)">
+            <summary>
+            This method is specific to add key values in local machine registry
+            </summary>
+            <param name="key">Key against the value in local machine registry</param>
+            <param name="value">value that you want to save</param>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.EnableDangerousScriptExecutionForWireGuard">
+            <summary>
+            Enables DangerousScriptExecution for WireGuard
+            Sets HKLM\Software\WireGuard\DangerousScriptExecution in Local Machine registry
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.DisableDangerousScriptExecutionForWireGuard">
+            <summary>
+            Disable DangerousScriptExecution for WireGuard
+            Deletes HKLM\Software\WireGuard\DangerousScriptExecution in Local Machine registry
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.ReadvalueFromRegistry(System.String)">
+            <summary>
+            Read value from registry HKEY_Current_User
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.IsInternetAvailable(Atom.SDK.Core.Enumerations.VPNState)">
+            <summary>
+            Determines whether internet is available
+            </summary>
+            <param name="state">Current <see cref="T:Atom.SDK.Core.Enumerations.VPNState"/></param>
+            <returns>Whether internet is connected</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.GetProtocolName(System.String)">
+            <summary>
+            this method is used for the conversion of IKEv2 to IKEV
+            </summary>
+            <param name="protocolSlug"></param>
+            <returns>Return protocol name</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.GetPropertyName(Atom.SDK.Core.Enumerations.MixPanelProperty)">
+            <summary>
+            Get Key for <see cref="T:Atom.SDK.Core.Enumerations.MixPanelProperty"/>
+            </summary>
+            <param name="property">MixPanelProperty</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.GetEventName(Atom.SDK.Core.Enumerations.MixPanelEvent)">
+            <summary>
+            Get Key for <see cref="T:Atom.SDK.Core.Enumerations.MixPanelEvent"/>
+            </summary>
+            <param name="mixPanelEvent"><see cref="T:Atom.SDK.Core.Enumerations.MixPanelEvent"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HelperMethods.GetCoordinatesDistance(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Gets distance in metres between Lat/Long Coordinates
+            </summary>
+            <param name="sLatitude">Source Latitude</param>
+            <param name="sLongitude">Source Longitude</param>
+            <param name="dLatitude">Destination Latitute</param>
+            <param name="dLongitude">Destination Longitude</param>
+            <returns>Distance in metres</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HttpClientExtensions.AddHeaders(System.Net.Http.HttpClient,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Add <paramref name="headers"/> as <see cref="T:System.Net.Http.Headers.HttpRequestHeaders"/> to <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+            <param name="client"><see cref="T:System.Net.Http.HttpClient"/></param>
+            <param name="headers">Headers with values as <see cref="T:System.Collections.Specialized.NameValueCollection"/></param>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HttpClientExtensions.AddContentType(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            Adds <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue"/> for <paramref name="contentType"/> to <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+            <param name="client"><see cref="T:System.Net.Http.HttpClient"/></param>
+            <param name="contentType">ContentType</param>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.IperfClient.GetAvailablePort(System.String,System.String,System.String@)">
+            <summary>
+            Get available against the port range provided
+            </summary>
+            <param name="host">should be ip</param>
+            <param name="portRange">port range should be in this format e.g 100-200</param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.SDK.Core.Helpers.LatencyComparer">
+            <summary>
+            <see cref="T:System.Collections.Generic.IComparer`1"/> implementation for <see cref="!:DataCenter.Latency"/>
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.LatencyComparer.Compare(System.Int64,System.Int64)">
+            <summary>
+            Compare Latency
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.ServiceHelper.SetStartMode(System.String,System.ServiceProcess.ServiceStartMode,System.Boolean@,System.String@)">
+            <summary>
+            Sets ServiceStartMode to <paramref name="serviceStartMode"/>
+            </summary>
+            <param name="serviceName"></param>
+            <param name="serviceStartMode"></param>
+            <param name="isPermissionDenied"></param>
+            <param name="errorMessge"></param>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.ServiceHelper.GetServiceStartupState(System.String)">
+            <summary>
+            Get <see cref="T:System.ServiceProcess.ServiceStartMode"/> for <paramref name="serviceName"/>
+            </summary>
+            <param name="serviceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.ServiceHelper.ExecuteCommand(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Executes a cmd command.
+            Don't include fileName in command.
+            fileName is something like ping.
+            command is something like google.com.
+            </summary>
+            <param name="command">arguments e.g. google.com</param>
+            <param name="fileName">e.g. ping</param>
+            <param name="workingDirectory">the directory where the command is to be executed</param>
+            <param name="timeout">runs out of operation after this time</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.SDK.Core.Helpers.WinINet">
+            <summary>
+            Wrapper for WinInet Win32 API
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.WinINet.InternetCheckConnection(System.String,System.Int32,System.Int32)">
+             <summary>
+             Allows an application to check if a connection to the Internet can be established.
+             </summary>
+             <param name="lpszUrl">Pointer to a null-terminated string that specifies the URL to use to check the connection. This value can be NULL.</param>
+             <param name="dwFlags">Options. FLAG_ICC_FORCE_CONNECTION is the only flag that is currently available. If this flag is set, it forces a connection. A sockets connection is attempted in the following order:
+            If lpszUrl is non-NULL, the host value is extracted from it and used to ping that specific host.
+            If lpszUrl is NULL and there is an entry in the internal server database for the nearest server, the host value is extracted from the entry and used to ping that server.</param>
+             <param name="dwReserved">This parameter is reserved and must be 0.</param>
+             <returns>Returns TRUE if a connection is made successfully, or FALSE otherwise.</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.WinINet.InternetCheckConnection(System.String)">
+            <summary>
+            Check if a connection to the Internet can be established.
+            </summary>
+            <param name="url">URL to check the internet connection</param>
+            <returns>Returns TRUE if a connection is made successfully, or FALSE otherwise.</returns>
+        </member>
+        <member name="T:Atom.SDK.Core.Helpers.HttpClientFactory">
+            <summary>
+            Provides instance creation methods for <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Helpers.HttpClientFactory.GetHttpClient(System.Int32,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Get new instance of <see cref="T:System.Net.Http.HttpClient"/> with given Timeout and Headers
+            </summary>
+            <param name="timeoutInMillis">Timeout in milliseconds</param>
+            <param name="headers">Http Request headers <see cref="N:Atom.SDK.Core.Helpers"/></param>
+            <returns><see cref="T:System.Net.Http.HttpClient"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.Countries">
+            <summary>
+            Countries from Inventory
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.Cities">
+            <summary>
+            Cities from Inventory
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.Channels">
+            <summary>
+            Channels from Inventory
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.PlaceholderForWireGuardClientPrivateKey">
+            <summary>
+            Placeholder for WireGuard client private key in configuration file
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.SuccessResponseCode">
+            <summary>
+            Web API Response Code to repesent Success
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.IPAppliedForSplitTunneling">
+            <summary>
+            IP added to Split tunneling
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.CurrentLocation">
+            <summary>
+            Stores current location information
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.RecommendedProtocol">
+            <summary>
+            Recommended protocol with respect to user's source location
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.WIREGUARD_ADAPTER_NAME">
+            <summary>
+            Adapter Name for WireGuard Tunnel Adapter
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.PAASAPI_getBestServerForWireGuard">
+            <summary>
+            Absolute url for API Get Best Server for WireGuard protocol
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.TAG_OVPN_OBF">
+            <summary>
+            DNS Tag for OpenVPN Obfuscation support
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Common.TAG_QR">
+            <summary>
+            DNS Tag for Quantum resistant support
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.DefaultPortForObfuscatedUDP">
+            <summary>
+            Default port for Obfuscation supported UDP Connections
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.DefaultPortForObfuscatedTCP">
+            <summary>
+            Default port for Obfuscation supported TCP Connections
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.DefaultDataUpdateIntervalInSeconds">
+            <summary>
+            Default interval in seconds to update data
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.DefaultTimeoutForWireGuardInSeconds">
+            <summary>
+            Timeout for WireGuard connection in seconds
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.DefaultThresholdDataTransferInBytesForInSessionUTB">
+            <summary>
+            Threshold value in bytes for data transmission to check UTB during session
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.DefaultNumberOfConsecutiveDataLoss">
+            <summary>
+            The number of consecutive low data transfers which describes the UTB
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Common.ConnectedLocationAttempts">
+            <summary>
+            Number of total attempts to make for Connected Location API
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Urls.speedtest_getBestServerForWireGuard">
+            <summary>
+            Relative url to API Get Best Server for WireGuard protocol
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.UTBEventSources">
+            <summary>
+            Describes the possible sources of UTB event
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.UTBEventSources.DuringSession">
+            <summary>
+            UTB Check during session
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.UTBEventSources.SessionStart">
+            <summary>
+            UTB Check on start of VPN connection
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.VPNConnectionState">
+            <summary>
+            Represents Vpn Connection state
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.VPNConnectionState.DISCONNECTED">
+            <summary>
+            The client has disconnected or failed a connection attempt.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.VPNConnectionState.AUTHENTICATING">
+            <summary>
+            The authentication process is starting.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.VPNConnectionState.AUTHENTICATED">
+            <summary>
+            The client has successfully completed authentication
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.VPNConnectionState.ASSIGNING_IP">
+            <summary>
+            The SDK is assigning IP to the client.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.VPNConnectionState.CONNECTED">
+            <summary>
+            The client has connected successfully.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.AddTagFilter(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Add <paramref name="tag"/> as tag filter to <paramref name="parameters"/>
+            </summary>
+            <param name="parameters">Parameters for Speed Test request</param>
+            <param name="tag">Tag for <see cref="P:Atom.SDK.Core.Helpers.APIParams.PARAM_aTagsFilter"/> parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.CopyOrDefault``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1},``0)">
+            <summary>
+            Copy value from <paramref name="source"/> for <paramref name="key"/> to <paramref name="destination"/>
+            </summary>
+            <typeparam name="TKey">Type of key</typeparam>
+            <typeparam name="TValue">Type of value</typeparam>
+            <param name="destination"><see cref="T:System.Collections.Generic.Dictionary`2"/> to copy value to</param>
+            <param name="source"><see cref="T:System.Collections.Generic.Dictionary`2"/> to copy value from</param>
+            <param name="key">Key for value to be copied</param>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.RemoveNonAlphabetAndNonDigitCharacters(System.String)">
+            <summary>
+            Removes non alphabet and non digit characters from <paramref name="source"/> and returns new string
+            </summary>
+            <param name="source"></param>
+            <returns>String with only Alphanumeric characters</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.MergeToString(System.Byte[])">
+            <summary>
+            Merge all bytes into a string of bytes  
+            </summary>
+            <param name="bytes">Bytes to merge</param>
+            <returns>bytes merged as string</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.ExtractWebException(System.Exception)">
+            <summary>
+            Extract <see cref="T:System.Net.WebException"/> from <see cref="P:System.Exception.InnerException"/>
+            </summary>
+            <param name="ex"><see cref="T:System.Exception"/></param>
+            <returns><see cref="T:System.Net.WebException"/> if found, otherwise return null</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.GetClosestCountry(System.Collections.Generic.IEnumerable{Atom.Core.Models.Country},System.Double,System.Double,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets <see cref="T:Atom.Core.Models.Country"/> from <paramref name="countries"/>, closest to Lat/Long Coordinates (<paramref name="sLatitude"/>, <paramref name="sLongitude"/>)
+            </summary>
+            <param name="countries">Countries to compare with</param>
+            <param name="sLatitude">Source Latitude</param>
+            <param name="sLongitude">Source Longitude</param>
+            <param name="countriesToIgnore">Country slugs to ignore</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.GetClosestCity(System.Collections.Generic.IEnumerable{Atom.Core.Models.Country},System.Collections.Generic.List{Atom.Core.Models.City},System.Double,System.Double)">
+            <summary>
+            Gets <see cref="T:Atom.Core.Models.City"/> from <paramref name="cities"/>, closest to Lat/Long Coordinates (<paramref name="sLatitude"/>, <paramref name="sLongitude"/>)
+            </summary>
+            <param name="countries">Physical countries to get it cities</param>
+            <param name="sLatitude">Source Latitude</param>
+            <param name="sLongitude">Source Longitude</param>
+            <param name="cities">Cities to compare with</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.IsValidGateway(System.String)">
+            <summary>
+            Specifies if the gateway address is valid
+            </summary>
+            <param name="gateway">The gateway address</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.IsOpenVPNObfuscationSupported(Atom.Core.Models.Dns)">
+            <summary>
+            Determines whether <see cref="T:Atom.Core.Models.Dns"/> supports OpenVPN Obfuscation
+            </summary>
+            <param name="dns">Protocol DNS</param>
+            <returns>Boolean describing whether <paramref name="dns"/> supports OpenVPN Obfuscation</returns>
+        </member>
+        <member name="M:Atom.SDK.Core.Extensions.TransformProtocolSlug(System.String)">
+            <summary>
+            User to covert IKEV protocol slug to IKEv2 protocol slug
+            </summary>
+            <param name="protocolSlug">protocolslug to be transformed</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.SDK.Core.Interfaces.IEventAdditionalPropertiesProvider`2">
+            <summary>
+            Provides additional properties for events
+            </summary>
+            <typeparam name="TKey"><see cref="T:System.Type"/> of key for event properties</typeparam>
+            <typeparam name="TValue"><see cref="T:System.Type"/> of value for event properties</typeparam>
+        </member>
+        <member name="M:Atom.SDK.Core.Interfaces.IEventAdditionalPropertiesProvider`2.AddAdditionalProperties(System.String,System.Collections.Generic.Dictionary{System.String,`1}@)">
+            <summary>
+            Add/Append event specific additional properties for <paramref name="eventName"/> to <paramref name="propertyValues"/>
+            </summary>
+            <param name="eventName">Event Name</param>
+            <param name="propertyValues">Event properties collection to append</param>
+        </member>
+        <member name="T:Atom.SDK.Core.Interfaces.IKeypairGenerator">
+            <summary>
+            Provides methods to manage <see cref="T:Atom.SDK.Core.Models.Keypair"/>
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Interfaces.IKeypairGenerator.Generate">
+            <summary>
+            Generates a new <see cref="T:Atom.SDK.Core.Models.Keypair"/>
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Models.Keypair"/></returns>
+        </member>
+        <member name="T:Atom.SDK.Core.Interfaces.IServiceListener">
+            <summary>
+            Represents Listener to Atom Service
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Core.Interfaces.IServiceListener.WireGuardConnected">
+            <summary>
+            Event triggers when Atom Service has established a WireGuard VPN Connection
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Core.Interfaces.IServiceListener.WireGuardDisconnected">
+            <summary>
+            Event triggers when Atom Service has disconnected to a WireGuard Connection
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.ExperimentProperties">
+            <summary>
+            These properties can be used to identify SDK whether the user is allowed to park in any specific app experiment 
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ExperimentProperties.BaseSpeed">
+            <summary>
+            Network speed of the user before VPN connection  
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ExperimentProperties.IsExperimentedUser">
+            <summary>
+            This flag will indicate SDK, whether the user is eligible to particate in speed test experiment
+            If the value is true, it will allow SDK to mark user as experimented user and respectively    
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ExperimentProperties.BaseSpeedSourceType">
+            <summary>
+            Describes the soruce of base speed
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.DedicatedDNS">
+            <summary>
+            Represents a Dedicated DNS with which you want to dial connection with Dedicated DNS dialing.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.DedicatedDNS.DedicatedHostName">
+            <summary>
+            Gets the <see cref="P:Atom.SDK.Core.Models.DedicatedDNS.DedicatedHostName"/> property if provided by the developer for the instance of DedicatedDNS.
+            </summary>
+            <remarks>
+            The hostname or IP Address of the VPN server.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.DedicatedDNS.Protocol">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.Protocol"/> object if provided by the developer for the instance of DedicatedDNS.
+            </summary>
+            <remarks>
+            The preferred protocol to dial VPN server.
+            </remarks>
+        </member>
+        <member name="M:Atom.SDK.Core.Models.DedicatedDNS.#ctor(System.String,Atom.Core.Models.Protocol)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.DedicatedDNS"/> with a dedicatedHostName and
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager.
+            </summary>
+            <param name="dedicatedHostName">The Dedicated Host Name with which you want to make the connection.This should be a valid hostname or IP Address.</param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager.</param>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.Keypair">
+            <summary>
+            Represents a Public Private key pair
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Models.Keypair.Public">
+            <summary>
+            Public key
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Core.Models.Keypair.Private">
+            <summary>
+            Private key
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Models.Keypair.#ctor(System.String,System.String)">
+            <summary>
+            Initializes key pair from string <paramref name="publicKey"/> and <paramref name="privateKey"/>
+            </summary>
+            <param name="publicKey"></param>
+            <param name="privateKey"></param>
+        </member>
+        <member name="M:Atom.SDK.Core.Models.Keypair.#ctor(System.Byte[],System.Byte[])">
+            <summary>
+            Initializes key pair from <see cref="T:System.Byte"/>[] <paramref name="publicKey"/> and <paramref name="privateKey"/>
+            </summary>
+            <param name="publicKey"></param>
+            <param name="privateKey"></param>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.SDKInfo">
+            <summary>
+            Describes SDK Information
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SDKInfo.SDKVersion">
+            <summary>
+            SDK Version
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SDKInfo.AssemblyVersion">
+            <summary>
+            Physical Assembly Version
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.DedicatedIPServerPing">
+            <summary>
+            Dedicated IP server address ping object class
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.DedicatedIPServerPing.ServerAddress">
+            <summary>
+            Set valid hostname or IP address
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.DedicatedIPServerPing.Latency">
+            <summary>
+            Get latency of provided hostname or IP address
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.RecommendedLocation">
+            <summary>
+            This model is used for sending properties to telmetry
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RecommendedLocation.IsRecommendedLocationFiltersEnabled">
+            <summary>
+            Desribes whether filter was provided for Recommended Location
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RecommendedLocation.RecommendedLocationFilterProtocol">
+            <summary>
+            Describes protocol slug for filter (if any) Recommended Location
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.SensitiveApplication">
+            <summary>
+            Application to be close, if network connection is droped.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SensitiveApplication.ExeName">
+            <summary>
+            Gets the ExeName of the application.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SensitiveApplication.CompleteExePath">
+            <summary>
+            Gets or sets the CompleteExePath of the application. Full physical path of the Application is required.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.ServerFilter">
+            <summary>
+            Represesnts filter to be applied on Server for connection
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ServerFilter.NASIdentifier">
+            <summary>
+            NAS Identifier for Server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ServerFilter.FilterType">
+            <summary>
+            Represents type of filter to apply on <see cref="P:Atom.SDK.Core.Models.ServerFilter.NASIdentifier"/>
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.Failover">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.Failover.TCP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.Failover.L2TP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.Failover.IKEV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.Failover.UDP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.Failover.PPTP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.Failover.SSTP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RemoteConfigFile.DefaultPortForObfuscatedTCP">
+            <summary>
+            Default port for Obfuscated TCP
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RemoteConfigFile.DefaultPortForObfuscatedUDP">
+            <summary>
+            Default port Obfuscated UDP
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RemoteConfigFile.TimeoutForWireGuardInSeconds">
+            <summary>
+            Timeout for WireGuard connection in seconds
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RemoteConfigFile.ThresholdDataTransferInBytesForInSessionUTB">
+            <summary>
+            Threshold value in bytes for data transmission to check UTB during session
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.RemoteConfigFile.NumberOfConsecutiveDataLossForInSessionUTB">
+            <summary>
+            Number of Consecutive data loss to detect
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.ConnectionDetails">
+            <summary>
+            <para>The ConnectionDetails class manages the connection specific details of the last connection vpn configuration of the session.</para>
+            <para>This class will also be handy in resolving details related to recently dialed connection.</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.Username">
+            <summary>
+            The username with which last connection was made.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.Bandwidth">
+            <summary>
+            The bandwidth consumed in the last session.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.SessionDuration">
+            <summary>
+            The duration of last session in minutes.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.Country">
+            <summary>
+            The name of the country to which the last connection was made.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IPAddress">
+            <summary>
+            The IP address assigned in last VPN connection.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.DeviceType">
+            <summary>
+            The device type is used to represent the device/platform on which the last connected VPN connection was made.
+            </summary>d
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServerAddress">
+            <summary>
+            The host address at which the VPN connection was established.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServerType">
+            <summary>
+            Representing the type of server host with which the VPN connection was made.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.FastestServerFindingMethod">
+            <summary>
+            The method used to receive servers for the last established vpn connection.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.Protocol">
+            <summary>
+            The Protocol of the VPN configuration with which last VPN connection was made.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TimeTakenToFindFastestServer">
+            <summary>
+            The time taken to find fastest server before starting connection to a server.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TotalTimeTakenToConnect">
+            <summary>
+            The total time taken to connect successfully in seconds.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.FastestServerFindingApiResponse">
+            <summary>
+            The response of Fastest Server API.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ConnectionMethod">
+            <summary>
+            The connection method type used to dialed VPN using ATOM SDK (Params, PSK, Manual)
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServerIP">
+            <summary>
+            The IP address of the server with which VPN Connection is establish.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithMultiport">
+            <summary>
+            Returns true if VPN is dialed with Multiport otherwise false
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ConnectionAttempts">
+            <summary>
+            The connection attempt tried to establish VPN Connection.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.OVPNConfigVersion">
+            <summary>
+            The OVPN Configuration version used to establish VPN Connection if dialed with TCP or UDP protocol
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.DialedPort">
+            <summary>
+            The Port used to dial VPN, will be 0 if not set.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsCancelled">
+            <summary>
+            Returns true if VPN Connection was cancelled before Connection is made successfully otherwise false.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDisconnectedManually">
+            <summary>
+            Returns true if VPN Connection was disconnected by user otherwise false.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithSmartDialing">
+            <summary>
+            Returns true if VPN Connection was dialed with Smart Dialing otherwise false
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithOptimization">
+            <summary>
+            Returns true if VPN Connection was dialed with Optimization otherwise false
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.SessionID">
+            <summary>
+            Id to represent VPN Connection session
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.Channel">
+            <summary>
+            The channel to which the last connection was made. The channel will be null if not dialed.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.City">
+            <summary>
+            The city to which the last connection was made. The city will be null if not dialed.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsLastConnectionWasUTB">
+            <summary>
+            Returns true if VPN Connection was dialed but no internet availablilty
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TimeElapsedSinceConnect">
+            <summary>
+            The  time elapsed since initiating the connection.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServiceInstallationStatus">
+            <summary>
+            Atom service installation status
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TimeTakenToEnableService">
+            <summary>
+            Duration in milliseconds taken to enable Atom service
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServiceEnableFailed">
+            <summary>
+            Describes that attempt to enable Atom service failed
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServiceErrorMessage">
+            <summary>
+            Error message on attempting to enable service
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsRecommendedProtocolEnabled">
+            <summary>
+            Determines whether Recommended Protocol is enabled
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.RecommendedProtocolSlug">
+            <summary>
+            Slug for Recommended Protocol for given parameters
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IKSIsEnabled">
+            <summary>
+            Return true if IKS is enabled
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsReconnecting">
+            <summary>
+            Return true if SDK is redialing
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.NASIdentifier">
+            <summary>
+            NAS Identifier for Connected Server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsFiltered">
+            <summary>
+            Describes whether ServerFilter applied
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ProvidedFilters">
+            <summary>
+            List of requested Server Filters
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ConnectionType">
+            <summary>
+            Describes Connection Type used to dial VPN Connection
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TimeTakenToGetAdapterState">
+            <summary>
+            Total time taken by Win32_NetworkAdapter to get adapter status
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsTapInstalledDuringConnection">
+            <summary>
+            True, if Tap Adapter is installed during connection sequence
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsTapAdapterAlreadyConnected">
+            <summary>
+            True, if Tap Adapter is already connected
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsProtocolSwitchEnabled">
+            <summary>
+            Describes wheather protocol switch is enable or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ReconnectType">
+            <summary>
+            Describes the reconnect type
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialWithLastDialedProtocolEnabled">
+            <summary>
+            Describes use last successfull protocol instead of recommanded protocol
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.LastDialedProtocolSlug">
+            <summary>
+            Describes Slug of last dialed successfull protocol
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithLastDialedProtocol">
+            <summary>
+            Describes if connection with last dialed successfull protocol
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithRecommandedProtocol">
+            <summary>
+            Describes whether Connection is made with recommended protocol (regardless of the value for IsRecommendedProtocolEnabled)
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsUseFailoverEnabled">
+            <summary>
+            If this property is set to true then server can be a failover
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.APIHttpRequestBody">
+            <summary>
+            HTTP request body of speed test API
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IperfPortRange">
+            <summary>
+            Port range for Iperf server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsIperfEnable">
+            <summary>
+            Is server is iperf enabled
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IperfClientIp">
+            <summary>
+            Use this ip for Iperf response instead of gateway IP
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TotalTimeTakenToGetIperfResponse">
+            <summary>
+            Total time taken to get Iperf response
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.DialWithOVPNObfuscatedServer">
+            <summary>
+            Shows if user want to dialed with obfuscated server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.DialWithQuantumResistantServer">
+            <summary>
+            Shows if user want to dialed with Quantum resistant server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithOVPNObfuscatedServer">
+            <summary>
+            Connection is dialing with obfuscated server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDialedWithQuantumResistantServer">
+            <summary>
+            Connection is dialing with quantum resistant server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.DisconnectionType">
+            <summary>
+            Showes reason for disconnect
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.TimeTakenToInitiateCOC">
+            <summary>
+            Total taken to initialize connection over connection
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.PreviousSessionID">
+            <summary>
+            Session ID of last connection
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.WireGuardClientPublicKey">
+            <summary>
+            Public key for WireGuard client
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.WireGuardServerConfiguration">
+            <summary>
+            Server configuration returned from WireGuard API
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsExperimentedServer">
+            <summary>
+            Can be use to identify whether the recevied server is experimented/non-experimented
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.UserProvidedDedicatedDNS">
+            <summary>
+            List of deidcated DNS provided by the user
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ProcessedDedicatedDNS">
+            <summary>
+            List of deidcated DNS after SDK apply filteration process
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsSelectedProtocolAutomatic">
+            <summary>
+            User didn't provide primary protocol during multiple dedicated DNS dialing
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsPolicyDataDownloaded">
+            <summary>
+            Shows if policay data download successfully or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsDefaultRecommendedProtocolUsed">
+            <summary>
+            Shows if recommended protocol set from default policy or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.RecommendedProtocolSource">
+            <summary>
+            Shows on which basis recommended protocol is seleted like city wise or country wise
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsIKSToggleOn">
+            <summary>
+            Describes if user requested IKS
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.IsOVPNObfuscatedSupported">
+            <summary>
+            Describes user's source location is supported obfuscated dialing or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.ConnectionDetails.ServerGroup">
+            <summary>
+            Describes the server group of the returned server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SpeedTestServer.WireGuardConfiguration">
+            <summary>
+            Client configuration for WireGuard supprted server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SpeedTestServer.WireGuardKeypair">
+            <summary>
+            <see cref="T:Atom.SDK.Core.Models.Keypair"/> to establish connection with WireGuard supported Server
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SpeedTestServer.IsExperimentedServer">
+            <summary>
+            If ture then user is a part of experiment
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SpeedTestServer.ServerGroup">
+            <summary>
+            Provided server belong to which server group
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.SplitApplication">
+            <summary>
+            Application to be launched through Split Tunneling.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SplitApplication.ExeName">
+            <summary>
+            Gets the ExeName of the application.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.SplitApplication.CompleteExePath">
+            <summary>
+            Gets or sets the CompleteExePath of the application. Full physical path of the Application is required.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Core.Models.VPNProperties">
+            <summary>
+            Contains all the preferences required by the SDK to establish VPN connection.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.DedicatedHostName">
+            <summary>
+            Gets the <see cref="P:Atom.SDK.Core.Models.VPNProperties.DedicatedHostName"/> property if provided by the developer for the instance of VPNProperties.
+            </summary>
+            <remarks>
+            The hostname or IP Address of the VPN server.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.PSK">
+            <summary>
+            Gets the <see cref="P:Atom.SDK.Core.Models.VPNProperties.PSK"/> property if provided by the developer for the instance of VPNProperties.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.Country">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.Country"/> object if provided by the developer for the instance of VPNProperties.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.Channel">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.Channel"/> object if provided by the developer for the instance of VPNProperties.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.City">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.City"/> object if provided by the developer for the instance of VPNProperties.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.Protocol">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.Protocol"/> object if provided by the developer for the instance of VPNProperties.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.SecondaryProtocol">
+            <summary>
+            Set this property to make ATOM SDK dial automatically to this protocol if Primary Protocol fails to connect.
+            This is ignored if the current <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> object is created with a PSK.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.TertiaryProtocol">
+            <summary>
+            Set this property to make ATOM SDK dial automatically to this protocol if Primary and Secondary Protocol fails to connect.
+            This is ignored if the current <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> object is created with a PSK.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.DataCenters">
+            <summary>
+            Gets or sets the top three fastest datacenters available.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.UseOptimization">
+            <summary>
+            When set to True, ATOM SDK will use real-time optimization mechanism to connect to your desired Country.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.UseSmartDialing">
+            <summary>
+            Set this property to YES while dialing through AtomProperties if you want to dial with Smart Connect. Default value is NO.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.ConnectionMethod">
+            <summary>
+            Gets or Sets a value indicating whether or not the SDK tries to connect again when the connection is lost
+            </summary>
+            <returns> true if if the SDK will reconnect; otherwise, false.</returns>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.IsRecommendedProtocolEnabled">
+            <summary>
+            Determines whether Recommended Protocol is enabled
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.RecommendedProtocolSlug">
+            <summary>
+            Slug for Recommended Protocol for given parameters
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.DedicatedDNSs">
+            <summary>
+            List of provided multiple DNSs
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.MultipleDedicatedDNSDialingType">
+            <summary>
+            Dialing type w.r.t protocols for multiple dedicated IPs
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.UseSplitTunneling">
+            <summary>
+            Set this property to true to use Split Tunneling mechanism for this connection.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.DoCheckInternetConnectivity">
+            <summary>
+            Set this property to false to make ATOM SDK ignore internet connectivity check before requests.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.AutomaticPort">
+            <summary>
+            <para>Set this property to True to make ATOM SDK use Multiport Dialing mechanism (For TCP and UDP Protocols only). </para>
+            <para>Setting this True will ignore <see cref="P:Atom.SDK.Core.Models.VPNProperties.ManualPort"/> value.</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.ManualPort">
+            <summary>
+            <para>Set this property to make ATOM SDK use Multiport Dialing mechanism (For TCP and UDP Protocols only) on a specific port.Port range is dependant on the protocol. </para>
+            <para>Setting this will ignore AutomaticPort.</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.Configuration">
+            <summary>
+            Gets the Configuration property if provided by the developer for the instance of VPNProperties. For TCP/UDP protocol only.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.SmartConnectTags">
+            <summary>
+            Gets the tags array if provided by the developer from the list of enum SmartConnectTag 
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.EnableIKS">
+            <summary>
+            If EnableIKS is set TRUE it will disconnects you from the internet if your VPN connection drops.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.EnableDNSLeakProtection">
+            <summary>
+            <para>If this property is set to true then after VPN connection your DNS will not be leaked</para>
+            <para>Default value is false</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.EnableIPv6LeakProtection">
+            <summary>
+            <para>If this property is set to true then after VPN connection your IPv6 will not be leaked</para>
+            <para>Default value is false</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.ServerFilters">
+            <summary>
+            List of <see cref="T:Atom.SDK.Core.Models.ServerFilter"/>s to be applied when <see cref="P:Atom.SDK.Core.Models.VPNProperties.UseSmartDialing"/> is Disabled
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.EnableProtocolSwitch">
+            <summary>
+            <para>If this property is set to true then protocol switch will work</para>
+            <para>Default value is true</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.UseFailover">
+            <summary>
+            <para>Set true to enable dialing with Failover Servers, If set false then despite Speedtest return FO server SDK will not consider it for dialing nor consider LFO servers.</para>
+            <para>This property only works if dial with Params or PSK with smartDialing disabled. For other cases its always true</para>
+            <para>Default value is true</para>
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.UseLastSuccessfulDialedProtocol">
+            <summary>
+            If Automatic protocol selected, use last dialed protocol instead of recommanded protocol
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.DialWithOVPNObfuscatedServer">
+            <summary>
+            If this property is set to true then OVPN will dial with obfuscated servers
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.DialWithQuantumResistantServer">
+            <summary>
+            If this property is set to true then OVPN will dial with quantum resistant servers
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.ExperimentProperties">
+            <summary>
+            This property can be used to identify SDK whether the user is allowed to park in any specific app experiment
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.IsTrackInSessionUTB">
+            <summary>
+            Describes if In session UTB should be tracked. Please note enabling it may cause multiple invocations of <see cref="!:OnUnableToAccessInternet"/> event during a VPN Session
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Core.Models.VPNProperties.ShouldDialWithObfuscatedServer">
+            <summary>
+            Describes that SDK will request for obfuscated servers or not
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(Atom.Core.Models.Country,Atom.Core.Models.Protocol)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with a <see cref="T:Atom.Core.Models.Country"/> and a <see cref="T:Atom.Core.Models.Protocol"/> 
+            object obtained from <see cref="!:AtomManager.GetCountries()"/> and <see cref="!:AtomManager.GetProtocols()"/> methods of AtomManager.
+            </summary>
+            <remarks>
+            Use this when a backend server used to generate PSK is not available to connect by providing the SDK with country, 
+            protocol and other optional properties.
+            </remarks>
+            <param name="country">The Country to which you need to make the connection on. Countries list can be obtained from GetCountries() method of AtomManager.
+            The <see cref="T:Atom.Core.Models.Country"/> which the SDK will use to create the VPN tunnel.</param>
+            <param name="protocol">The Protocol with which you need to make the connection. Protocols list can be obtained from GetProtocols() method of AtomManager. Ignore or provide null to use <see cref="P:Atom.Core.Models.Country.RecommendedProtocol"/></param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException" /> thrown when <paramref name="country"/> is null or Country.CountrySlug is null or empty.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> object with the PSK provided by your backend server. 
+            All other properties of this class are ignored by the ATOM SDK when PSK is provided.
+            </summary>
+            <remarks>
+            Create a VPNProperties object with the PSK provided by your backend server. All other properties of this class are 
+            ignored by the ATOM SDK when <see cref="P:Atom.SDK.Core.Models.VPNProperties.PSK"/> is provided.
+            </remarks>
+            <param name="psk">The Preshared Key provided by your backend server</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="psk"/> is null.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(System.String,Atom.Core.Models.Protocol)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with a dedicatedHostName and
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager.
+            </summary>
+            <remarks>
+            Use this when a dedicated IP or hostname is available to connect.
+            </remarks>
+            <param name="dedicatedHostName">The Dedicated Host Name with which you want to make the connection. This should be a valid hostname or IP Address,
+            Dial error with a validation exception will be thrown otherwise.
+            </param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager.</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="dedicatedHostName"/> or <paramref name="protocol"/> is null.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(System.String,Atom.Core.Models.Protocol,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with a dedicatedHostName and
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager.
+            </summary>
+            <param name="dedicatedHostName">The Dedicated Host Name with which you want to make the connection.This should be a valid hostname or IP Address.</param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager.</param>
+            <param name="configuration">Specify configuration while dialing using (For TCP/UDP Protocols only)</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="dedicatedHostName"/> or <paramref name="protocol"/> is null and configuration is validate in case of TCP/UDP protocol only.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(Atom.Core.Models.Channel,Atom.Core.Models.Protocol)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with a channel and
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager.
+            </summary>
+            <param name="channel">The channel to which you need to make the connection on.</param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager. Ignore or provide null to use <see cref="P:Atom.Core.Models.City.RecommendedProtocol"/></param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="channel"/> is null or channel.Id is less than or equal to zero.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(Atom.Core.Models.City,Atom.Core.Models.Protocol)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with a city and
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager.
+            </summary>
+            <param name="city">The city to which you need to make the connection on.</param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager. Ignore or provide null to use <see cref="P:Atom.Core.Models.City.RecommendedProtocol"/></param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="city"/> is null or city.Id or city.CountryId is less than and equal to zero.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(Atom.Core.Models.Protocol,System.Collections.Generic.List{Atom.Core.Enums.SmartConnectTag})">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager and list of enum <see cref="T:Atom.Core.Enums.SmartConnectTag"/>
+            </summary>
+            <param name="smartConnectTags">smartConnectTags which you want to filter the SmartConnect connection. These SmartConnectTags can be obtained from <see cref="T:Atom.Core.Enums.SmartConnectTag"/></param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager.</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="protocol"/> is null.
+        </member>
+        <member name="M:Atom.SDK.Core.Models.VPNProperties.#ctor(System.Collections.Generic.List{Atom.SDK.Core.Models.DedicatedDNS},Atom.Core.Models.Protocol)">
+            <summary>
+            Initializes a new instance of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> with a list of dedicatedDNSs and
+            the <see cref="T:Atom.Core.Models.Protocol"/> object obtained from GetProtocols() method of AtomManager.
+            </summary>
+            <remarks>
+            Use this when a single or multiple dedicated DNSs are available to connect.
+            </remarks>
+            <param name="dedicatedDNSs">The <see cref="T:Atom.SDK.Core.Models.DedicatedDNS"/> list with which you want to make the connection. This should have a valid hostnames or IP Addresses and valid protocol,
+            Dial error with a validation exception will be thrown otherwise.
+            </param>
+            <param name="protocol">The <see cref="T:Atom.Core.Models.Protocol"/> with which you need to make the connection. The dedicated DNSs list will filer out according to this protocol .Protocol list can be obtained from <see cref="!:AtomManager.GetProtocols"/> method of AtomManager.</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"/> thrown when <paramref name="dedicatedDNSs"/> is null.
+        </member>
+    </members>
+</doc>

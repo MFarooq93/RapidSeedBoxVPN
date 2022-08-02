@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4374DCB0-7F69-4557-AFDD-2D37DD467E97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PureVPN.Service</RootNamespace>
+    <AssemblyName>PureVPN.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atom.Core, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atom.Core.Net.1.9.0\lib\net45\Atom.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.SDK.Core, Version=4.3.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atom.SDK.Net.4.3.0-rc.2\lib\net45\Atom.SDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.SDK.Net, Version=4.3.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atom.SDK.Net.4.3.0-rc.2\lib\net45\Atom.SDK.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Curve25519, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Curve25519.1.0.1\lib\net20\Curve25519.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.1.0\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Mixpanel">
+      <HintPath>..\SolutionItems\Mixpanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry, Version=1.2.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.1.2.0\lib\net461\Sentry.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.PlatformAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.PlatformAbstractions.1.0.0\lib\net471\Sentry.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.Protocol, Version=1.0.6.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.Protocol.1.0.6\lib\net46\Sentry.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.6.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.6.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.5.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.6.1\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth2TokenService.cs" />
+    <Compile Include="AuthenticationTelemetryService.cs" />
+    <Compile Include="AuthTokenService.cs" />
+    <Compile Include="CachingService.cs" />
+    <Compile Include="Contracts\IAuthTokenService.cs" />
+    <Compile Include="Contracts\IBaseURLProvider.cs" />
+    <Compile Include="Contracts\ICachingService.cs" />
+    <Compile Include="Contracts\IClientAppAccessTokenService.cs" />
+    <Compile Include="Contracts\IDashboardNotificationsService.cs" />
+    <Compile Include="Contracts\IDislikeReasonsService.cs" />
+    <Compile Include="Contracts\IMigrationService.cs" />
+    <Compile Include="Contracts\INotificationInstanceDirector.cs" />
+    <Compile Include="Contracts\INotificationsService.cs" />
+    <Compile Include="Contracts\IPortForwardingDetailsService.cs" />
+    <Compile Include="Contracts\IPureAtomBPCManagerService.cs" />
+    <Compile Include="Contracts\IPureAtomManagerService.cs" />
+    <Compile Include="Contracts\IPureLinkParser.cs" />
+    <Compile Include="Contracts\ISettingsProvider.cs" />
+    <Compile Include="Contracts\ITroubleshootErrorService.cs" />
+    <Compile Include="DashboardNotificationsService.cs" />
+    <Compile Include="Directors\NCDirector.cs" />
+    <Compile Include="Contracts\IUserProfileProvider.cs" />
+    <Compile Include="DislikeReasonsService.cs" />
+    <Compile Include="Helper\BaseURLProvider.cs" />
+    <Compile Include="Helper\Extensions.cs" />
+    <Compile Include="Helper\Sentry.cs" />
+    <Compile Include="Helper\ServiceHelperConstants.cs" />
+    <Compile Include="MigrationService.cs" />
+    <Compile Include="NotificationCenterErrorLogger.cs" />
+    <Compile Include="NotificationsService.cs" />
+    <Compile Include="PortForwardingDetailsService.cs" />
+    <Compile Include="PureLinkParserService.cs" />
+    <Compile Include="RealtimeConnectionStringProvider.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PureAtomBPCManagerService.cs" />
+    <Compile Include="PureAtomManagerService.cs" />
+    <Compile Include="PureAtomConfigurationService.cs" />
+    <Compile Include="AtomService.cs" />
+    <Compile Include="Contracts\IPureAtomConfigurationService.cs" />
+    <Compile Include="Contracts\IAtomService.cs" />
+    <Compile Include="Contracts\IMixpanelService.cs" />
+    <Compile Include="Contracts\ISignalrService.cs" />
+    <Compile Include="DialerToServerService.cs" />
+    <Compile Include="Helper\Common.cs" />
+    <Compile Include="Helper\EventHandlers.cs" />
+    <Compile Include="Helper\MappingProfile.cs" />
+    <Compile Include="Contracts\ISentryService.cs" />
+    <Compile Include="Helper\MixpanelProperties.cs" />
+    <Compile Include="Helper\Utilities.cs" />
+    <Compile Include="Helper\WebRequestHelper.cs" />
+    <Compile Include="Contracts\IDialerToServerService.cs" />
+    <Compile Include="MixpanelEvents.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MixpanelEvents.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MixpanelService.cs" />
+    <Compile Include="SentryService.cs" />
+    <Compile Include="ThirdPartyUtilities\SpeedMeasurementManager.cs" />
+    <Compile Include="TroubleshootErrorService.cs" />
+    <Compile Include="UserProfileProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MixpanelEvents.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MixpanelEvents.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\auth\PureVPN.Core\PureVPN.Core.csproj">
+      <Project>{7455BDCD-0695-4F3D-8A41-4865E90530CF}</Project>
+      <Name>PureVPN.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotificationCenter\NotificationCenter\NotificationCenter.Infrastructure\NotificationCenter.Infrastructure.csproj">
+      <Project>{82fa4f28-133e-45e2-b118-4e4804c5d7b9}</Project>
+      <Name>NotificationCenter.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotificationCenter\NotificationCenter\NotificationCenter\NotificationCenter.csproj">
+      <Project>{24bcbb14-5893-46fe-931c-a8e421a8a22d}</Project>
+      <Name>NotificationCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureVPN.Descifrar\PureVPN.Descifrar.csproj">
+      <Project>{666ACD94-64A8-44B8-96DB-8B2E4AAE64F2}</Project>
+      <Name>PureVPN.Descifrar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureVPN.Entity\PureVPN.Entity.csproj">
+      <Project>{2e8d7050-34ad-4fa4-ac2c-652bfdf20858}</Project>
+      <Name>PureVPN.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureVPN.Realtime.Repository\PureVPN.Realtime.Repository.csproj">
+      <Project>{51FFB60F-19BD-41A8-9903-FCF5F8FB15AC}</Project>
+      <Name>PureVPN.Realtime.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureVPN.SpeedTest\PureVPN.SpeedTest.csproj">
+      <Project>{B509B659-F44E-44AD-8731-9A1125E8A2E7}</Project>
+      <Name>PureVPN.SpeedTest</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Atom.SDK.Net.4.3.0-rc.2\build\Atom.SDK.Net.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atom.SDK.Net.4.3.0-rc.2\build\Atom.SDK.Net.targets'))" />
+  </Target>
+  <Import Project="..\packages\Atom.SDK.Net.3.6.0-rc.3\build\Atom.SDK.Net.targets" Condition="Exists('..\packages\Atom.SDK.Net.3.6.0-rc.3\build\Atom.SDK.Net.targets')" />
+  <Import Project="..\packages\Atom.SDK.Net.4.3.0-rc.2\build\Atom.SDK.Net.targets" Condition="Exists('..\packages\Atom.SDK.Net.4.3.0-rc.2\build\Atom.SDK.Net.targets')" />
+</Project>

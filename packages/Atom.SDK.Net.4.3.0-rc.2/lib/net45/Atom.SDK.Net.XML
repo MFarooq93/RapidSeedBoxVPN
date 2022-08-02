@@ -1,0 +1,2123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.SDK.Net</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.SDK.Net.OpenVPNException">
+            <summary>
+            Represents an exception that is thrown while dialing via OpenVPN TCP or UDP protocol.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.RasException">
+            <summary>
+            Represents an exception that is thrown when a remote access service (RAS) error occurs while dialing a connection.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.StealthVPNException">
+            <summary>
+            Represents an exception that is thrown while dialing via Stealth protocol.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.Helpers.DataUpdateHelper">
+            <summary>
+            Updates local data periodically
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DataUpdateHelper.#ctor">
+            <summary>
+            Creates a new DataUpdateHelper instance
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.DataUpdateHelper.Interval">
+            <summary>
+            Timer interval in milliseconds
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.DataUpdateHelper.DataLastUpdatedOn">
+            <summary>
+            <see cref="T:System.DateTime"/> when data was last updated
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DataUpdateHelper.Start(System.Double)">
+            <summary>
+            Start timer for periodic data update
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DataUpdateHelper.Stop">
+            <summary>
+            Stop data update timer
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DataUpdateHelper.Dispose">
+            <summary>
+            Dispose and Release resources
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DataUpdateHelper.DisposeTimer">
+            <summary>
+            Disposes <see cref="F:Atom.SDK.Net.Helpers.DataUpdateHelper._Timer"/>
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DataUpdateHelper._Timer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            On Timer Elapsed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.DNSLeakHelper.StopDNSLeakProtection">
+            <summary>
+            Request Atom Service to Stop DNS Leak Protection using Service Commands
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.Helpers.UTBTracker">
+            <summary>
+            Manages UTB check during VPN Session
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.UTBTracker.LastBytesReceived">
+            <summary>
+            Number of bytes last received
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.UTBTracker.NumberOfConsecutiveLowData">
+            <summary>
+            Holds the number of tracked consecutive low data transfers than the threshold value
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.UTBTracker.IsUTBCheckInProgress">
+            <summary>
+            Describes if UTB is in progress
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.UTBTracker.CheckUTBInSession(System.Int64)">
+            <summary>
+            Checks UTB during session, sends event to mixpanel when required
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.UTBTracker.InitiateUTBCheck">
+            <summary>
+            Check UTB and send event to Mixpanel if UTB has occured
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.UTBTracker.SendMixpanelEvent">
+            <summary>
+            Sends VPNUnableToBrowse event to Mixpanel
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.UTBTracker.ComputeDataTransfer(System.Int64)">
+            <summary>
+            Computes difference of bytes received
+            </summary>
+            <param name="bytesReceived"></param>
+        </member>
+        <member name="T:Atom.SDK.Net.Helpers.MixPanelAdditionalEventPropertiesProvider">
+            <summary>
+            Provides additional properties for events with <see cref="T:System.String"/> as type for event properties
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.MixPanelAdditionalEventPropertiesProvider.AddAdditionalProperties(System.String,System.Collections.Generic.Dictionary{System.String,System.Object}@)">
+            <summary>
+            Add/Append event specific additional properties for <paramref name="eventName"/> to <paramref name="propertyValues"/>
+            </summary>
+            <param name="eventName">Event Name</param>
+            <param name="propertyValues">Event properties collection to append</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.MixPanelAdditionalEventPropertiesProvider.GetAdditionalPropertiesForEvent(System.String)">
+            <summary>
+            Get additional properties for <see cref="T:Atom.SDK.Core.Enumerations.MixPanelEvent"/>
+            </summary>
+            <param name="eventName"><see cref="T:Atom.SDK.Core.Enumerations.MixPanelEvent"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.MixPanelAdditionalEventPropertiesProvider.GetInternetAvailabilityProperties">
+            <summary>
+            Get Internet Availability related properties
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.Helpers.NamedSemaphore">
+            <summary>
+            Acquired a named Semaphore
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.NamedSemaphore.IsAcquired">
+            <summary>
+            Describes whether Semaphore is acquired
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.NamedSemaphore.#ctor(System.String)">
+            <summary>
+            Initialize and acquire named Semaphore for <paramref name="semaphoreName"/>
+            </summary>
+            <param name="semaphoreName">Name value for Semaphore</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.NamedSemaphore.Dispose">
+            <summary>
+            Release named Semaphore
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.NetworkUtilityHelper.AddAllSplitApplications(System.Collections.Generic.List{System.String})">
+            <summary>
+            Don't use this Method directly. Use this method <see cref = "!:NetworkUtilityHelper.AddApplicationsForSplitTunneling()" />
+            </summary>
+            <param name="applications"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.NetworkUtilityHelper.RemoveAllSplitApplication">
+            <summary>
+            Don't use this Method directly. Use this method <see cref = "M:Atom.SDK.Net.Helpers.NetworkUtilityHelper.RemoveAllSplitTunnelingApplications" />
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.Helpers.PacketTransmittedHelper">
+            <summary>
+            Provides transmitted data stats from Network Adapter
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper.#ctor(System.Double)">
+            <summary>
+            Creates a new PacketTransmittedHelper instance
+            </summary>
+            <param name="interval">Timer interval in milliseconds</param>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.PacketTransmittedHelper.Interval">
+            <summary>
+            Timer interval in milliseconds
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.PacketTransmittedHelper.AdapterName">
+            <summary>
+            Network
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper.Start(System.String,System.Action{System.Int64,System.Int64})">
+            <summary>
+            Start notifying for amount of transmitted data from network adapter with name <paramref name="adapterName"/>
+            </summary>
+            <param name="adapterName">Network adapter name</param>
+            <param name="callback">Callback method, expecting BytesReceived and BytesSent as parameters, to invoke with amount of data trnamistted</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper.Stop">
+            <summary>
+            Stop notifying for transmitted data
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper.Dispose">
+            <summary>
+            Dispose and Release resources
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper.GetNetworkInterfaceByName(System.String)">
+            <summary>
+            Get <see cref="T:System.Net.NetworkInformation.NetworkInterface"/> by name or Description. Priority is given to Name
+            </summary>
+            <param name="netInterfaceName">Network Interface Name</param>
+            <returns><see cref="T:System.Net.NetworkInformation.NetworkInterface"/> with name <paramref name="netInterfaceName"/></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper._Timer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            On Timer Elapsed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.PacketTransmittedHelper.GetTransmittedDataAmountAndInvokeCallback">
+            <summary>
+            Gets amount of data transmitted from <see cref="F:Atom.SDK.Net.Helpers.PacketTransmittedHelper._NetworkInterface"/> and invokes <see cref="F:Atom.SDK.Net.Helpers.PacketTransmittedHelper._Callback"/>
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.Extensions.Validate(Atom.Core.Models.LocationFilter)">
+            <summary>
+            Validate <see cref="T:Atom.Core.Models.LocationFilter"/>
+            </summary>
+            <param name="locationFilter"></param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"></exception>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.MixPanelHelper.AdditionalPropertiesProvider">
+            <summary>
+            Provides addtional properties for events
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.Helpers.SDKLogger.Severity">
+            <summary>
+            Log severity
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._logDir">
+            <summary>
+            Directory to log to
+            </summary>
+            <remarks>
+            Default is the application's current working directory
+            </remarks>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._prefix">
+            <summary>
+            Prefix to use in file name
+            </summary>
+            <remarks>
+            Default is the empty string, i.e. no prefix.
+            </remarks>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._dateFormat">
+            <summary>
+            Date format to use in file name
+            </summary>
+            <remarks>
+            Default is "yyyy_MM_dd" (e.g. 2013_04_21), which leads to a daily change of the log file.
+            </remarks>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._suffix">
+            <summary>
+            Suffix to use in file name
+            </summary>
+            <remarks>
+            Default is the empty string, i.e. no suffix.
+            </remarks>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._extension">
+            <summary>
+            Extension to use in file name
+            </summary>
+            <remarks>
+            Default is "log".
+            </remarks>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._logLevel">
+            <summary>
+            Log level
+            </summary>
+            <remarks>
+            Log all entries with <see cref="T:Atom.SDK.Net.Helpers.SDKLogger.Severity"/> set here and above. 
+            For example, when log level is set to <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/>, incoming entries with severity
+            <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/>, <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Warning"/>, <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Error"/> and <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Exception"/> 
+            are actually written to the log file. When log level is set to e.g. <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Error"/>, only 
+            entries with severity <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Error"/> and <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Exception"/> are actually written to the log file. 
+            Default is <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/>.
+            </remarks>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._logEntryQueue">
+            <summary>
+            Log entry queue
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._backgroundTask">
+            <summary>
+            Background task to write log entries to disk
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._backgroundTaskSyncRoot">
+            <summary>
+            Snyc root for the background task itself
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._logFileSyncRoot">
+            <summary>
+            Snyc root for the log file
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.Helpers.SDKLogger._textSeparator">
+            <summary>
+            Backing field for <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.TextSeparator"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.LogDir">
+            <summary>
+            Directory to log to
+            </summary>
+            <remarks>
+            Default is the application's current working directory. Can be set using <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.SetLogDir(System.String,System.Boolean)"/>.
+            Log file is assembled in <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)"/> using <code>string.Format("{0}\\{1}{2}{3}.{4}", LogDir, Prefix, dateTime.ToString(DateFormat), Suffix, Extension)</code>.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.Prefix">
+            <summary>
+            Prefix to use in file name
+            </summary>
+            <remarks>
+            Default is the empty string, i.e. no prefix.
+            Log file is assembled in <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)"/> using <code>string.Format("{0}\\{1}{2}{3}.{4}", LogDir, Prefix, dateTime.ToString(DateFormat), Suffix, Extension)</code>.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.Suffix">
+            <summary>
+            Suffix to use in file name
+            </summary>
+            <remarks>
+            Default is the empty string, i.e. no suffix.
+            Log file is assembled in <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)"/> using <code>string.Format("{0}\\{1}{2}{3}.{4}", LogDir, Prefix, dateTime.ToString(DateFormat), Suffix, Extension)</code>.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.Extension">
+            <summary>
+            Extension to use in file name
+            </summary>
+            <remarks>
+            Default is "log". Set to null to return to default.
+            Log file is assembled in <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)"/> using <code>string.Format("{0}\\{1}{2}{3}.{4}", LogDir, Prefix, dateTime.ToString(DateFormat), Suffix, Extension)</code>.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.DateFormat">
+            <summary>
+            Date format to use in file name
+            </summary>
+            <remarks>
+            Default is "yyyy_MM_dd" (e.g. 2013_04_21), which leads to a daily change of the log file. Set to null to return to default. Set to e.g. "yyyy_MM_dd_HH" to change log file hourly.
+            Log file is assembled in <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)"/> using <code>string.Format("{0}\\{1}{2}{3}.{4}", LogDir, Prefix, dateTime.ToString(DateFormat), Suffix, Extension)</code>.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.LogLevel">
+            <summary>
+            Log level
+            </summary>
+            <remarks>
+            Log all entries with <see cref="T:Atom.SDK.Net.Helpers.SDKLogger.Severity"/> set here and above. In other words, do not write entries to the log file with 
+            severity below the severity specified here.
+            
+            For example, when log level is set to <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/>, incoming entries with severity
+            <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/>, <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Warning"/>, <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Error"/> and <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Exception"/> 
+            are actually written to the log file. When log level is set to e.g. <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Error"/>, only 
+            entries with severity <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Error"/> and <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Exception"/> are actually written to the log file. 
+            Default is <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/>. <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Log(System.Xml.Linq.XElement,Atom.SDK.Net.Helpers.SDKLogger.Severity,System.Boolean,System.Int32)"/> for details.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly">
+            <summary>
+            Whether logging has to be started explicitly as opposed to start automatically on first log. Default is false.
+            </summary>
+            <remarks>
+            Normally, logging starts automatically when the first log entry is enqueued, <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Enqueue(System.Xml.Linq.XElement)"/>. In some 
+            situations, it may be desired to start logging explicitly at a later time. In the meantime, logging 
+            entries are enqued and are processed (i.e. written to the log file) when logging is started. 
+            To start logging, use <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging"/>
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.WriteText">
+            <summary>
+            Whether to write plain text instead of XML. Default is false.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.TextSeparator">
+            <summary>
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.WriteText"/> is true, this is the separator text entries reperesenting attributes or values are separated with. Defaults to " | ".
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.FileName">
+            <summary>
+            File to log in
+            </summary>
+            <remarks>
+            Is assembled from <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LogDir"/>, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Prefix"/>, the current date and time formatted in <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.DateFormat"/>, 
+            <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Suffix"/>, "." and <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Extension"/>. So, by default, the file is named e.g. "2013_04_21.log" and is written to the current working directory.
+            It is assembled in <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)"/> using <code>string.Format("{0}\\{1}{2}{3}.{4}", LogDir, Prefix, dateTime.ToString(DateFormat), Suffix, Extension)</code>.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.StopEnqueingNewEntries">
+            <summary>
+            Whether to stop enqueing new entries.
+            </summary>
+            <remarks>
+            Use <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StopLogging(System.Boolean)"/> to stop logging and <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging"/> to start logging.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.StopLoggingRequested">
+            <summary>
+            Whether to stop logging background task is requested, i.e. to stop logging at all is requested.
+            </summary>
+            <remarks>
+            Use <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StopLogging(System.Boolean)"/> to stop logging and <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging"/> to start logging.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.LastExceptionInBackgroundTask">
+            <summary>
+            Last exception that occurred in the background task when trying to write to the file.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.NumberOfLogEntriesWaitingToBeWrittenToFile">
+            <summary>
+            Number of log entries waiting to be written to file
+            </summary>
+            <remarks>
+            When this number is 1000 or more, there seems to be a permanent problem to wite 
+            to the file. See <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LastExceptionInBackgroundTask"/> what it could be.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.Helpers.SDKLogger.LoggingStarted">
+            <summary>
+            Whether logging background task currenty runs, i.e. log entries are written to disk.
+            </summary>
+            <remarks>
+            If logging is not running (yet), log methods can be called anyway. Messages will 
+            be written to disk when logging is started. See <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Enqueue(System.Xml.Linq.XElement)"/> for details.
+            </remarks>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.#cctor">
+            <summary>
+            Static constructor
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.CurrentDomainProcessExit(System.Object,System.EventArgs)">
+            <summary>
+            Process is about to exit
+            </summary>
+            <remarks>
+            This is some kind of static destructor used to flush unwritten log entries.
+            </remarks>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.SetLogFile(System.String,System.String,System.String,System.String,System.String,System.Nullable{Atom.SDK.Net.Helpers.SDKLogger.Severity},System.Nullable{System.Boolean},System.Boolean,System.Nullable{System.Boolean},System.String)">
+            <summary>
+            Set all log properties at once
+            </summary>
+            <remarks>
+            Set all log customizing properties at once. This is a convenience function. All parameters are optional.
+            When logDir is set and it cannot be created or writing a first entry fails, no exception is thrown, but the previous directory, 
+            respectively the default directory (the current working directory), is used instead.
+            </remarks>
+            <param name="logDir"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LogDir"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LogDir"/> is not set. Here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LogDir"/> is created, when it does not exist.</param>
+            <param name="prefix"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Prefix"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Prefix"/> is not set.</param>
+            <param name="suffix"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Suffix"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Suffix"/> is not set.</param>
+            <param name="extension"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Extension"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.Extension"/> is not set.</param>
+            <param name="dateFormat"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.DateFormat"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.DateFormat"/> is not set.</param>
+            <param name="logLevel"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LogLevel"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LogLevel"/> is not set.</param>
+            <param name="startExplicitly"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> is not set.</param>
+            <param name="check">Whether to call <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Check(System.String)"/>, i.e. whether to write a test entry after setting the new log file. If true, the result of <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Check(System.String)"/> is returned.</param>
+            <param name="writeText"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.WriteText"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.WriteText"/> is not set.</param>
+            <param name="textSeparator"><see cref="P:Atom.SDK.Net.Helpers.SDKLogger.TextSeparator"/> for details. When null is passed here, <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.TextSeparator"/> is not set.</param>
+            <returns>Null on success, otherwise an exception with what went wrong.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.SetLogDir(System.String,System.Boolean)">
+            <summary>
+            Set new logging directory
+            </summary>
+            <param name="logDir">The logging diretory to set. When passing null or the empty string, the current working directory is used.</param>
+            <param name="createIfNotExisting">Try to create directory if not existing. Default is false.</param>
+            <returns>Null if setting log directory was successful, otherwise an exception with what went wrong.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Check(System.String)">
+            <summary>
+            Check if logging to <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.FileName"/> works
+            </summary>
+            <remarks>
+            Writes a test entry directly to <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.FileName"/> without using the background task. 
+            When no exception is returned, logging to <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.FileName"/> works.
+            </remarks>
+            <param name="message">Test message to write to the log file</param>
+            <returns>Null on success, otherwise an exception with what went wrong.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Info(System.String,System.Boolean)">
+            <summary>
+            Write info message to log
+            </summary>
+            <param name="message">The message to write to the log</param>
+            <param name="useBackgroundTask">Whether to use the background task (thread) to write messages to disk. Default is true. This is much faster than writing directly to disk in the main thread.</param>
+            <returns>Null on success or the <see cref="T:System.Exception"/> that occurred when processing the message, i.e. when enqueuing the message (when <paramref name="useBackgroundTask"/> is true) or when writing the message to disk (when <paramref name="useBackgroundTask"/> is false).</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Warning(System.String,System.Boolean)">
+            <summary>
+            Write warning message to log
+            </summary>
+            <param name="message">The message to write to the log</param>
+            <param name="useBackgroundTask">Whether to use the background task (thread) to write messages to disk. Default is true. This is much faster than writing directly to disk in the main thread.</param>
+            <returns>Null on success or the <see cref="T:System.Exception"/> that occurred when processing the message, i.e. when enqueuing the message (when <paramref name="useBackgroundTask"/> is true) or when writing the message to disk (when <paramref name="useBackgroundTask"/> is false).</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Error(System.String,System.Boolean)">
+            <summary>
+            Write error message to log
+            </summary>
+            <param name="message">The message to write to the log</param>
+            <param name="useBackgroundTask">Whether to use the background task (thread) to write messages to disk. Default is true. This is much faster than writing directly to disk in the main thread.</param>
+            <returns>Null on success or the <see cref="T:System.Exception"/> that occurred when processing the message, i.e. when enqueuing the message (when <paramref name="useBackgroundTask"/> is true) or when writing the message to disk (when <paramref name="useBackgroundTask"/> is false).</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Log(System.Exception,System.Boolean,System.Boolean)">
+            <summary>
+            Write exception to log
+            </summary>
+            <param name="ex">The exception to write to the log</param>
+            <param name="useBackgroundTask">Whether to use the background task (thread) to write messages to disk. Default is true. This is much faster than writing directly to disk in the main thread.</param>
+            <param name="framesToSkip">How many frames to skip when detecting the calling method, <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetCaller(System.Int32)"/>. This is useful when log calls to <see cref="T:Atom.SDK.Net.Helpers.SDKLogger"/> are wrapped in an application. Default is 0.</param>
+            <returns>Null on success or the <see cref="T:System.Exception"/> that occurred when processing the message, i.e. when enqueuing the message (when <paramref name="useBackgroundTask"/> is true) or when writing the message to disk (when <paramref name="useBackgroundTask"/> is false).</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetExceptionAsXmlString(System.Exception)">
+            <summary>
+            Gets an XML string with detailed information about an exception
+            </summary>
+            <remarks>
+            Recursively adds elements for inner exceptions. For the most inner exception, the stack trace is added.
+            Tags for <see cref="P:System.Exception.Data"/> are added. Specific properties of the exception types <see cref="T:System.Data.SqlClient.SqlException"/>,
+            <see cref="T:System.Runtime.InteropServices.COMException"/> and <see cref="T:System.AggregateException"/> are recognized, too.
+            </remarks>
+            <param name="ex">The exception to get detailed information about</param>
+            <returns>An XML string with detailed information about the passed exception</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetExceptionXElement(System.Exception)">
+            <summary>
+            Gets an XElement for an exception
+            </summary>
+            <remarks>
+            Recursively adds elements for inner exceptions. For the most inner exception, the stack trace is added.
+            Tags for <see cref="P:System.Exception.Data"/> are added. Specific properties of the exception types <see cref="T:System.Data.SqlClient.SqlException"/>,
+            <see cref="T:System.Runtime.InteropServices.COMException"/> and <see cref="T:System.AggregateException"/> are recognized, too.
+            </remarks>
+            <param name="ex">The exception to get the XElement for</param>
+            <returns>An XElement for the exception</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Log(System.String,Atom.SDK.Net.Helpers.SDKLogger.Severity,System.Boolean,System.Int32)">
+            <summary>
+            Write message to log
+            </summary>
+            <remarks>
+            See <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Log(System.Xml.Linq.XElement,Atom.SDK.Net.Helpers.SDKLogger.Severity,System.Boolean,System.Int32)"/>.
+            </remarks>
+            <param name="message">The message to write to the log</param>
+            <param name="severity">Log entry severity</param>
+            <param name="useBackgroundTask">Whether to use the background task (thread) to write messages to disk. Default is true. This is much faster than writing directly to disk in the main thread.</param>
+            <param name="framesToSkip">How many frames to skip when detecting the calling method, <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetCaller(System.Int32)"/>. This is useful when log calls to <see cref="T:Atom.SDK.Net.Helpers.SDKLogger"/> are wrapped in an application. Default is 0.</param>
+            <returns>Null on success or the <see cref="T:System.Exception"/> that occurred when processing the message, i.e. when enqueuing the message (when <paramref name="useBackgroundTask"/> is true) or when writing the message to disk (when <paramref name="useBackgroundTask"/> is false).</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Log(System.Xml.Linq.XElement,Atom.SDK.Net.Helpers.SDKLogger.Severity,System.Boolean,System.Int32)">
+            <summary>
+            Write XElement to log
+            </summary>
+            <remarks>
+            Unless <paramref name="useBackgroundTask"/> is set to false (default is true), the XElement is not actually 
+            written to the file here, but enqueued to the log entry queue. It is dequeued by 
+            <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.WriteLogEntriesToFile"/> in a backround task and actually written to the file there. 
+            This is much faster than writing directly to disk in the main thread (what is done when 
+            <paramref name="useBackgroundTask"/> is set to false). 
+            
+            However, writing to the file is synchronized between threads. I.e. writing directly can be done from multiple threads. 
+            Also, using the background task and writing directly to the file can be used both in parallel.
+            
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> is set to true (default is false), the background task must be started 
+            explicitly by calling <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging"/>, to get messages actually written to the file. They get enqueued 
+            before the background task is started, though. I.e. they will get logged when the background task is started later.
+            
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> is set to false, which is the default, logging background task (thread) is 
+            started automatically when first calling this method with <paramref name="useBackgroundTask"/> set to true 
+            (which is the default).
+            </remarks>
+            <param name="xElement">The XElement to log</param>
+            <param name="severity">Log entry severity, defaults to <see cref="F:Atom.SDK.Net.Helpers.SDKLogger.Severity.Info"/></param>
+            <param name="useBackgroundTask">Whether to use the background task (thread) to write messages to disk. Default is true. This is much faster than writing directly to disk in the main thread.</param>
+            <param name="framesToSkip">How many frames to skip when detecting the calling method, <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.GetCaller(System.Int32)"/>. This is useful when log calls to <see cref="T:Atom.SDK.Net.Helpers.SDKLogger"/> are wrapped in an application. Default is 0.</param>
+            <returns>Null on success or the <see cref="T:System.Exception"/> that occurred when processing the message, i.e. when enqueuing the message (when <paramref name="useBackgroundTask"/> is true) or when writing the message to disk (when <paramref name="useBackgroundTask"/> is false).</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetFileName(System.DateTime)">
+            <summary>
+            Gets the log filename for the passed date
+            </summary>
+            <param name="dateTime">The date to get the log file name for</param>
+            <returns>The log filename for the passed date</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.LogFileExists(System.DateTime)">
+            <summary>
+            Check, whether there is a log file for the passed date
+            </summary>
+            <param name="dateTime">The date and time to check the existance of a log file for</param>
+            <returns>True = log file exists, false otherwise</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetLogFileAsXml">
+            <summary>
+            Get the current log file as XML document
+            </summary>
+            <remarks>
+            Does not throw an exception when the log file does not exist.
+            </remarks>
+            <returns>The log file as XML document or null when it does not exist.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetLogFileAsXml(System.DateTime)">
+            <summary>
+            Get the log file for the passed date as XML document
+            </summary>
+            <remarks>
+            Does not throw an exception when the log file does not exist.
+            </remarks>
+            <param name="dateTime">The date and time to get the log file for. Use DateTime.Now to get the current log file.</param>
+            <returns>The log file as XML document or null when it does not exist.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetLogFileAsText">
+            <summary>
+            Get the current log file as text document
+            </summary>
+            <remarks>
+            Does not throw an exception when the log file does not exist.
+            </remarks>
+            <returns>The log file as text document or null when it does not exist.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetLogFileAsText(System.DateTime)">
+            <summary>
+            Get the log file for the passed date as text document
+            </summary>
+            <remarks>
+            Does not throw an exception when the log file does not exist.
+            </remarks>
+            <param name="dateTime">The date and time to get the log file for. Use DateTime.Now to get the current log file.</param>
+            <returns>The log file as text document or null when it does not exist.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.ShowLogFile">
+            <summary>
+            Shows the current log file 
+            </summary>
+            <remarks>
+            Opens the default program to show text or XML files and displays the requested file, if it exists. Does nothing otherwise.
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.WriteText"/> is false, a temporary XML file is created and saved in the users's temporary path each time this method is called. 
+            So don't use it excessively in that case. Otherwise, the log file itself is shown.
+            </remarks>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.ShowLogFile(System.DateTime)">
+            <summary>
+            Show a log file for the passed date
+            </summary>
+            <remarks>
+            Opens the default program to show text or XML files and displays the requested file, if it exists. Does nothing otherwise.
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.WriteText"/> is false, a temporary XML file is created and saved in the users's temporary path each time this method is called. 
+            So don't use it excessively in that case. Otherwise, the log file itself is shown.
+            </remarks>
+            <param name="dateTime">The date and time to show the log file for.</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging">
+            <summary>
+            Start logging
+            </summary>
+            <remarks>
+            Start background task pointing to <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.WriteLogEntriesToFile"/> to write log files to disk. 
+            Is called automatically by <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.Enqueue(System.Xml.Linq.XElement)"/> when the first entry is logged, unless
+            <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> is set to true (default is false). Then, this method has to be 
+            called explicitly to start logging.
+            </remarks>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.StopLogging(System.Boolean)">
+            <summary>
+            Stop logging background task, i.e. logging at all.
+            </summary>
+            <remarks>
+            Stop background task pointing to <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.WriteLogEntriesToFile"/> to write log files to disk. 
+            </remarks>
+            <param name="flush">Whether to write all pending entries to disk before. Default is true.</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Flush">
+            <summary>
+            Wait for all entries having been written to the file
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.ClearQueue">
+            <summary>
+            Clear background task's log entry queue. I.e. remove all log messages waiting to be written to <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.FileName"/> by the background task.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Enqueue(System.Xml.Linq.XElement)">
+            <summary>
+            Enqueue log entry to be written to log file
+            </summary>
+            <remarks>
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> is set to false (which is the default), 
+            logging is started automatically by calling <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging"/> from 
+            inside this method when the first <paramref name="logEntry"/> is enqueued. 
+            
+            When <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.StartExplicitly"/> is set to true, <paramref name="logEntry"/> 
+            is just enqueued, but not yet actually written to the log file. 
+            The latter will be done when <see cref="M:Atom.SDK.Net.Helpers.SDKLogger.StartLogging"/> is called explicitly.
+            </remarks>
+            <param name="logEntry">The log entry to be enqueued</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Peek">
+            <summary>
+            Get the next log entry from the queue, but do not dequeue it
+            </summary>
+            <returns>The next element or null when the queue is empty</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.Dequeue">
+            <summary>
+            Dequeue log entry
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.WriteLogEntriesToFile">
+            <summary>
+            Write log entries to the file on disk
+            </summary>
+            <remarks>
+            The thread looks every 100 milliseconds for new items in the queue.
+            </remarks>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.WriteOwnExceptionToEventLog(System.Exception)">
+            <summary>
+            Write exceptions happening here, i.e. <see cref="P:Atom.SDK.Net.Helpers.SDKLogger.LastExceptionInBackgroundTask"/> to the event log.
+            </summary>
+            <remarks>
+            When there are exceptions occurring when we try to write to disk, sometimes it is hard to find out why this fails.
+            That's why they are written to the event log here. For not to clutter up event log too much, doubles are sorted out.
+            The event is written as an error to the application event log under source "SimpleLog".
+            </remarks>
+            <param name="ex">The exception to write to the event log.</param>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.WriteLogEntryToFile(System.Xml.Linq.XElement)">
+            <summary>
+            Write one log entry to file
+            </summary>
+            <remarks>
+            This method can be called from the logging background thread or directly 
+            from the main thread. Lock accordingly to avoid multiple threads concurrently 
+            accessing the file. When the lock can not be got within five seconds, 
+            <paramref name="xmlEntry" /> is not being written to the file, but a respective 
+            exception is returned, saying what went wrong.
+            </remarks>
+            <param name="xmlEntry">The entry to write</param>
+            <returns>Null when all worked fine, an exception otherwise</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.ConvertXmlToPlainText(System.Xml.Linq.XElement)">
+            <summary>
+            Convert <paramref name="xmlEntry"/> to plain text to be written to a file.
+            </summary>
+            <remarks>
+            A typical xml entry to be converted looks like this:
+            <![CDATA[
+            
+            <LogEntry Date="2014-06-19 11:20:52" Severity="Info" Source="SimpleLogDemo.Program.DoSomethingElse" ThreadId="9">
+              <Message>Entering method. See Source which method is meant.</Message>
+            </LogEntry>
+            <LogEntry Date="2014-06-19 11:20:52" Severity="Exception" Source="SimpleLogDemo.Program.DoSomething" ThreadId="9">
+              <Exception Type="System.Exception" Source="SimpleLogDemo.Program.DoSomethingElse">
+                <Message>Something went wrong.</Message>
+                <Exception Type="System.NullReferenceException" Source="SimpleLogDemo.Program.DoSomethingElse">
+                  <Message>Object reference not set to an instance of an object.</Message>
+                  <StackTrace>   at SimpleLogDemo.Program.DoSomethingElse(String fred) in D:\Projekt\VisualStudio\SimpleLogDemo\SimpleLogDemo\Program.cs:line 91</StackTrace>
+                </Exception>
+              </Exception>
+            </LogEntry>
+            
+            ]]>
+            
+            This is a basic implementation so far. Feel free to implement your own if you need something more sophisticated, e.g. 
+            nicer exception formatting.
+            </remarks>
+            <param name="xmlEntry">The XML entry to convert.</param>
+            <returns><paramref name="xmlEntry"/> converted to plain text.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.SDKLogger.GetCaller(System.Int32)">
+            <summary>
+            Detects the method that was calling the log method
+            </summary>
+            <remarks>
+            The method is walking up the frames in the stack trace until the first method outside <see cref="T:Atom.SDK.Net.Helpers.SDKLogger"/> is reached.
+            When log calls to <see cref="T:Atom.SDK.Net.Helpers.SDKLogger"/> are wrapped in an application, this may still not be the method where logging 
+            was called initially (e.g. when an exception occurred and has been logged). In that case set <paramref name="framesToSkip"/> 
+            accordingly to get outside the wrapper method(s).
+            </remarks>
+            <param name="framesToSkip">How many frames to skip when detecting the calling method. This is useful when log calls to <see cref="T:Atom.SDK.Net.Helpers.SDKLogger"/> are wrapped in an application. Default is 0.</param>
+            <returns>Class and method that was calling the log method</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.Utilities.GetAdapterByName(System.String)">
+            <summary>
+            Gets <see cref="T:System.Net.NetworkInformation.NetworkInterface"/> by <paramref name="name"/>
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.Helpers.Utilities.GetSDKInfo">
+            <summary>
+            Get <see cref="T:Atom.SDK.Core.Models.SDKInfo"/> for Integrated ATOM SDK Version
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Models.SDKInfo"/></returns>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.Network">
+            <summary>
+            Represents a network on the local machine. 
+            It can also represent a collection of network 
+            connections with a similar network signature.
+            </summary>
+            <remarks>
+            Instances of this class are obtained by calling 
+            methods on the <see cref="T:Atom.SDK.Net.InternetHelper.NetworkListManager"/> class.
+            </remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.Category">
+            <summary>
+            Gets or sets the category of a network. The 
+            categories are trusted, untrusted, or 
+            authenticated.
+            </summary>
+            <value>A <see cref="T:Atom.SDK.Net.InternetHelper.NetworkCategory"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.ConnectedTime">
+            <summary>
+            Gets the local date and time when the network 
+            was connected.
+            </summary>
+            <value>A <see cref="T:System.DateTime"/> object.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.Connections">
+            <summary>
+            Gets the network connections for the network.
+            </summary>
+            <value>A <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnectionCollection"/> object.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.Connectivity">
+            <summary>
+            Gets the connectivity state of the network.
+            </summary>
+            <value>A <see cref="P:Atom.SDK.Net.InternetHelper.Network.Connectivity"/> value.</value>
+            <remarks>Connectivity provides information on whether
+            the network is connected, and the protocols
+            in use for network traffic.</remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.CreatedTime">
+            <summary>
+            Gets the local date and time when the 
+            network was created.
+            </summary>
+            <value>A <see cref="T:System.DateTime"/> object.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.Description">
+            <summary>
+            Gets or sets a description for the network.
+            </summary>
+            <value>A <see cref="T:System.String"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.DomainType">
+            <summary>
+            Gets the domain type of the network. 
+            </summary>
+            <value>A <see cref="P:Atom.SDK.Net.InternetHelper.Network.DomainType"/> value.</value>
+            <remarks>The domain
+            indictates whether the network is an Active
+            Directory Network, and whether the machine
+            has been authenticated by Active Directory.</remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.IsConnected">
+            <summary>
+            Gets a value that indicates whether there is
+            network connectivity.
+            </summary>
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.IsConnectedToInternet">
+            <summary>
+            Gets a value that indicates whether there is 
+            Internet connectivity.
+            </summary>
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.Name">
+            <summary>
+            Gets or sets the name of the network.
+            </summary>
+            <value>A <see cref="T:System.String"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.Network.NetworkId">
+            <summary>
+            Gets a unique identifier for the network.
+            </summary>
+            <value>A <see cref="T:System.Guid"/> value.</value>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.NetworkCollection">
+            <summary>
+            An enumerable collection of <see cref="T:Atom.SDK.Net.InternetHelper.Network"/> objects.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkCollection.GetEnumerator">
+            <summary>
+            Returns the strongly typed enumerator for this collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerator`1"/>  object.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkCollection.System#Collections#IEnumerable#GetEnumerator">
+             <summary>
+             Returns the enumerator for this collection.
+             </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/> object.</returns> 
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.NetworkConnection">
+            <summary>
+            Represents a connection to a network.
+            </summary>
+            <remarks> A collection containing instances of this class is obtained by calling
+            the <see cref="P:Microsoft.WindowsAPICodePack.Net.Network.Connections"/> property.</remarks>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.Network">
+            <summary>
+            Retrieves an object that represents the network 
+            associated with this connection.
+            </summary>
+            <returns>A <see cref="P:Atom.SDK.Net.InternetHelper.NetworkConnection.Network"/> object.</returns>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.AdapterId">
+            <summary>
+            Gets the adapter identifier for this connection.
+            </summary>
+            <value>A <see cref="T:System.Guid"/> object.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.ConnectionId">
+            <summary>
+            Gets the unique identifier for this connection.
+            </summary>
+            <value>A <see cref="T:System.Guid"/> object.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.Connectivity">
+            <summary>
+            Gets a value that indicates the connectivity of this connection.
+            </summary>
+            <value>A <see cref="P:Atom.SDK.Net.InternetHelper.NetworkConnection.Connectivity"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.DomainType">
+            <summary>
+            Gets a value that indicates whether the network associated
+            with this connection is 
+            an Active Directory network and whether the machine
+            has been authenticated by Active Directory.
+            </summary>
+            <value>A <see cref="P:Atom.SDK.Net.InternetHelper.NetworkConnection.DomainType"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.IsConnectedToInternet">
+            <summary>
+            Gets a value that indicates whether this 
+            connection has Internet access.
+            </summary>
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkConnection.IsConnected">
+            <summary>
+            Gets a value that indicates whether this connection has
+            network connectivity.
+            </summary>
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.NetworkConnectionCollection">
+            <summary>
+            An enumerable collection of <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnection"/> objects.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkConnectionCollection.GetEnumerator">
+            <summary>
+            Returns the strongly typed enumerator for this collection.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerator`1"/> object.</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkConnectionCollection.System#Collections#IEnumerable#GetEnumerator">
+             <summary>
+             Returns the enumerator for this collection.
+             </summary>
+            <returns>A <see cref="T:System.Collections.IEnumerator"/> object.</returns> 
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.ConnectivityStates">
+            <summary>
+            Specifies types of network connectivity.
+            </summary>    
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.None">
+            <summary>
+            The underlying network interfaces have no 
+            connectivity to any network.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv4Internet">
+            <summary>
+            There is connectivity to the Internet 
+            using the IPv4 protocol.
+            </summary>        
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv4LocalNetwork">
+            <summary>
+            There is connectivity to a routed network
+            using the IPv4 protocol.
+            </summary>        
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv4NoTraffic">
+            <summary>
+            There is connectivity to a network, but 
+            the service cannot detect any IPv4 
+            network traffic.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv4Subnet">
+            <summary>
+            There is connectivity to the local 
+            subnet using the IPv4 protocol.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv6Internet">
+            <summary>
+            There is connectivity to the Internet 
+            using the IPv4 protocol.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv6LocalNetwork">
+            <summary>
+            There is connectivity to a local 
+            network using the IPv6 protocol.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv6NoTraffic">
+            <summary>
+            There is connectivity to a network, 
+            but the service cannot detect any 
+            IPv6 network traffic
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.ConnectivityStates.IPv6Subnet">
+            <summary>
+            There is connectivity to the local 
+            subnet using the IPv6 protocol.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.DomainType">
+            <summary>
+            Specifies the domain type of a network.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.DomainType.NonDomainNetwork">
+            <summary>
+            The network is not an Active Directory network.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.DomainType.DomainNetwork">
+            <summary>
+            The network is an Active Directory network, but this machine is not authenticated against it.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.DomainType.DomainAuthenticated">
+            <summary>
+            The network is an Active Directory network, and this machine is authenticated against it.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.NetworkCategory">
+            <summary>
+            Specifies the trust level for a 
+            network.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.NetworkCategory.Public">
+            <summary>
+            The network is a public (untrusted) network. 
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.NetworkCategory.Private">
+            <summary>
+            The network is a private (trusted) network. 
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.NetworkCategory.Authenticated">
+            <summary>
+            The network is authenticated against an Active Directory domain.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.NetworkConnectivityLevels">
+            <summary>
+            Specifies the level of connectivity for 
+            networks returned by the 
+            <see cref="T:Atom.SDK.Net.InternetHelper.NetworkListManager"/> 
+            class.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.NetworkConnectivityLevels.Connected">
+            <summary>
+            Networks that the machine is connected to.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.NetworkConnectivityLevels.Disconnected">
+            <summary>
+            Networks that the machine is not connected to.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.InternetHelper.NetworkConnectivityLevels.All">
+            <summary>
+            All networks.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.InternetHelper.NetworkListManager">
+            <summary>
+            Provides access to objects that represent networks and network connections.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkListManager.GetNetworks(Atom.SDK.Net.InternetHelper.NetworkConnectivityLevels)">
+            <summary>
+            Retrieves a collection of <see cref="T:Atom.SDK.Net.InternetHelper.Network"/> objects that represent the networks defined for this machine.
+            </summary>
+            <param name="level">
+            The <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnectivityLevels"/> that specify the connectivity level of the returned <see cref="T:Atom.SDK.Net.InternetHelper.Network"/> objects.
+            </param>
+            <returns>
+            A <see cref="T:Atom.SDK.Net.InternetHelper.NetworkCollection"/> of <see cref="T:Atom.SDK.Net.InternetHelper.Network"/> objects.
+            </returns>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkListManager.GetNetwork(System.Guid)">
+            <summary>
+            Retrieves the <see cref="T:Atom.SDK.Net.InternetHelper.Network"/> identified by the specified network identifier.
+            </summary>
+            <param name="networkId">
+            A <see cref="T:System.Guid"/> that specifies the unique identifier for the network.
+            </param>
+            <returns>
+            The <see cref="T:Atom.SDK.Net.InternetHelper.Network"/> that represents the network identified by the identifier.
+            </returns>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkListManager.GetNetworkConnections">
+            <summary>
+            Retrieves a collection of <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnection"/> objects that represent the connections for this machine.
+            </summary>
+            <returns>
+            A <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnectionCollection"/> containing the network connections.
+            </returns>
+        </member>
+        <member name="M:Atom.SDK.Net.InternetHelper.NetworkListManager.GetNetworkConnection(System.Guid)">
+            <summary>
+            Retrieves the <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnection"/> identified by the specified connection identifier.
+            </summary>
+            <param name="networkConnectionId">
+            A <see cref="T:System.Guid"/> that specifies the unique identifier for the network connection.
+            </param>
+            <returns>
+            The <see cref="T:Atom.SDK.Net.InternetHelper.NetworkConnection"/> identified by the specified identifier.
+            </returns>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkListManager.IsConnectedToInternet">
+            <summary>
+            Gets a value that indicates whether this machine 
+            has Internet connectivity.
+            </summary>
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkListManager.IsConnected">
+            <summary>
+            Gets a value that indicates whether this machine 
+            has network connectivity.
+            </summary>
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="P:Atom.SDK.Net.InternetHelper.NetworkListManager.Connectivity">
+            <summary>
+            Gets the connectivity state of this machine.
+            </summary>
+            <value>A <see cref="P:Atom.SDK.Net.InternetHelper.NetworkListManager.Connectivity"/> value.</value>
+        </member>
+        <member name="T:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager">
+            <summary>
+            Handles the policy josn and its working
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.IsPolicyDataDownloaded">
+            <summary>
+            Shows if policay data download successfully or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.IsDefaultRecommendedProtocolUsed">
+            <summary>
+            Shows if recommended protocol set from default policy or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.RecommendedProtocolSource">
+            <summary>
+            Shows on which basis recommended protocol is seleted like city wise or country wise
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.BaseSpeed">
+            <summary>
+            Base speed from policy JSON
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.DownloadPolicyData">
+            <summary>
+            Download policy data form S3
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.WritePolicyJson(Atom.SDK.Core.Models.PolicyData)">
+            <summary>
+            Write data to local file
+            </summary>
+            <param name="policyData"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.ReadPolicyDataFromLocal">
+            <summary>
+            Read data from localy saved file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.ValidateIfPolicyDataExistLocally">
+            <summary>
+            Valid if local file of policy data is exist or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.GetRecommendedProtocolSlugFromPolicy(Atom.Core.Models.ApiModels.IpToLocationApiModel)">
+            <summary>
+            Set recommended protocol from policy josn
+            </summary>
+            <param name="currentLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.PolicyDataHelper.PolicyDataManager.GetRecommendedProtocolSlugFromDefaultPolicy(Atom.SDK.Core.Models.LocalFileModel)">
+            <summary>
+            Set recommended protocol from default policy in local data
+            </summary>
+            <param name="localData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.SDK.Net.GetServerForWireGuard">
+            <summary>
+            <see cref="T:Atom.SDK.Core.Interfaces.IGetServerStrategy"/> to get servers for WireGuard
+            Note:
+            This Strategy was working before when we have separate Speed test API for WireGuard servers
+            Now Speed test v4 version is supported all of the protocols so we are not gonna use this strategy any more
+            Changes of this strategy has already been merged in GetServerWithParam class
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.GetServerForWireGuard.KeypairGenerator">
+            <summary>
+            <see cref="T:Atom.SDK.Core.Interfaces.IKeypairGenerator"/> to generate keypair
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerForWireGuard.#ctor(Atom.SDK.Core.Models.VPNProperties,Atom.SDK.Core.Interfaces.IKeypairGenerator)">
+            <summary>
+            Initializes <see cref="T:Atom.SDK.Net.GetServerForWireGuard"/> for <paramref name="vpnProperties"/> and <paramref name="keypairGenerator"/>
+            </summary>
+            <param name="vpnProperties"></param>
+            <param name="keypairGenerator"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerForWireGuard.GetServers(System.String,Atom.Core.Models.Credentials)">
+            <summary>
+            Get <see cref="T:Atom.SDK.Core.Models.SpeedTestServer"/>s for <see cref="T:Atom.SDK.Core.Models.VPNProperties"/>
+            </summary>
+            <param name="accessToken"></param>
+            <param name="credentials"></param>
+            <returns><see cref="T:System.Collections.Generic.Queue`1"/></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerWithDedicatedIP.ValidateDNSFromLocalDataSmartConnect(Atom.SDK.Core.Models.LocalFileModel,Atom.SDK.Core.Models.VPNProperties)">
+            <summary>
+            Find configuration or verify DNS in local data under smart connect object list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerWithDedicatedIP.ValidateDNSFromLocalDataCountries(Atom.SDK.Core.Models.LocalFileModel,Atom.SDK.Core.Models.VPNProperties)">
+            <summary>
+            Find configuration or verify DNS in local data under country object list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerWithDedicatedIP.ValidateDnsFromLocalDataCities(Atom.SDK.Core.Models.LocalFileModel,Atom.SDK.Core.Models.VPNProperties)">
+            <summary>
+            Find configuration or verify DNS in local data under city object list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerWithDedicatedIP.ValidateDNSFromLocalDataChannels(Atom.SDK.Core.Models.LocalFileModel,Atom.SDK.Core.Models.VPNProperties)">
+            <summary>
+            Find configuration or verify DNS in local data under city object list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.GetServerWithParams.KeypairGenerator">
+            <summary>
+            <see cref="T:Atom.SDK.Core.Interfaces.IKeypairGenerator"/> to generate keypair
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.GetServerWithParams.#ctor(Atom.SDK.Core.Models.VPNProperties,Atom.SDK.Core.Interfaces.IKeypairGenerator)">
+            <summary>
+            Initializes <see cref="T:Atom.SDK.Net.GetServerWithParams"/> for <paramref name="vpnProperties"/> and <paramref name="keypairGenerator"/>
+            </summary>
+            <param name="vpnProperties"></param>
+            <param name="keypairGenerator"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Atom.SDK.Net.GetServerWithParams.GetCityWiseDataCenters(Atom.Core.Models.City,System.Collections.Generic.List{Atom.Core.Models.City},System.Collections.Generic.List{Atom.Core.Models.DataCenter})" -->
+        <member name="M:Atom.SDK.Net.Networking.WebRequestCamp.GetConnectedLocationWithRetries(System.String,System.Func{System.Boolean})">
+            <summary>
+            Gets Connected <see cref="T:Atom.Core.Models.Location"/> with multiple attempts on failure
+            </summary>
+            <param name="accessToken">Web API auth access token</param>
+            <param name="isForcedStopped"><see cref="T:System.Func`1"/> returns true when request is to be forced stopped</param>
+            <returns></returns>
+        </member>
+        <member name="F:Atom.SDK.Net.WebRequestHelper._DEFAULT_REQ_TIMOUTE">
+            <summary>
+            Timeout in milliseconds for POST requests
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.WebRequestHelper.Get``1(System.String)">
+            <summary>
+            This method is used for third party APIs 
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.WebRequestHelper.GetAppropriateAtomAPIExceptionForWebExceptionWithoutRetry(Atom.Core.Helpers.WebResponseModel,System.Net.WebException)">
+            <summary>
+            Gets appropriate <see cref="T:Atom.Core.Exceptions.AtomAPIException"/> for <see cref="T:System.Net.WebException"/>
+            </summary>
+            <param name="webResponse"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.WebRequestHelper.SetWebExceptionToWebResponseAndSendApiErrorToMixPanel(Atom.Core.Helpers.WebResponseModel,System.Net.WebException)">
+            <summary>
+            Set <see cref="T:System.Net.WebException"/> to <see cref="T:Atom.Core.Helpers.WebResponseModel"/>
+            </summary>
+            <param name="webResponse"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.WebRequestHelper.RetryGetRequestOrThrowAtomAPIExceptionFromWebException``1(System.String@,System.Collections.Specialized.NameValueCollection,System.Boolean@,Atom.Core.Helpers.WebResponseModel,System.Net.WebException)">
+            <summary>
+            Retry Get request if possible or throw <see cref="T:Atom.Core.Exceptions.AtomAPIException"/> from <see cref="T:System.Net.WebException"/>
+            Sets <see cref="T:System.Net.WebResponse"/> and updates properties to Mix Panel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.WebRequestHelper.RetryPostRequestOrThrowAtomAPIExceptionForWebException``1(System.String@,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Specialized.NameValueCollection,Atom.Core.Helpers.WebResponseModel@,System.Boolean@,System.Net.WebException,System.String)">
+            <summary>
+            Retry Post request if possible or throw <see cref="T:Atom.Core.Exceptions.AtomAPIException"/> from <see cref="T:System.Net.WebException"/>
+            Sets <see cref="T:System.Net.WebResponse"/> and updates properties to Mix Panel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.SDK.Net.SignalRListener">
+            <summary>
+            Listener for Atom Service triggered SignalR Messages
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Net.SignalRListener.WireGuardConnected">
+            <summary>
+            Event triggers when Atom Service has established a WireGuard VPN Connection
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Net.SignalRListener.WireGuardDisconnected">
+            <summary>
+            Event triggers when Atom Service has disconnected to a WireGuard Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.ConnectToWireGuard">
+            <summary>
+            Establish VPN Connection using WireGuard protocol
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.DisconnectToWireGuard">
+            <summary>
+            Disconnect WireGuard VPN Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.CancelToWireGuard">
+            <summary>
+            Cancel WireGuard VPN Connection
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.AbortIperf">
+            <summary>
+            Abort Iperf on disconnect
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.SignalRClient.SignalRMethods.ConnectToWireGuard(System.String,System.String,System.String)">
+            <summary>
+            Invokes <see cref="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.ConnectToWireGuard"/>
+            </summary>
+            <param name="adapterName"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.SignalRClient.SignalRMethods.DisconnectToWireGuard(System.String)">
+            <summary>
+            Invokes <see cref="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.DisconnectToWireGuard"/>
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.SignalRClient.SignalRMethods.CancelToWireGuard(System.String)">
+            <summary>
+            Invokes <see cref="F:Atom.SDK.Net.SignalRClient.SignalRMethods.SignalRCommands.CancelToWireGuard"/>
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.AtomManager">
+            <summary>
+            The main class used to connect and maintain VPN Connections.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.IsAtomSDKInitializedSuccessfully">
+            <summary>
+            Describes whether Atom SDK has Initialized Successfully and ready to perform Connection operations
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.IsAtomServiceInstalled">
+            <summary>
+            Describes whether Atom Service is installed or not
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.ServersList">
+            <summary>
+            Only used for send servers response data to Mixapnel
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.Country">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.Country"/> object to which last connection was made, or <see langword="null" /> if no connection has been made yet.
+            </summary>
+            <returns><see cref="T:Atom.Core.Models.Country"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.City">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.City"/> object to which last connection was made, or <see langword="null" /> 
+            if <see cref="T:Atom.Core.Models.City"/> was not specified or if no connection has been made yet.
+            </summary>
+            <returns><see cref="T:Atom.Core.Models.City"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.Protocol">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Models.Protocol"/> object which was used for the connection, or <see langword="null" /> if no connection has been made yet.
+            </summary>
+            <returns><see cref="T:Atom.Core.Models.Protocol"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager._policyDataManager">
+            <summary>
+            Policy data manager object that handles policy data
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.BeginInit(System.String)">
+            <summary>
+            Tasks to be performed on initialization
+            </summary>
+            <param name="secretKey"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Finalize">
+            <summary>
+            Destructor of AtomManager
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.ConnectAsync">
+            <summary>
+            Creates and connects the hub connection and hub proxy. This method
+            is called asynchronously from Atom Constructor
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Connection_Closed">
+            <summary>
+            If the server is stopped, the connection will time out after 30 seconds (default), and the 
+            Closed event will fire.
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.DialError">
+            <summary>
+            Invokes when the ATOM SDK is unable to connect with the provided VPNProperties.
+            </summary>
+            <remarks>
+            Occurs when the SDK is unable to connect to the VPN server.
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.Connected">
+            <summary>
+            <para>Invokes when a successful VPN Connection is made.</para>
+            <para>Use <see cref="T:Atom.SDK.Core.ConnectedEventArgs"/> instead of <see cref="T:System.EventArgs"/> for connection details from v2.0 onwards</para>
+            </summary>
+            <remarks>
+            Occurs when the asynchronous dial operation has completed.
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.Disconnected">
+            <summary>
+            Invokes when a VPN Connection is successfully disconnected.
+            </summary>
+            <remarks>
+            Occurs when the Vpn connection is terminated.
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.StateChanged">
+            <summary>
+            Invokes when the <see cref="T:Atom.SDK.Core.Enumerations.VPNState"/> changed during dialing.
+            </summary>
+            <remarks>
+            Occurs when the connection state changes.
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.Redialing">
+            <summary>
+            Invokes whenever ATOM SDK tries to redial automatically in case of a failed connection attempt.
+            </summary>
+            <remarks>
+            Occurs when the SDK is unable to connect to a sever and retrying to another available server.
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.OnUnableToAccessInternet">
+            <summary>
+            Invokes when the VPN server is unable to access internet.
+            </summary>
+            <remarks>
+            Occurs when the ATOM SDK is unable to access internet after connection.
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.SDKAlreadyInitialized">
+            <summary>
+            Invokes when the ATOM SDK is already initialized from another process
+            </summary>
+            <remarks>
+            Occurs when the ATOM SDK is already initialized from another process
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.ConnectedLocation">
+            <summary>
+            Invokes when the ATOM SDK have Connected <see cref="T:Atom.Core.Models.Location"/>
+            </summary>
+            <remarks>
+            Occurs when the ATOM SDK has established VPN Connection and Connected Location is known
+            </remarks>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.PacketsTransmitted">
+            <summary>
+            Invokes iteratively to provide amount of data transmitted during VPN Connection
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.AtomInitialized">
+            <summary>
+            Invokes when SDK instance has been initialized and ready to perform Connection related operations or failed to initialize
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.AtomDependenciesMissing">
+            <summary>
+            Invokes when SDK initialization is requested but its dependencies are not installed
+            </summary>
+        </member>
+        <member name="E:Atom.SDK.Net.AtomManager.OnConnecting">
+            <summary>
+            <para>Invokes when a SDK is starting dialing process.</para>
+            </summary>
+            <remarks>
+            Occurs when the SDK starts dialing process.
+            </remarks>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Atom#SDK#Core#Interfaces#IEventListener#RaiseConnectedLocation(Atom.SDK.Core.ConnectedLocationEventArgs)">
+            <summary>
+            Raise <see cref="E:Atom.SDK.Net.AtomManager.ConnectedLocation"/> event
+            </summary>
+            <param name="args"><see cref="T:Atom.SDK.Core.ConnectedLocationEventArgs"/></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Atom#SDK#Core#Interfaces#IEventListener#RaiseConnecting(Atom.SDK.Core.CustomEventArgs.ConnectingEventArgs)">
+            <summary>
+            Raise <see cref="E:Atom.SDK.Net.AtomManager.OnConnecting"/> event
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Atom#SDK#Core#Interfaces#IEventListener#RaisePacketsTransmitted(Atom.SDK.Core.CustomEventArgs.PacketsTransmittedEventArgs)">
+            <summary>
+            Raise PacketsTransmitted event
+            </summary>
+            <param name="args">Event args for PacketsTransmitted event</param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Atom#SDK#Core#Interfaces#IEventListener#RaiseAtomInitialized(Atom.SDK.Core.CustomEventArgs.AtomInitializedEventArgs)">
+            <summary>
+            Raise <see cref="E:Atom.SDK.Net.AtomManager.ConnectedLocation"/> event
+            </summary>
+            <param name="args"><see cref="T:Atom.SDK.Core.ConnectedLocationEventArgs"/></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Atom#SDK#Core#Interfaces#IEventListener#RaiseAtomDependenciesMissing(Atom.SDK.Core.CustomEventArgs.AtomDependenciesMissingEventArgs)">
+            <summary>
+            Raise <see cref="E:Atom.SDK.Net.AtomManager.AtomDependenciesMissing"/> event
+            </summary>
+            <param name="args"><see cref="T:Atom.SDK.Core.CustomEventArgs.AtomDependenciesMissingEventArgs"/></param>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.SecretKey">
+            <summary>
+            The Secret Key provided by Atom at the time of subscription.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.IsBusy">
+            <summary>
+            Gets a value indicating whether the SDK is busy in connecting or disconnecting. Calls to 
+            <see cref="M:Atom.SDK.Net.AtomManager.Connect(Atom.SDK.Core.Models.VPNProperties)"/> or <see cref="M:Atom.SDK.Net.AtomManager.Disconnect"/> will have no effect if 
+            <see cref="P:Atom.SDK.Net.AtomManager.IsBusy"/> is true. <see cref="M:Atom.SDK.Net.AtomManager.Cancel"/> can be called if the SDK is busy in Connecting.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.LogPath">
+            <summary>
+            Gets or sets the directory to log to. Default is the AtomSDK.dll's current working directory.
+            Log files are created in the format SDK_{Current Date}.log
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.LastDialedHost">
+            <summary>
+            Gets the hostname to which last connection attempt was made or an empty string if no attempt is made yet.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.LastDialedHostMethod">
+            <summary>
+            Gets the method used to fetch the server to which last connection attempt was made or an empty string if no attempt is made yet.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.LastDialedHostServerType">
+            <summary>
+            Gets the server type with which last connection attempt was made or an empty string if no attempt is made yet.
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.ConnectionDetails">
+            <summary>
+            Gets the details of the last connection attempt
+            or return connection details of last connection if <see cref="P:Atom.Core.Models.AtomConfiguration.PersistVPNDetails"/> property set to true
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.VPNConnectionState">
+            <summary>
+             Provides the <see cref="T:Atom.SDK.Core.Enumerations.VPNState"/> of the current dialing process.
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Enumerations.VPNState"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.Credentials">
+            <summary>
+            <para> Gets or sets the <see cref="T:Atom.Core.Models.Credentials"/> object to be used in a VPN Connection. 
+            It must be provided before calling Connect method or provide UUID alternatively.</para>
+            <seealso cref="P:Atom.SDK.Net.AtomManager.UUID"/>
+            </summary>
+            <returns><see cref="T:Atom.Core.Models.Credentials"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.UUID">
+            <summary>
+            Gets or Sets a Unique User identifier used to connect to a vpn server if <see cref="T:Atom.Core.Models.Credentials"/> object is not provided. 
+            ATOM SDK will generate VPN Credentials itself when this property is provided. This value will be ignored if Credentials are provided.
+            </summary>
+            <returns>A Unique User Identifier string.</returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.VPNProperties">
+            <summary>
+            Gets the <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> which were used for the connection, 
+            or return VPNProperties of last connection if <see cref="P:Atom.Core.Models.AtomConfiguration.PersistVPNDetails"/> property set to true,
+            or <see langword="null" /> if no connection has been made yet.
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Models.VPNProperties"/></returns>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.AutoRedialOnConnectionDrop">
+            <summary>
+            Gets or Sets a value indicating whether or not the SDK tries to connect again when the connection is lost
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.AtomManager.SensitiveApplications">
+            <summary>
+            Set the List of sensitive applications that will be closeed when VPN connection drops automatically
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Initialize(Atom.Core.Models.AtomConfiguration)">
+            <summary>
+            Initializes a new instance of the ATOM SDK using AtomConfiguration. If the SDK was initialized previously the same object is returned.
+            </summary>
+            <remarks>
+            Initializes a new instance of SDK
+            </remarks>
+            <param name="atomConfiguration">An AtomConfiguration object which enables the developer to provide the custom configuration. SecretKey is mandatory in any case.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="atomConfiguration"/> is null.</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Initialize(System.String)">
+            <summary>
+            Initializes a new instance of the ATOM SDK using a secret key. If the ATOM SDK was initialized previously the same object is returned.
+            </summary>
+            <remarks>
+            Initializes a new instance of SDK
+            </remarks>
+            <param name="secretKey">The Secret Key provided by ATOM at the time of subscription.</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException">Thrown when <paramref name="secretKey"/> is null or empty.</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.AcquireMutex(System.String)">
+            <summary>
+            Acquire <see cref="!:NamedMutex"/> for <paramref name="secretKey"/>
+            </summary>
+            <param name="secretKey">Secret Key for Reseller</param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.RaiseSDKAlreadyInitializedEventAsync">
+            <summary>
+            Raise SDKAlreadyInitialized event
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.ReleaseNamedMutex(System.Object,System.EventArgs)">
+            <summary>
+            Release NamedMutex on ProcessExit
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.ReConnect">
+            <summary>
+            Reconnect to the last connected server. This will cause a dial error if no connection has been made yet.
+            </summary>
+            <remarks>
+            Reconnect to the last connected server. This will cause a dial error if no connection has been made yet.
+            </remarks>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Thrown when no connection has been made yet</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Connect(Atom.SDK.Core.Models.VPNProperties)">
+            <summary>
+            Creates a VPN connection.This function is used to start the VPN tunnel using the current VPN configuration after validation of <see cref="T:Atom.SDK.Core.Models.VPNProperties"/>.
+            </summary>
+            <remarks>For DNSLeaks Prevention, this method should be called with Admin rights </remarks>
+            <param name="vpnProperties">The <see cref="T:Atom.SDK.Core.Models.VPNProperties"/> object used by the ATOM SDK to establish a VPN connection.</param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.ThrowIfSDKNotInitialized">
+            <summary>
+            Throws Dial Error with <see cref="T:Atom.Core.Exceptions.ValidationException"/> if SDK is not initialized
+            </summary>
+            <returns>Boolean describing whether dial error was raised or not</returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.CancelConnectedLocationThread">
+            <summary>
+            Cancels <see cref="E:Atom.SDK.Net.AtomManager.ConnectedLocation"/> event request, if  any
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Disconnect">
+            <summary>
+            Disconnects existing VPN connection. If <see cref="T:Atom.SDK.Core.Enumerations.VPNStatus"/> is CONNECTING then use <see cref="M:Atom.SDK.Net.AtomManager.Cancel"/> method
+            </summary>
+            <remarks>
+            Disconnect the VPN connection.
+            </remarks>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Thrown when VPN is in connecting state or in disconnected state.</exception> 
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.Cancel">
+            <summary>
+            Cancels a VPN connection process if a connection process is already started and not reached to Connected state.
+            </summary>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Thrown when VPN is connected or when VPN is disconnected.</exception> 
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetConfig">
+            <summary>
+            Gets a string dictionary representing the config file used by the Atom SDK.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.SetConfig(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Sets the config file with with predefined keys used by the Atom SDK.
+            </summary>
+            <param name="dictionary">A string dictionary representing the config file.</param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetLastConnectionDetails">
+            <summary>
+            Gets the connection details of the last successful connection made using the provided Credentials or UUID.
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Models.ConnectionDetails"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Thrown when no connection details found for this session or invalid credentials/UUID are provided</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetConnectedIP">
+            <summary>
+            Gets the VPN IP of the current connected session. Returns empty string in case of disconnected state.
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetCurrentVPNStatus">
+            <summary>
+            Gets the current status of the VPN SDK. Please refer to <see cref="T:Atom.SDK.Core.Enumerations.VPNStatus"/> Enum for the possible values. 
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Enumerations.VPNStatus"/></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetConnectedTime">
+            <summary>
+            Gets the time at which the current VPN connection was established. Returns <see cref="F:System.DateTime.MinValue"/> in case of disconnected state.
+            </summary>
+            /// <returns><see cref="T:System.DateTime"/></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.DisableIKS">
+            <summary>
+            This method disables the Internet Kill Switch explicitly if enabled while dialing a VPN Connection
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.PingDedicatedIPServer(Atom.SDK.Core.Models.DedicatedIPServerPing)">
+            <summary>
+            Use this method to Ping Dedicated IP Server (IP or Hostname)
+            </summary>
+            <param name="dedicatedIPServerPing"></param>
+            <returns cref="T:Atom.SDK.Core.Models.DedicatedIPServerPing"></returns>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException"> Throw validation exception when user provide empty or null dedicated IP address to ping</exception>  
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Throw atom exception when error occured during ping Dedicated IP Server</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetCountries">
+            <summary>
+            Gets all the <see cref="T:Atom.Core.Models.Country"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.Country"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get countries</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetVirtualCountries">
+            <summary>
+            Gets all Virtual <see cref="T:Atom.Core.Models.Country"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.Country"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get virtual countries</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetPhysicalCountries">
+            <summary>
+            Gets all Physical <see cref="T:Atom.Core.Models.Country"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.Country"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get physical countries</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetProtocols">
+            <summary>
+            Gets all the <see cref="T:Atom.Core.Models.Protocol"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.Protocol"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get protocols</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetSmartConnect">
+            <summary>
+            Gets all the <see cref="T:Atom.Core.Models.SmartConnect"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.SmartConnect"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get SmartConnect</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.IsSmartConnectAvailableOnProtocol(Atom.Core.Models.Protocol,System.Collections.Generic.List{Atom.Core.Enums.SmartConnectTag})">
+            <summary>
+            return true if SmartConnect is available on Protocol and SmartConnectTag.
+            </summary>
+            <param name="protocol">Supported protocol otherwise throw <exception cref="T:Atom.Core.Exceptions.ValidationException"/> for empty protocol</param>
+            <param name="smartConnectTags">Valid tags that might support the supported protocol</param>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException">Validation Exception is thrown if Protocol is null or empty</exception>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Atom Exception is thrown if SmartConnect DNS is not found</exception>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetOptimizedCountries">
+            <summary>
+            Gets all the Countries optimized and sorted on the basis of real-time latency w.r.t. user's network conditions allowed to the reseller by Atom.
+            </summary>
+             <returns>Array List of <see cref="T:Atom.Core.Models.Country"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get optimized countries</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetCities">
+            <summary>
+            Gets all the <see cref="T:Atom.Core.Models.City"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.City"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get cities</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetChannels">
+            <summary>
+            Gets all the <see cref="T:Atom.Core.Models.Channel"/> allowed to the reseller by Atom.
+            </summary>
+            <returns>Array List of <see cref="T:Atom.Core.Models.Channel"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get channels</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetCountriesForSmartDialing">
+            <summary>
+            Get all the Countries those support advanced mechanism of VPN Dialing on our network. This advanced mechanism of dialing will help in establishing a VPN Tunnel, quicker than the conventional (and recommended) method. 
+            <see cref="P:Atom.Core.Models.Country.IsSmartDialingSupported"/> will be set to the true. 
+            </summary>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"> Thrown when the SDK is unable to get smart countries</exception>  
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetConnectedCountry">
+            <summary>
+            Returns the connected Country object. It represents the exact Country against the Connected IP lies in our system.
+            </summary>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException">Thrown when VPN is not connected</exception>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Thrown when unable to get connected country, see the inner exception for the details</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetConnectedLocation">
+            <summary>
+            Returbds the <see cref="T:Atom.Core.Models.Location"/>
+            </summary>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException">Thrown when VPN is not connected</exception>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Thrown when unable to get connected location, see the inner exception for the details</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetRecommendedLocation">
+            <summary>
+            Gets Recommended <see cref="T:Atom.Core.Models.Location"/>
+            </summary>
+            <returns><see cref="T:Atom.Core.Models.Location"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Throw Atom Exception if location not found.</exception>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException">Throw Validation Exception if this method called other then disconnected state.</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetRecommendedLocationByFilters(Atom.Core.Models.LocationFilter)">
+            <summary>
+            Get Recommended <see cref="T:Atom.Core.Models.Location"/> for <paramref name="filter"/>s
+            </summary>
+            <param name="filter"><see cref="!:FilterLocation"/> filter to apply</param>
+            <returns><see cref="T:Atom.Core.Models.Location"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException">Throw Atom Exception if location not found.</exception>
+            <exception cref="T:Atom.Core.Exceptions.ValidationException">Throw Validation Exception if this method called other then disconnected state.</exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetRecommendedCountry">
+            <summary>
+            Gets Recommended <see cref="P:Atom.SDK.Net.AtomManager.Country"/>
+            </summary>
+            <returns><see cref="P:Atom.SDK.Net.AtomManager.Country"/></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetRecommendedCityForLocation(Atom.Core.Models.ApiModels.IpToLocationApiModel,Atom.SDK.Core.Models.RecommendedLocation,System.Boolean,Atom.Core.Models.LocationFilter)">
+            <summary>
+            Get Recommended Country for <see cref="T:Atom.Core.Models.ApiModels.IpToLocationApiModel"/>
+            </summary>
+            <param name="sourceLocation">Location</param>
+            <param name="recommendedLocation">For internal use</param>
+            <param name="isSendEvent">For internal use</param>
+            <param name="filter"><see cref="T:Atom.Core.Models.LocationFilter"/> to apply</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetRecommendedCountryForLocation(Atom.Core.Models.ApiModels.IpToLocationApiModel)">
+            <summary>
+            Get Recommended Country for <see cref="T:Atom.Core.Models.ApiModels.IpToLocationApiModel"/>
+            </summary>
+            <param name="sourceLocation">Location</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.ApplySplitTunneling(Atom.SDK.Core.Models.SplitApplication[])">
+            <summary>
+            Apply split tunneling to provided applications
+            </summary>
+            <param name="splitApplication">provide the complete application path with extension</param>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"></exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.MonitorConnectedIPChange(System.String,System.Action)">
+            <summary>
+            For a fixed duration monitors if Connected IP to WireGuard network adapter changes.
+            Triggers <paramref name="funcOnChange"/> if a change is detected.
+            </summary>
+            <param name="initialIp">Initial IP of network adapter</param>
+            <param name="funcOnChange">Routine to execute when connected IP has changed</param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.RemoveAllSplitTunnelingApplications">
+            <summary>
+            Remove split tunneling to all applications
+            </summary>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"></exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.RemoveSplitTunnelingApplication(Atom.SDK.Core.Models.SplitApplication)">
+            <summary>
+            Remove split tunneling from specfied application
+            </summary>
+            <param name="splitApplication">provide the complete application path with extension</param>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"></exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.SaveLastInstanceProperties(Atom.SDK.Core.Models.ConnectionDetails,Atom.SDK.Core.Models.VPNProperties)">
+            <summary>
+            Save last instance properties into settings
+            </summary>
+            <param name="connectionDetails"></param>
+            <param name="vpnProperties"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.SaveLastSuccessfulDialedProtocol(Atom.SDK.Core.Models.ConnectionDetails)">
+            <summary>
+            Save last successfull dialed protocol
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetLastConnectionDetailsProperties">
+            <summary>
+            Get last connection details from settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetLastVPNProperties">
+            <summary>
+            Get last VPN properties from settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetCurrentVpnState(Atom.SDK.Core.Models.ConnectionDetails)">
+            <summary>
+            Use GetCurrentVPNStatus() method instead of this
+            </summary>
+            <param name="connectionDetails"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.VerifyAtomServiceInstallation">
+            <summary>
+            Verifies that Atom service is installed and enabled.
+            Attempts to enable if app has required permissions. Otherwise, throws appropriate error
+            </summary>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"></exception>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.GetConnectedLocationWithRetries(System.Threading.CancellationToken)">
+            <summary>
+            Invokes <see cref="E:Atom.SDK.Net.AtomManager.ConnectedLocation"/> event
+            Gets Connected Location with multiple attempts on failure
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.ShouldPerformNetworkOperation(Atom.SDK.Core.Enumerations.VPNState)">
+            <summary>
+            Determines whether to perform network operation(s). Checks internet connectivity only if required.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.UTBCheckTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs,System.Int32)">
+            <summary>
+            UTB timer callback
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <param name="connectionAttempt"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.AutoDisconnectTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Auto Disconnect timer callback
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.TimerForOptimization_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Data centers optimization timer callback
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.SDK.Net.AtomManager.PacketTransmittedCallback(System.Int64,System.Int64)">
+            <summary>
+            Packets Transmitted Callback
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.None">
+            <summary>
+            No options are valid.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.UserName">
+            <summary>
+            The user name member is valid.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.Password">
+            <summary>
+            The password member is valid.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.Domain">
+            <summary>
+            The domain name member is valid.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.DefaultCredentials">
+            <summary>
+            Indicates the credentials are the default credentials for an all-user connection.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.PreSharedKey">
+            <summary>
+            Indicates a pre-shared key should be retrieved.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.ServerPreSharedKey">
+            <summary>
+            Used to set the pre-shared key on the remote access server.
+            </summary>
+        </member>
+        <member name="F:Atom.SDK.Net.RASCM.DdmPreSharedKey">
+            <summary>
+            Used to set the pre-shared key for a demand dial interface.
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.RasEntry">
+            <summary>
+            RasEntry µÄÕªÒªËµÃ÷¡£
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.VPNConfiguration.IsCredentialsRequired">
+            <summary>
+            Describes whether <see cref="P:Atom.SDK.Net.VPNConfiguration.Credentials"/> are required
+            </summary>
+        </member>
+        <member name="P:Atom.SDK.Net.WireGuardVPNConfiguration.IsCredentialsRequired">
+            <summary>
+            Describes whether <see cref="P:Atom.SDK.Net.VPNConfiguration.Credentials"/> are required
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.WireGuardVPNConfiguration.GetConfigFile">
+            <summary>
+             Get configuration from <see cref="P:Atom.SDK.Net.VPNConfiguration.SpeedtestServer"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.SDK.Net.WireGuardVPNConfiguration.CancelIfConnectionTimesoutAsync">
+            <summary>
+            Requests cancel if connection times out
+            </summary>
+        </member>
+        <member name="T:Atom.SDK.Net.WireGuardKeypairGenerator">
+            <summary>
+            Provides methods to manage <see cref="T:Atom.SDK.Core.Models.Keypair"/> using Curve25519 algorithm
+            </summary>
+        </member>
+        <member name="M:Atom.SDK.Net.WireGuardKeypairGenerator.Generate">
+            <summary>
+            Generates a new <see cref="T:Atom.SDK.Core.Models.Keypair"/> using Curve25519 algorithm
+            </summary>
+            <returns><see cref="T:Atom.SDK.Core.Models.Keypair"/></returns>
+            <exception cref="T:Atom.Core.Exceptions.AtomException"></exception>
+        </member>
+    </members>
+</doc>
